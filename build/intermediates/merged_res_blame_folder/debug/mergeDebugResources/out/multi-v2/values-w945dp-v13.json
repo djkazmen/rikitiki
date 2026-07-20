@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "pl.rikitiki.im-mergeDebugResources-23:/values-w945dp-v13/values-w945dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/kazmen/Documents/projects/claude/rikitiki/src/main/res/values-w945dp/dimens.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "57",
+                        "endOffsets": "69"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "57",
+                        "endOffsets": "108"
+                    }
+                }
+            ]
+        }
+    ]
+}

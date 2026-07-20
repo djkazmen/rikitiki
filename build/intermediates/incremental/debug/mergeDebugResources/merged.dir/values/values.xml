@@ -1,0 +1,1752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <string-array name="automatic_message_deletion">
+		<item>@string/never</item>
+		<item>@string/timeout_24_hours</item>
+		<item>@string/timeout_7_days</item>
+		<item>@string/timeout_30_days</item>
+		<item>@string/timeout_6_months</item>
+	</string-array>
+    <string-array name="automatic_message_deletion_values">
+		<item>0</item>
+		<item>86400</item>
+		<item>604800</item>
+		<item>2592000</item>
+		<item>15811200</item>
+	</string-array>
+    <string-array name="filesizes">
+		<item>@string/never</item>
+		<item>256 KiB</item>
+		<item>512 KiB</item>
+		<item>1 MiB</item>
+		<item>5 MiB</item>
+		<item>10 MiB</item>
+	</string-array>
+    <string-array name="filesizes_values">
+		<item>0</item>
+		<item>262144</item>
+		<item>524288</item>
+		<item>1048576</item>
+		<item>5242880</item>
+		<item>10485760</item>
+	</string-array>
+    <string-array name="grace_periods">
+		<item>@string/gp_short</item>
+		<item>@string/gp_medium</item>
+		<item>@string/gp_long</item>
+	</string-array>
+    <string-array name="grace_periods_values">
+		<item>144</item>
+		<item>610</item>
+		<item>2584</item>
+	</string-array>
+    <string-array name="mam_prefs">
+		<item>@string/never</item>
+		<item>@string/contacts</item>
+		<item>@string/always</item>
+	</string-array>
+    <string-array name="mute_options_descriptions">
+		<item>@string/thirty_minutes</item>
+		<item>@string/one_hour</item>
+		<item>@string/two_hours</item>
+		<item>@string/eight_hours</item>
+		<item>@string/until_further_notice</item>
+	</string-array>
+    <integer-array name="mute_options_durations">
+		<item>1800</item>
+		<item>3600</item>
+		<item>7200</item>
+		<item>28800</item>
+		<item>-1</item>
+	</integer-array>
+    <string-array name="picture_compression_entries">
+		<item>@string/never</item>
+		<item>@string/automatically</item>
+		<item>@string/always</item>
+	</string-array>
+    <string-array name="picture_compression_values">
+		<item>never</item>
+		<item>auto</item>
+		<item>always</item>
+	</string-array>
+    <string-array name="presence_show_options">
+		<item>@string/presence_chat</item>
+		<item>@string/presence_online</item>
+		<item>@string/presence_away</item>
+		<item>@string/presence_xa</item>
+		<item>@string/presence_dnd</item>
+	</string-array>
+    <string-array name="quick_action_values">
+		<item>none</item>
+		<item>recent</item>
+		<item>photo</item>
+		<item>picture</item>
+		<item>voice</item>
+		<item>location</item>
+	</string-array>
+    <string-array name="quick_actions">
+		<item>@string/none</item>
+		<item>@string/recently_used</item>
+		<item>@string/attach_take_picture</item>
+		<item>@string/attach_choose_picture</item>
+		<item>@string/attach_record_voice</item>
+		<item>@string/send_location</item>
+	</string-array>
+    <string-array name="resources">
+		<item>Mobile</item>
+		<item>Phone</item>
+		<item>Tablet</item>
+		<item>@string/app_name</item>
+		<item>Android</item>
+	</string-array>
+    <string-array name="themes">
+		<item>@string/pref_theme_light</item>
+		<item>@string/pref_theme_dark</item>
+	</string-array>
+    <string-array name="themes_values">
+		<item>light</item>
+		<item>dark</item>
+	</string-array>
+    <attr format="dimension" name="IconSize"/>
+    <attr format="dimension" name="TextSeparation"/>
+    <attr format="dimension" name="TextSizeBody"/>
+    <attr format="dimension" name="TextSizeHeadline"/>
+    <attr format="dimension" name="TextSizeInfo"/>
+    <attr format="reference|color" name="color_background_primary"/>
+    <attr format="reference|color" name="color_background_secondary"/>
+    <attr format="reference|color" name="color_text_primary"/>
+    <attr format="reference|color" name="color_text_secondary"/>
+    <attr format="reference|color" name="conversations_overview_background"/>
+    <attr format="reference" name="coordinatorLayoutStyle"/>
+    <attr format="reference" name="cropImageStyle"/>
+    <attr format="dimension" name="dialog_horizontal_padding"/>
+    <attr format="dimension" name="dialog_vertical_padding"/>
+    <attr format="reference|color" name="divider"/>
+    <attr format="reference" name="ic_attach_camera"/>
+    <attr format="reference" name="ic_attach_document"/>
+    <attr format="reference" name="ic_attach_location"/>
+    <attr format="reference" name="ic_attach_photo"/>
+    <attr format="reference" name="ic_attach_record"/>
+    <attr format="reference" name="ic_send_cancel_offline"/>
+    <attr format="reference" name="ic_send_location_offline"/>
+    <attr format="reference" name="ic_send_photo_offline"/>
+    <attr format="reference" name="ic_send_picture_offline"/>
+    <attr format="reference" name="ic_send_text_offline"/>
+    <attr format="reference" name="ic_send_voice_offline"/>
+    <attr format="reference" name="icon_add_group"/>
+    <attr format="reference" name="icon_add_person"/>
+    <attr format="float" name="icon_alpha"/>
+    <attr format="reference" name="icon_cancel"/>
+    <attr format="reference" name="icon_copy"/>
+    <attr format="reference" name="icon_discard"/>
+    <attr format="reference" name="icon_done"/>
+    <attr format="reference" name="icon_download"/>
+    <attr format="reference" name="icon_edit"/>
+    <attr format="reference" name="icon_edit_body"/>
+    <attr format="reference" name="icon_group"/>
+    <attr format="reference" name="icon_import_export"/>
+    <attr format="reference" name="icon_new"/>
+    <attr format="reference" name="icon_new_attachment"/>
+    <attr format="reference" name="icon_not_secure"/>
+    <attr format="reference" name="icon_notifications"/>
+    <attr format="reference" name="icon_notifications_none"/>
+    <attr format="reference" name="icon_notifications_off"/>
+    <attr format="reference" name="icon_notifications_paused"/>
+    <attr format="reference" name="icon_quote"/>
+    <attr format="reference" name="icon_refresh"/>
+    <attr format="reference" name="icon_remove"/>
+    <attr format="reference" name="icon_scan_qr_code"/>
+    <attr format="reference" name="icon_search"/>
+    <attr format="reference" name="icon_secure"/>
+    <attr format="reference" name="icon_settings"/>
+    <attr format="reference" name="icon_share"/>
+    <attr format="reference" name="infocard_border"/>
+    <attr format="reference" name="message_bubble_received_green"/>
+    <attr format="reference" name="message_bubble_received_monochrome"/>
+    <attr format="reference" name="message_bubble_sent"/>
+    <attr format="reference" name="nestedScrollViewStyle"/>
+    <attr format="enum" name="splitLayoutDirection">
+        <enum name="locale" value="0"/>
+        <enum name="ltr" value="1"/>
+        <enum name="rtl" value="2"/>
+    </attr>
+    <attr format="dimension" name="splitMinSmallestWidth"/>
+    <attr format="dimension" name="splitMinWidth"/>
+    <attr format="float" name="splitRatio"/>
+    <attr format="reference|color" name="unread_count"/>
+    <bool name="allow_message_correction">false</bool>
+    <bool name="autojoin">false</bool>
+    <bool name="away_when_screen_off">false</bool>
+    <bool name="btbv">true</bool>
+    <bool name="chat_states">false</bool>
+    <bool name="confirm_messages">true</bool>
+    <bool name="display_enter_key">false</bool>
+    <bool name="dnd_on_silent_mode">false</bool>
+    <bool name="dont_trust_system_cas">false</bool>
+    <bool name="enable_foreground_service">false</bool>
+    <bool name="enable_quiet_hours">false</bool>
+    <bool name="enter_is_send">false</bool>
+    <bool name="grant_new_contacts">true</bool>
+    <bool name="headsup_notifications">false</bool>
+    <bool name="indicate_received">false</bool>
+    <bool name="last_activity">false</bool>
+    <bool name="led">true</bool>
+    <bool name="manually_change_presence">false</bool>
+    <bool name="never_send">false</bool>
+    <bool name="notifications_from_strangers">false</bool>
+    <bool name="portrait_only">true</bool>
+    <bool name="return_to_previous">false</bool>
+    <bool name="send_button_status">false</bool>
+    <bool name="show_connection_options">false</bool>
+    <bool name="show_dynamic_tags">false</bool>
+    <bool name="show_notification">true</bool>
+    <bool name="treat_vibrate_as_silent">false</bool>
+    <bool name="use_green_background">true</bool>
+    <bool name="use_larger_font">false</bool>
+    <bool name="use_subject">true</bool>
+    <bool name="use_tor">false</bool>
+    <bool name="validate_hostname">false</bool>
+    <bool name="vibrate_on_notification">true</bool>
+    <color name="accent">#ff0091ea</color>
+    <color name="androidx_core_ripple_material_light">#1f000000</color>
+    <color name="androidx_core_secondary_text_default_material_light">#8a000000</color>
+    <color name="black12">#1f000000</color>
+    <color name="black26">#42000000</color>
+    <color name="black54">#8a000000</color>
+    <color name="black87">#de000000</color>
+    <color name="bubble">#ff4b9b4a</color>
+    <color name="call_notification_answer_color">#1d873b</color>
+    <color name="call_notification_decline_color">#d93025</color>
+    <color name="crop__button_bar">#f3f3f3</color>
+    <color name="crop__button_text">#666666</color>
+    <color name="crop__selector_focused">#77000000</color>
+    <color name="crop__selector_pressed">#1a000000</color>
+    <color name="elv_btn_focused">#ff0099cc</color>
+    <color name="elv_btn_normal">#00000000</color>
+    <color name="elv_btn_pressed">#ff33b5e5</color>
+    <color name="elv_popup_bg_color">#EE666666</color>
+    <color name="elv_popup_text_color">#FFFFFF</color>
+    <color name="elv_separator_color">#BBBBBB</color>
+    <color name="green500">#ff259b24</color>
+    <color name="grey200">#ffeeeeee</color>
+    <color name="grey50">#fffafafa</color>
+    <color name="grey500">#ff9e9e9e</color>
+    <color name="grey800">#ff424242</color>
+    <color name="grey900">#ff282828</color>
+    <color name="ksw_md_ripple_checked">#33019285</color>
+    <color name="ksw_md_ripple_normal">#1E000000</color>
+    <color name="ksw_md_solid_checked">#019285</color>
+    <color name="ksw_md_solid_checked_disable">#aaaaaa</color>
+    <color name="ksw_md_solid_disable">#FFFFFF</color>
+    <color name="ksw_md_solid_normal">#ECECEC</color>
+    <color name="ksw_md_solid_shadow">#33000000</color>
+    <color name="notification_action_color_filter">#ffffffff</color>
+    <color name="notification_icon_bg_color">#ff9e9e9e</color>
+    <color name="notification_material_background_media_default_color">#ff424242</color>
+    <color name="orange500">#ffff9800</color>
+    <color name="primary500">#ff259b24</color>
+    <color name="primary700">#ff0a7e07</color>
+    <color name="primary800">#ff026100</color>
+    <color name="primary900">#ff024500</color>
+    <color name="primary_text_default_material_dark">#ffffffff</color>
+    <color name="red500">#fff44336</color>
+    <color name="red800">#ffc62828</color>
+    <color name="secondary_text_default_material_dark">#b3ffffff</color>
+    <color name="unreadcountdark">#ff326130</color>
+    <color name="unreadcountlight">#ff4b9b4a</color>
+    <color name="white">#ffffffff</color>
+    <color name="white12">#1fffffff</color>
+    <color name="white70">#b2ffffff</color>
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
+    <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
+    <dimen name="compat_button_inset_vertical_material">6dp</dimen>
+    <dimen name="compat_button_padding_horizontal_material">8dp</dimen>
+    <dimen name="compat_button_padding_vertical_material">4dp</dimen>
+    <dimen name="compat_control_corner_material">2dp</dimen>
+    <dimen name="compat_notification_large_icon_max_height">320dp</dimen>
+    <dimen name="compat_notification_large_icon_max_width">320dp</dimen>
+    <dimen name="crop__bar_height">56dp</dimen>
+    <dimen name="elv_touch_slop">32dp</dimen>
+    <dimen name="elv_undo_bottom_offset">15dp</dimen>
+    <dimen name="fineprint_size">11sp</dimen>
+    <dimen name="image_button_padding">8dp</dimen>
+    <dimen name="infocard_padding">16dp</dimen>
+    <dimen name="ksw_md_thumb_ripple_size">42dp</dimen>
+    <dimen name="ksw_md_thumb_shadow_inset">11dp</dimen>
+    <dimen name="ksw_md_thumb_shadow_inset_bottom">10dp</dimen>
+    <dimen name="ksw_md_thumb_shadow_inset_top">11dp</dimen>
+    <dimen name="ksw_md_thumb_shadow_offset">2dp</dimen>
+    <dimen name="ksw_md_thumb_shadow_size">21dp</dimen>
+    <dimen name="ksw_md_thumb_solid_inset">11dp</dimen>
+    <dimen name="ksw_md_thumb_solid_size">20dp</dimen>
+    <dimen name="menu_item_icon_size">24dp</dimen>
+    <dimen name="notification_action_icon_size">32dp</dimen>
+    <dimen name="notification_action_text_size">13sp</dimen>
+    <dimen name="notification_big_circle_margin">12dp</dimen>
+    <dimen name="notification_content_margin_start">8dp</dimen>
+    <dimen name="notification_large_icon_height">64dp</dimen>
+    <dimen name="notification_large_icon_width">64dp</dimen>
+    <dimen name="notification_main_column_padding_top">10dp</dimen>
+    <dimen name="notification_media_narrow_margin">@dimen/notification_content_margin_start</dimen>
+    <dimen name="notification_right_icon_size">16dp</dimen>
+    <dimen name="notification_right_side_padding_top">4dp</dimen>
+    <dimen name="notification_small_icon_background_padding">3dp</dimen>
+    <dimen name="notification_small_icon_size_as_large">24dp</dimen>
+    <dimen name="notification_subtext_size">13sp</dimen>
+    <dimen name="notification_top_pad">10dp</dimen>
+    <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="subtitle_corner_radius">2dp</dimen>
+    <dimen name="subtitle_outline_width">2dp</dimen>
+    <dimen name="subtitle_shadow_offset">2dp</dimen>
+    <dimen name="subtitle_shadow_radius">2dp</dimen>
+    <dimen name="swipe_handle_size">32dp</dimen>
+    <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
+    <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
+    <item name="TAG_ACCOUNT" type="id"/>
+    <item name="TAG_FINGERPRINT" type="id"/>
+    <item name="TAG_FINGERPRINT_STATUS" type="id"/>
+    <item name="accessibility_action_clickable_span" type="id"/>
+    <item name="accessibility_custom_action_0" type="id"/>
+    <item name="accessibility_custom_action_1" type="id"/>
+    <item name="accessibility_custom_action_10" type="id"/>
+    <item name="accessibility_custom_action_11" type="id"/>
+    <item name="accessibility_custom_action_12" type="id"/>
+    <item name="accessibility_custom_action_13" type="id"/>
+    <item name="accessibility_custom_action_14" type="id"/>
+    <item name="accessibility_custom_action_15" type="id"/>
+    <item name="accessibility_custom_action_16" type="id"/>
+    <item name="accessibility_custom_action_17" type="id"/>
+    <item name="accessibility_custom_action_18" type="id"/>
+    <item name="accessibility_custom_action_19" type="id"/>
+    <item name="accessibility_custom_action_2" type="id"/>
+    <item name="accessibility_custom_action_20" type="id"/>
+    <item name="accessibility_custom_action_21" type="id"/>
+    <item name="accessibility_custom_action_22" type="id"/>
+    <item name="accessibility_custom_action_23" type="id"/>
+    <item name="accessibility_custom_action_24" type="id"/>
+    <item name="accessibility_custom_action_25" type="id"/>
+    <item name="accessibility_custom_action_26" type="id"/>
+    <item name="accessibility_custom_action_27" type="id"/>
+    <item name="accessibility_custom_action_28" type="id"/>
+    <item name="accessibility_custom_action_29" type="id"/>
+    <item name="accessibility_custom_action_3" type="id"/>
+    <item name="accessibility_custom_action_30" type="id"/>
+    <item name="accessibility_custom_action_31" type="id"/>
+    <item name="accessibility_custom_action_4" type="id"/>
+    <item name="accessibility_custom_action_5" type="id"/>
+    <item name="accessibility_custom_action_6" type="id"/>
+    <item name="accessibility_custom_action_7" type="id"/>
+    <item name="accessibility_custom_action_8" type="id"/>
+    <item name="accessibility_custom_action_9" type="id"/>
+    <item name="androidx_window_activity_scope" type="id"/>
+    <item name="ghost_view" type="id"/>
+    <item name="ghost_view_holder" type="id"/>
+    <item name="line1" type="id"/>
+    <item name="line3" type="id"/>
+    <item name="parent_matrix" type="id"/>
+    <item name="save_non_transition_alpha" type="id"/>
+    <item name="save_overlay_view" type="id"/>
+    <item name="tag_accessibility_actions" type="id"/>
+    <item name="tag_accessibility_clickable_spans" type="id"/>
+    <item name="tag_accessibility_heading" type="id"/>
+    <item name="tag_accessibility_pane_title" type="id"/>
+    <item name="tag_on_apply_window_listener" type="id"/>
+    <item name="tag_on_receive_content_listener" type="id"/>
+    <item name="tag_on_receive_content_mime_types" type="id"/>
+    <item name="tag_screen_reader_focusable" type="id"/>
+    <item name="tag_state_description" type="id"/>
+    <item name="tag_transition_group" type="id"/>
+    <item name="tag_unhandled_key_event_manager" type="id"/>
+    <item name="tag_unhandled_key_listeners" type="id"/>
+    <item name="tag_window_insets_animation_callback" type="id"/>
+    <item name="text" type="id"/>
+    <item name="text2" type="id"/>
+    <item name="title" type="id"/>
+    <item name="transition_current_scene" type="id"/>
+    <item name="transition_layout_save" type="id"/>
+    <item name="transition_position" type="id"/>
+    <item name="transition_scene_layoutid_cache" type="id"/>
+    <item name="transition_transform" type="id"/>
+    <id name="view_tree_lifecycle_owner"/>
+    <id name="view_tree_view_model_store_owner"/>
+    <integer name="auto_accept_filesize">524288</integer>
+    <integer name="automatic_message_deletion">0</integer>
+    <integer name="cancel_button_image_alpha">127</integer>
+    <integer name="grace_period">144</integer>
+    <integer name="status_bar_notification_info_maxnum">999</integer>
+    <plurals name="select_contact">
+		<item quantity="one">Select %d contact</item>
+		<item quantity="other">Select %d contacts</item>
+	</plurals>
+    <plurals name="toast_delete_certificates">
+		<item quantity="one">%d certificate deleted</item>
+		<item quantity="other">%d certificates deleted</item>
+	</plurals>
+    <plurals name="x_messages">
+		<item quantity="one">%d message</item>
+		<item quantity="other">%d messages</item>
+	</plurals>
+    <string name="accept">Accept</string>
+    <string name="account_already_exists">This account already exists</string>
+    <string name="account_details">Account details</string>
+    <string name="account_image_description">Account avatar</string>
+    <string name="account_settings_confirm_password">Confirm password</string>
+    <string name="account_settings_example_jabber_id">username@example.com</string>
+    <string name="account_settings_hostname">Hostname</string>
+    <string name="account_settings_jabber_id">Jabber ID</string>
+    <string name="account_settings_password">Password</string>
+    <string name="account_settings_port">Port</string>
+    <string name="account_status_bind_failure">Bind failure</string>
+    <string name="account_status_connecting">Connecting\u2026</string>
+    <string name="account_status_disabled">Temporarily disabled</string>
+    <string name="account_status_host_unknown">Server not responsible for domain</string>
+    <string name="account_status_incompatible_server">Incompatible server</string>
+    <string name="account_status_no_internet">No connectivity</string>
+    <string name="account_status_not_found">Server not found</string>
+    <string name="account_status_offline">Offline</string>
+    <string name="account_status_online">Online</string>
+    <string name="account_status_policy_violation">Policy violation</string>
+    <string name="account_status_regis_conflict">Username already in use</string>
+    <string name="account_status_regis_fail">Registration failed</string>
+    <string name="account_status_regis_not_sup">Server does not support registration</string>
+    <string name="account_status_regis_success">Registration completed</string>
+    <string name="account_status_regis_web">Server requires registration on website</string>
+    <string name="account_status_stream_error">Stream error</string>
+    <string name="account_status_tls_error">TLS negotiation failed</string>
+    <string name="account_status_tor_unavailable">Tor network unavailable</string>
+    <string name="account_status_unauthorized">Unauthorized</string>
+    <string name="account_status_unknown">Unknown</string>
+    <string name="action_accounts">Manage accounts</string>
+    <string name="action_add">New conversation</string>
+    <string name="action_add_account">Add account</string>
+    <string name="action_add_account_with_certificate">Add account with certificate</string>
+    <string name="action_add_phone_book">Add to address book</string>
+    <string name="action_block_contact">Block contact</string>
+    <string name="action_block_domain">Block domain</string>
+    <string name="action_clear_history">Clear history</string>
+    <string name="action_contact_details">Contact details</string>
+    <string name="action_delete_contact">Delete from roster</string>
+    <string name="action_edit_contact">Edit name</string>
+    <string name="action_edit_subject">Edit conference subject</string>
+    <string name="action_end_conversation">End this conversation</string>
+    <string name="action_muc_details">Conference details</string>
+    <string name="action_renew_certificate">Renew certificate</string>
+    <string name="action_secure">Secure conversation</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_unblock_contact">Unblock contact</string>
+    <string name="action_unblock_domain">Unblock domain</string>
+    <string name="add">Add</string>
+    <string name="add_back">Add back</string>
+    <string name="add_contact">Add contact</string>
+    <string name="add_phone_book_text">Do you want to add %s to your address book?</string>
+    <string name="additional_information">Additional Information</string>
+    <string name="admin">Admin</string>
+    <string name="advanced_mode">Advanced mode</string>
+    <string name="all_accounts_on_this_device">Set for all accounts on this device</string>
+    <string name="all_omemo_keys_have_been_verified">All OMEMO keys have been verified</string>
+    <string name="allow">Allow</string>
+    <string name="also_end_conversation">End this conversation afterwards</string>
+    <string name="always">Always</string>
+    <string name="androidx_startup" translatable="false">androidx.startup</string>
+    <string name="apk">Android App</string>
+    <string name="app_name" translatable="false">Rikitiki IM</string>
+    <string name="application_found_to_open_website">No application found to open website</string>
+    <string name="are_you_sure_verify_fingerprint">Are you sure that you want to verify your contact’s OTR fingerprint?</string>
+    <string name="ask_for_presence_updates">Ask for presence updates</string>
+    <string name="ask_question">Ask question</string>
+    <string name="attach_choose_picture">Choose picture</string>
+    <string name="attach_file">Attach file</string>
+    <string name="attach_record_voice">Record voice</string>
+    <string name="attach_take_picture">Take picture</string>
+    <string name="audio">audio</string>
+    <string name="authenticate_with_certificate">Leave empty to authenticate w/ certificate</string>
+    <string name="automatically">Automatically</string>
+    <string name="avatar_has_been_published">Avatar has been published!</string>
+    <string name="ban_from_conference">Ban from conference</string>
+    <string name="ban_now">Ban now</string>
+    <string name="barcode_does_not_contain_fingerprints_for_this_conversation">Barcode does not contain fingerprints for this conversation.</string>
+    <string name="battery_optimizations_enabled">Battery optimizations enabled</string>
+    <string name="battery_optimizations_enabled_dialog">Your device is doing some heavy battery optimizations on Conversations that might lead to delayed notifications or even message loss.\n\nYou will now be asked to disable those.</string>
+    <string name="battery_optimizations_enabled_explained">Your device is doing some heavy battery optimizations on Conversations that might lead to delayed notifications or even message loss.\nIt is recommended to disable those.</string>
+    <string name="blindly_trusted_omemo_keys">Blindly trusted OMEMO keys</string>
+    <string name="block">Block</string>
+    <string name="block_contact">Block contact</string>
+    <string name="block_contact_text">Would you like to block %s from sending you messages?</string>
+    <string name="block_domain_text">Block all contacts from %s?</string>
+    <string name="block_entire_domain">Block entire domain</string>
+    <string name="block_jabber_id">Block Jabber ID</string>
+    <string name="block_stranger">Block stranger</string>
+    <string name="bookmark_already_exists">This bookmark already exists</string>
+    <string name="call_notification_answer_action">Answer</string>
+    <string name="call_notification_answer_video_action">Video</string>
+    <string name="call_notification_decline_action">Decline</string>
+    <string name="call_notification_hang_up_action">Hang Up</string>
+    <string name="call_notification_incoming_text">Incoming call</string>
+    <string name="call_notification_ongoing_text">Ongoing call</string>
+    <string name="call_notification_screening_text">Screening an incoming call</string>
+    <string name="cancel">Cancel</string>
+    <string name="cancel_transmission">Cancel transmission</string>
+    <string name="captcha_hint">Enter the text from the image above</string>
+    <string name="captcha_required">Captcha required</string>
+    <string name="certicate_info_not_available">(Not available)</string>
+    <string name="certificate_chain_is_not_trusted">Certificate chain is not trusted</string>
+    <string name="certificate_cn">Common Name</string>
+    <string name="certificate_does_not_contain_jid">Certificate does not contain a Jabber ID</string>
+    <string name="certificate_information">Certificate Information</string>
+    <string name="certificate_issuer">Issuer</string>
+    <string name="certificate_not_found">No certificate found</string>
+    <string name="certificate_o">Organization</string>
+    <string name="certificate_sha1">SHA-1</string>
+    <string name="certificate_subject">Subject</string>
+    <string name="change_password">Change password</string>
+    <string name="change_password_on_server">Change password on server</string>
+    <string name="change_presence">Change Presence</string>
+    <string name="check_x_filesize">Check %s size</string>
+    <string name="check_x_filesize_on_host">Check %1$s size on %2$s</string>
+    <string name="checking_x">Checking %s on HTTP host</string>
+    <string name="choose_file">Choose file</string>
+    <string name="choose_participants">Choose participants</string>
+    <string name="choose_presence">Choose device</string>
+    <string name="choose_quick_action">Choose quick action</string>
+    <string name="clear_conversation_history">Clear Conversation History</string>
+    <string name="clear_histor_msg">Do you want to delete all messages within this Conversation?\n\n<b>Warning:</b> This will not influence messages stored on other devices or servers.</string>
+    <string name="clear_other_devices">Clear devices</string>
+    <string name="clear_other_devices_desc">Are you sure you want to clear all other devices from the OMEMO announcement? The next time your devices connect, they will reannounce themselves, but they might not receive messages sent in the meantime.</string>
+    <string name="code_sent_to_x">A verification code was sent to %s</string>
+    <string name="conference_address">Conference address</string>
+    <string name="conference_address_example">room@conference.example.com/nick</string>
+    <string name="conference_banned">You are banned from this conference</string>
+    <string name="conference_creation_failed">Conference creation failed!</string>
+    <string name="conference_kicked">You have been kicked from this conference</string>
+    <string name="conference_members_only">This conference is members only</string>
+    <string name="conference_name">Conference name</string>
+    <string name="conference_options">Conference options</string>
+    <string name="conference_requires_password">Conference requires password</string>
+    <string name="conference_shutdown">The conference was shut down</string>
+    <string name="conference_subject">Subject</string>
+    <string name="conference_unknown_error">You are no longer in this conference</string>
+    <string name="conference_with">Create conference with…</string>
+    <string name="conferences">Conferences</string>
+    <string name="confirm">Confirm</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="connect">Connect</string>
+    <string name="connected_accounts">%1$d of %2$d accounts connected</string>
+    <string name="contact_added_you">Contact added you to contact list</string>
+    <string name="contact_already_exists">The contact already exists</string>
+    <string name="contact_asks_for_presence_subscription">Contact asks for presence subscription</string>
+    <string name="contact_blocked">Contact blocked</string>
+    <string name="contact_blocked_past_tense">Contact blocked.</string>
+    <string name="contact_has_no_pgp_key">Conversations is unable to encrypt your messages because your contact is not announcing his or hers public key.\n\n<small>Please ask your contact to setup OpenPGP.</small></string>
+    <string name="contact_has_read_up_to_this_point">%s has read up to this point</string>
+    <string name="contact_has_stopped_typing">%s has stopped typing</string>
+    <string name="contact_is_typing">%s is typing…</string>
+    <string name="contact_status_away">away</string>
+    <string name="contact_status_do_not_disturb">do not disturb</string>
+    <string name="contact_status_extended_away">extended away</string>
+    <string name="contact_status_free_to_chat">free to chat</string>
+    <string name="contact_status_offline">offline</string>
+    <string name="contact_status_online">online</string>
+    <string name="contacts">Contacts</string>
+    <string name="contacts_are_typing">%s are typing…</string>
+    <string name="contacts_have_no_pgp_keys">Conversations is unable to encrypt your messages because your contacts are not announcing their public key.\n\n<small>Please ask your contacts to setup OpenPGP.</small></string>
+    <string name="contacts_have_stopped_typing">%s have stopped typing</string>
+    <string name="conversations_foreground_service">Conversations</string>
+    <string name="copy_fingerprint">Copy fingerprint</string>
+    <string name="copy_omemo_clipboard_description">Copy OMEMO fingerprint to clipboard</string>
+    <string name="copy_original_url">Copy original URL</string>
+    <string name="copy_otr_clipboard_description">Copy OTR fingerprint to clipboard</string>
+    <string name="correct_message">Correct message</string>
+    <string name="corresponding_conversations_closed">Corresponding conversations closed.</string>
+    <string name="could_not_change_affiliation">Could not change affiliation of %s</string>
+    <string name="could_not_change_password">Could not change password</string>
+    <string name="could_not_change_role">Could not change role of %s</string>
+    <string name="could_not_modify_conference_options">Could not modify conference options</string>
+    <string name="could_not_verify_fingerprint">Could not verify fingerprint</string>
+    <string name="crash_report_message">By sending in stack traces you are helping the ongoing development of Conversations\n<b>Warning:</b> This will use your XMPP account to send the stack trace to the developer.</string>
+    <string name="crash_report_title">Conversations has crashed</string>
+    <string name="create">Create</string>
+    <string name="create_account">Create Account</string>
+    <string name="create_conference">Create conference</string>
+    <string name="create_contact">Create Contact</string>
+    <string name="creating_conference">Creating conference…</string>
+    <string name="crop__cancel" ns1:ignore="ButtonCase">CANCEL</string>
+    <string name="crop__done">DONE</string>
+    <string name="crop__pick_error">No image sources available</string>
+    <string name="crop__saving">Saving picture…</string>
+    <string name="crop__wait">Please wait…</string>
+    <string name="current_password">Current password</string>
+    <string name="data_saver_enabled">Data saver enabled</string>
+    <string name="data_saver_enabled_explained">Your operating system is restricting Conversations from accessing the Internet when in background. To receive notifications of new messages you should allow Conversations unrestricted access when Data saver is on.\nConversations will still make an effort to save data when possible.</string>
+    <string name="decrypt">Decrypt</string>
+    <string name="decryption_failed">Decryption failed. Maybe you don’t have the proper private key.</string>
+    <string name="default_resource">Phone</string>
+    <string name="define_roundedimageview"/>
+    <string name="delete">Delete</string>
+    <string name="delete_bookmark">Delete bookmark</string>
+    <string name="delete_contact">Delete Contact</string>
+    <string name="delete_fingerprint">Delete Fingerprint</string>
+    <string name="delete_messages">Delete messages</string>
+    <string name="delete_selected_keys">Delete selected keys</string>
+    <string name="delete_x_file">Delete %s</string>
+    <string name="device_does_not_support_battery_op">Your device does not support opting out of battery optimization</string>
+    <string name="device_does_not_support_certificates">Your device does not support the selection of client certificates!</string>
+    <string name="device_does_not_support_data_saver">Your device does not support disabling Data saver for Conversations.</string>
+    <string name="dialog_manage_certs_negativebutton">Cancel</string>
+    <string name="dialog_manage_certs_positivebutton">Delete selection</string>
+    <string name="dialog_manage_certs_title">Remove certificates</string>
+    <string name="disable">Disable</string>
+    <string name="disable_account">Disable Account</string>
+    <string name="disable_all_accounts">Disable all accounts</string>
+    <string name="disable_foreground_service">Disable foreground service</string>
+    <string name="disable_notifications">Disable notifications</string>
+    <string name="disable_notifications_for_this_conversation">Disable notifications for this conversation</string>
+    <string name="distrust_omemo_key">Distrust device</string>
+    <string name="distrust_omemo_key_text">Are you sure you want to remove the verification for this device?\nThis device and messages coming from that device will be marked as untrusted.</string>
+    <string name="done">Done</string>
+    <string name="download_failed_could_not_connect">Download failed: Could not connect to host</string>
+    <string name="download_failed_could_not_write_file">Download failed: Could not write file</string>
+    <string name="download_failed_file_not_found">Download failed: File not found</string>
+    <string name="download_failed_server_not_found">Download failed: Server not found</string>
+    <string name="download_x_file">Download %s</string>
+    <string name="edit">Edit</string>
+    <string name="edit_subject_hint">The subject of this conference</string>
+    <string name="eight_hours">8 hours</string>
+    <string name="elv_item_deleted">Item deleted</string>
+    <string name="elv_n_items_deleted">%1$s items deleted</string>
+    <string name="elv_undo">Undo</string>
+    <string name="elv_undo_all">Undo All</string>
+    <string name="enable">Enable</string>
+    <string name="enable_all_accounts">Enable all accounts</string>
+    <string name="enable_notifications">Enable notifications</string>
+    <string name="encrypting_message">Encrypting message</string>
+    <string name="encryption_choice_omemo">OMEMO</string>
+    <string name="encryption_choice_otr">OTR</string>
+    <string name="encryption_choice_pgp">OpenPGP</string>
+    <string name="encryption_choice_unencrypted">Unencrypted</string>
+    <string name="enter_contact">Enter Contact</string>
+    <string name="enter_password">Enter password</string>
+    <string name="error">An error has occurred</string>
+    <string name="error_compressing_image">Error while converting the image file</string>
+    <string name="error_connection">Could not reach the server. Check your connection and try again.</string>
+    <string name="error_decrypting_file">I/O Error decrypting file</string>
+    <string name="error_expired_otp">This code has expired. Request a new one.</string>
+    <string name="error_fetching_omemo_key">Error fetching OMEMO key!</string>
+    <string name="error_file_not_found">File not found</string>
+    <string name="error_invalid_otp">Incorrect verification code</string>
+    <string name="error_io_exception">General I/O error. Maybe you ran out of storage space?</string>
+    <string name="error_message">Error Message</string>
+    <string name="error_no_keys_to_trust">There are no usable keys available for this contact. If you have purged any of their keys, they need to generate new ones.</string>
+    <string name="error_no_keys_to_trust_server_error">There are no usable keys available for this contact.\nFetching new keys from the server has been unsuccessful. Maybe there is something wrong with your contacts server.</string>
+    <string name="error_not_an_image_file">The file you selected is not an image</string>
+    <string name="error_out_of_memory">Out of memory. Image is too large</string>
+    <string name="error_publish_avatar_converting">Something went wrong while converting your picture</string>
+    <string name="error_publish_avatar_no_server_support">Your server does not support the publication of avatars</string>
+    <string name="error_publish_avatar_offline">You need to be connected to publish your avatar.</string>
+    <string name="error_publish_avatar_server_reject">The server rejected your publication</string>
+    <string name="error_rate_limited">Too many attempts. Please try again later.</string>
+    <string name="error_saving_avatar">Could not save avatar to disk</string>
+    <string name="error_security_exception_during_image_copy">The app you used to select this image did not provide us with enough permissions to read the file.\n\n<small>Use a different file manager to choose an image</small></string>
+    <string name="error_too_many_attempts">Too many incorrect attempts. Request a new code.</string>
+    <string name="error_trustkeys_title">Error</string>
+    <string name="error_unable_to_create_temporary_file">Unable to create temporary file</string>
+    <string name="error_unknown">Something went wrong. Please try again.</string>
+    <string name="error_username_taken">This username is already taken</string>
+    <string name="failed">Failed</string>
+    <string name="fetching_history_from_server">Fetching history from server</string>
+    <string name="fetching_keys">Fetching keys…</string>
+    <string name="fetching_mam_prefs">Fetching archiving preferences. Please wait…</string>
+    <string name="file">file</string>
+    <string name="file_deleted">The file has been deleted</string>
+    <string name="file_transmission_failed">file transmission failed</string>
+    <string name="file_url">File URL</string>
+    <string name="finish">Finish</string>
+    <string name="free_for_six_month">¹ Registration requires phone number verification.</string>
+    <string name="gp_long">Long</string>
+    <string name="gp_medium">Medium</string>
+    <string name="gp_short">Short</string>
+    <string name="grant_admin_privileges">Grant admin privileges</string>
+    <string name="grant_membership">Grant membership</string>
+    <string name="hide_inactive_devices">Hide inactive devices</string>
+    <string name="hide_offline">Hide offline</string>
+    <string name="hostname_example">xmpp.example.com</string>
+    <string name="hostname_or_onion">Server- or .onion-Address</string>
+    <string name="i_followed_this_link_from_a_trusted_source">I followed this link from a trusted source</string>
+    <string name="ignore">Ignore</string>
+    <string name="image">image</string>
+    <string name="image_transmission_failed">Image transmission failed</string>
+    <string name="in_progress">In progress</string>
+    <string name="install">Install</string>
+    <string name="install_openkeychain">Encrypted message. Please install OpenKeychain to decrypt.</string>
+    <string name="invalid_barcode">Invalid 2D barcode</string>
+    <string name="invalid_conference_name">This is not a valid conference name</string>
+    <string name="invalid_jid">This is not a valid Jabber ID</string>
+    <string name="invalid_phone_number">This is not a valid phone number</string>
+    <string name="invalid_username">This is not a valid username</string>
+    <string name="invite_again">Invite again</string>
+    <string name="invite_contact">Invite Contact</string>
+    <string name="jid_does_not_match_certificate">Jabber ID does not match certificate</string>
+    <string name="join">Join</string>
+    <string name="join_conference">Join Conference</string>
+    <string name="join_or_create_conference">Join or create conference</string>
+    <string name="joining_conference">Joining conference…</string>
+    <string name="just_now">just now</string>
+    <string name="keys">Keys</string>
+    <string name="last_seen_day">last seen 1 day ago</string>
+    <string name="last_seen_days">last seen %d days ago</string>
+    <string name="last_seen_hour">last seen 1 hour ago</string>
+    <string name="last_seen_hours">last seen %d hours ago</string>
+    <string name="last_seen_min">last seen 1 minute ago</string>
+    <string name="last_seen_mins">last seen %d minutes ago</string>
+    <string name="last_seen_now">last seen just now</string>
+    <string name="leave">Leave</string>
+    <string name="library_roundedimageview_author">Vince Mi</string>
+    <string name="library_roundedimageview_authorWebsite">https://github.com/vinc3m1</string>
+    <string name="library_roundedimageview_isOpenSource">true</string>
+    <string name="library_roundedimageview_libraryDescription">A fast ImageView (and Drawable) that supports rounded corners (and ovals or circles) based on the original example from Romain Guy.</string>
+    <string name="library_roundedimageview_libraryName">RoundedImageView</string>
+    <string name="library_roundedimageview_libraryVersion">1.3.0</string>
+    <string name="library_roundedimageview_libraryWebsite">https://github.com/vinc3m1/RoundedImageView</string>
+    <string name="library_roundedimageview_licenseId">apache_2_0</string>
+    <string name="library_roundedimageview_repositoryLink">https://github.com/vinc3m1/RoundedImageView.git</string>
+    <string name="load_more_messages">Load more messages</string>
+    <string name="location">Location</string>
+    <string name="magic_create_text">We will guide you through the process of creating an account on msg.rikitiki.pl.¹\nWhen picking msg.rikitiki.pl as a provider you will be able to communicate with users of other providers by giving them your full Jabber ID.</string>
+    <string name="mam_prefs">Archiving preferences</string>
+    <string name="manual_verification_explanation">Carefully compare the fingerprint shown below with the fingerprint of your contact.\nYou can use any trusted form of communication like an encrypted e-mail or a telephone call to exchange those.</string>
+    <string name="manually_verify">Manually verify</string>
+    <string name="me">Me</string>
+    <string name="member">Member</string>
+    <string name="members_only">Private, members only</string>
+    <string name="message_copied_to_clipboard">Message copied to clipboard</string>
+    <string name="message_decrypting">Decrypting message. Please wait…</string>
+    <string name="message_options">Message options</string>
+    <string name="message_text">Message text</string>
+    <string name="mgmt_account_are_you_sure">Are you sure?</string>
+    <string name="mgmt_account_delete">Delete account</string>
+    <string name="mgmt_account_delete_confirm_text">If you delete your account, your entire conversation history will be lost</string>
+    <string name="mgmt_account_disable">Temporarily disable</string>
+    <string name="mgmt_account_edit">Edit account</string>
+    <string name="mgmt_account_enable">Enable account</string>
+    <string name="mgmt_account_publish_avatar">Publish avatar</string>
+    <string name="mgmt_account_publish_pgp">Publish OpenPGP public key</string>
+    <string name="minute_ago">1 min ago</string>
+    <string name="minutes_ago">%d mins ago</string>
+    <string name="missing_internet_permission">Missing internet permission</string>
+    <string name="missing_keys_from_x">Missing OMEMO keys from %s.</string>
+    <string name="missing_omemo_keys">Missing OMEMO keys</string>
+    <string name="missing_presence_subscription">Missing presence subscription</string>
+    <string name="missing_presence_subscription_with_x">Missing presence subscription with %s.</string>
+    <string name="missing_presence_updates">Missing presence updates from contact</string>
+    <string name="missing_public_keys">Missing public key announcements</string>
+    <string name="moderated">Moderated</string>
+    <string name="moderator">Moderator</string>
+    <string name="modified_conference_options">Modified conference options!</string>
+    <string name="mtm_accept_cert">Accept Unknown Certificate?</string>
+    <string name="mtm_accept_servername">Accept Mismatching Server Name?</string>
+    <string name="mtm_cert_details">Certificate details:</string>
+    <string name="mtm_cert_expired">The server certificate is expired.</string>
+    <string name="mtm_connect_anyway">Do you want to connect anyway?</string>
+    <string name="mtm_decision_abort">Abort</string>
+    <string name="mtm_decision_always">Always</string>
+    <string name="mtm_decision_once">Once</string>
+    <string name="mtm_hostname_mismatch">Server could not authenticate as \"%s\". The certificate is only valid for:</string>
+    <string name="mtm_notification">Certificate Verification</string>
+    <string name="mtm_trust_anchor">The server certificate is not signed by a known Certificate Authority.</string>
+    <string name="muc_details_conference">Conference</string>
+    <string name="muc_details_other_members">Other Members</string>
+    <string name="network_is_unreachable">Network is unreachable</string>
+    <string name="never">Never</string>
+    <string name="never_seen">never seen</string>
+    <string name="new_password">New password</string>
+    <string name="next">Next</string>
+    <string name="nick_in_use">Nickname is already in use</string>
+    <string name="no_accounts">(No activated accounts)</string>
+    <string name="no_affiliation">No affiliation</string>
+    <string name="no_application_found_to_display_location">No application found to display location</string>
+    <string name="no_application_found_to_open_file">No application found to open file</string>
+    <string name="no_application_to_share_uri">No application found to share URI</string>
+    <string name="no_conference_server_found">No conference server found</string>
+    <string name="no_keys_just_confirm">You already trust this contact. By selecting \'done\' you are just confirming that %s is part of this conference.</string>
+    <string name="no_more_history_on_server">No more history on server</string>
+    <string name="no_otr_session_found">No valid OTR session has been found!</string>
+    <string name="no_permission_to_access_x">No permission to access %s</string>
+    <string name="no_pgp_key">No OpenPGP Key found</string>
+    <string name="no_pgp_keys">No OpenPGP Keys found</string>
+    <string name="no_role">Offline</string>
+    <string name="no_storage_permission">Conversations need access to external storage</string>
+    <string name="non_anonymous">Non-anonymous</string>
+    <string name="none">None</string>
+    <string name="not_a_valid_port">This is not a valid port number</string>
+    <string name="not_connected_try_again">You are not connected. Try again later</string>
+    <string name="not_fetching_history_retention_period">Not fetching messages due to local retention period.</string>
+    <string name="not_in_roster">The contact is not in your roster. Would you like to add it?</string>
+    <string name="not_trusted">Untrusted</string>
+    <string name="not_valid_hostname">This is not a valid hostname</string>
+    <string name="notification_export_logs_title">Writing logs to SD card</string>
+    <string name="notification_ringtone">content://settings/system/notification_sound</string>
+    <string name="notify_never">Notifications disabled</string>
+    <string name="notify_on_all_messages">Notify on all messages</string>
+    <string name="notify_only_when_highlighted">Notify only when mentioned</string>
+    <string name="notify_paused">Notifications paused</string>
+    <string name="offering">offering…</string>
+    <string name="offering_x_file">Offering %s</string>
+    <string name="ok">OK</string>
+    <string name="omemo_fingerprint">OMEMO fingerprint</string>
+    <string name="omemo_fingerprint_selected_message">OMEMO fingerprint of message</string>
+    <string name="omemo_fingerprint_x509">v\\OMEMO fingerprint</string>
+    <string name="omemo_fingerprint_x509_selected_message">v\\OMEMO fingerprint of message</string>
+    <string name="one_hour">1 hour</string>
+    <string name="online_right_now">online right now</string>
+    <string name="open_website">Open website</string>
+    <string name="open_x_file">Open %s</string>
+    <string name="openkeychain_not_installed">Please install OpenKeychain</string>
+    <string name="openkeychain_required">OpenKeychain</string>
+    <string name="openkeychain_required_long">Conversations utilizes a third party app called <b>OpenKeychain</b> to encrypt and decrypt messages and to manage your public keys.\n\nOpenKeychain is licensed under GPLv3 and available on F-Droid and Google Play.\n\n<small>(Please restart Conversations afterwards.)</small></string>
+    <string name="openpgp_error">OpenKeychain reported an error</string>
+    <string name="openpgp_has_been_published">OpenPGP public key has been published.</string>
+    <string name="openpgp_install_openkeychain_via">Install OpenKeychain via %s</string>
+    <string name="openpgp_key_id">OpenPGP Key ID</string>
+    <string name="openpgp_key_selected">Key has been selected</string>
+    <string name="openpgp_list_preference_none">None</string>
+    <string name="openpgp_messages_found">OpenPGP encrypted messages found</string>
+    <string name="openpgp_no_key_selected">No key selected</string>
+    <string name="or_long_press_for_default">(Or long press to bring back default)</string>
+    <string name="other_devices">Other devices</string>
+    <string name="otr_fingerprint">OTR fingerprint</string>
+    <string name="otr_fingerprint_selected_message">OTR fingerprint of message</string>
+    <string name="otr_session_not_started">Send a message to start an encrypted chat</string>
+    <string name="outcast">Outcast</string>
+    <string name="owner">Owner</string>
+    <string name="participant">Participant</string>
+    <string name="password">Password</string>
+    <string name="password_changed">Password changed!</string>
+    <string name="password_should_not_be_empty">Password should not be empty</string>
+    <string name="passwords_do_not_match">Passwords do not match</string>
+    <string name="payment_required">Payment required</string>
+    <string name="pdf_document">PDF document</string>
+    <string name="perform_action_with">Perform action with</string>
+    <string name="pgp_message">OpenPGP encrypted message</string>
+    <string name="phone_number_hint">Phone number</string>
+    <string name="phone_verification_text">To create an account on msg.rikitiki.pl we need to verify your phone number by SMS.</string>
+    <string name="pick_your_username">Pick your username</string>
+    <string name="picture_compression">auto</string>
+    <string name="please_wait_for_keys_to_be_fetched">Please wait for keys to be fetched</string>
+    <string name="preemptively_grant">Preemptively grant subscription request</string>
+    <string name="pref_about_conversations_summary">Build and licensing information</string>
+    <string name="pref_about_message" translatable="false">
+			Conversations • the very last word in instant messaging.
+			\n\nCopyright © 2014-2017 Daniel Gultsch
+			\n\nThis program is free software: you can redistribute it and/or modify
+			it under the terms of the GNU General Public License as published by
+			the Free Software Foundation, either version 3 of the License, or
+			(at your option) any later version.
+			\n\nThis program is distributed in the hope that it will be useful,
+			but WITHOUT ANY WARRANTY; without even the implied warranty of
+			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+			GNU General Public License for more details.
+			\n\nYou should have received a copy of the GNU General Public License
+			along with this program. If not, see https://www.gnu.org/licenses
+			\n\nDownload the full source code at https://github.com/siacs/Conversations
+			\n\n\nLibraries
+			\n\nhttps://www.bouncycastle.org\n(The MIT License (MIT))
+			\n\nhttps://www.gnu.org/software/libidn\n(Apache License, Version 2.0)
+			\n\nhttps://github.com/ge0rg/MemorizingTrustManager\n(The MIT License (MIT))
+			\n\nhttps://github.com/rtreffer/minidns\n(WTFPL)
+			\n\nhttps://github.com/open-keychain/openkeychain-api-lib\n(Apache License, Version 2.0)
+			\n\nhttps://github.com/jitsi/otr4j\n(LGPL-3.0)
+			\n\nhttps://developer.android.com/tools/support-library\n(Apache License, Version 2.0)
+			\n\nhttps://github.com/zxing/zxing\n(Apache License, Version 2.0)
+			\n\nhttps://github.com/google/material-design-icons\n(CC BY 4.0)
+			\n\nhttps://github.com/timroes/EnhancedListView\n(Apache License, Version 2.0)
+			\n\nhttps://github.com/leolin310148/ShortcutBadger\n(Apache License, Version 2.0)
+			\n\nhttps://github.com/kyleduo/SwitchButton\n(Apache License, Version 2.0)
+			\n\nhttps://github.com/WhisperSystems/libaxolotl-java\n(GPLv3)
+			\n\nhttps://github.com/vinc3m1/RoundedImageView\n(Apache License, Version 2.0)
+			\n\nhttps://github.com/jdamcd/android-crop\n(Apache License, Version 2.0)
+		    \n\nhttps://github.com/vdurmont/emoji-java\n(The MIT License)
+	</string>
+    <string name="pref_accept_files">Accept files</string>
+    <string name="pref_accept_files_summary">Automatically accept files smaller than…</string>
+    <string name="pref_advanced_options">Advanced</string>
+    <string name="pref_allow_message_correction">Allow message correction</string>
+    <string name="pref_allow_message_correction_summary">Allow your contacts to retroactively edit their messages</string>
+    <string name="pref_attachments">Attachments</string>
+    <string name="pref_autojoin">Automatically join conferences</string>
+    <string name="pref_autojoin_summary">Respect the autojoin flag in conference bookmarks</string>
+    <string name="pref_automatically_delete_messages">Automatic message deletion</string>
+    <string name="pref_automatically_delete_messages_description">Automatically delete messages from this device that are older than the configured time frame.</string>
+    <string name="pref_away_when_screen_off">Away when screen is off</string>
+    <string name="pref_away_when_screen_off_summary">Marks your resource as away when the screen is turned off</string>
+    <string name="pref_blind_trust_before_verification">Blind Trust Before Verification</string>
+    <string name="pref_blind_trust_before_verification_summary">Automatically trust all new devices of contacts that haven’t been verified before, and prompt for manual confirmation each time a verified contact adds a new device.</string>
+    <string name="pref_broadcast_last_activity">Broadcast Last User Interaction</string>
+    <string name="pref_broadcast_last_activity_summary">Let all your contacts know when you use Conversations</string>
+    <string name="pref_chat_states">Typing notifications</string>
+    <string name="pref_chat_states_summary">Let your contacts know when you are writing messages to them</string>
+    <string name="pref_clean_cache">Clean cache</string>
+    <string name="pref_clean_cache_summary">Clean cache folder (used by Camera Application)</string>
+    <string name="pref_clean_private_storage">Clean private storage</string>
+    <string name="pref_clean_private_storage_summary">Clean private storage where files are kept (They can be re-downloaded from the server)</string>
+    <string name="pref_conference_name">Conference name</string>
+    <string name="pref_conference_name_summary">Use room’s subject instead of JID to identify conferences</string>
+    <string name="pref_confirm_messages">Confirm Messages</string>
+    <string name="pref_confirm_messages_summary">Let your contacts know when you have received and read their messages</string>
+    <string name="pref_connection_options">Connection</string>
+    <string name="pref_delete_omemo_identities">Delete OMEMO identities</string>
+    <string name="pref_delete_omemo_identities_summary">Regenerate your OMEMO keys. All your contacts will have to verify you again. Use this only as a last resort.</string>
+    <string name="pref_display_enter_key">Show enter key</string>
+    <string name="pref_display_enter_key_summary">Change the emoticons key to an enter key</string>
+    <string name="pref_dnd_on_silent_mode">“Do not disturb” in silent mode</string>
+    <string name="pref_dnd_on_silent_mode_summary">Marks your resource as “Do not disturb” when device is in silent mode</string>
+    <string name="pref_dont_save_encrypted">Don’t save encrypted messages</string>
+    <string name="pref_dont_save_encrypted_summary">Warning: This could lead to message loss</string>
+    <string name="pref_dont_trust_system_cas_summary">All certificates must be manually approved</string>
+    <string name="pref_dont_trust_system_cas_title">Don’t trust system CAs</string>
+    <string name="pref_enter_is_send">Enter is send</string>
+    <string name="pref_enter_is_send_summary">Use enter key to send message</string>
+    <string name="pref_expert_options">Expert settings</string>
+    <string name="pref_expert_options_other">Other</string>
+    <string name="pref_expert_options_summary">Please be careful with these</string>
+    <string name="pref_export_logs">Export history</string>
+    <string name="pref_export_logs_summary">Write conversations history logs to SD card</string>
+    <string name="pref_force_encryption">Force end-to-end encryption</string>
+    <string name="pref_force_encryption_summary">Always send messages encrypted (except for conferences)</string>
+    <string name="pref_general">General</string>
+    <string name="pref_grant_presence_updates">Grant presence updates</string>
+    <string name="pref_grant_presence_updates_summary">Preemptively grant and request presence subscriptions for contacts you have created</string>
+    <string name="pref_headsup_notifications">Heads-up Notifications</string>
+    <string name="pref_headsup_notifications_summary">Show Heads-up Notifications</string>
+    <string name="pref_input_options">Input</string>
+    <string name="pref_keep_foreground_service">Keep service in foreground</string>
+    <string name="pref_keep_foreground_service_summary">Prevents the operating system from killing your connection</string>
+    <string name="pref_led">LED Notification</string>
+    <string name="pref_led_summary">Blink notification light when a new message arrives</string>
+    <string name="pref_manually_change_presence">Manually change presence</string>
+    <string name="pref_manually_change_presence_summary">Touch your avatar to change your presence</string>
+    <string name="pref_never_send_crash">Never send crash reports</string>
+    <string name="pref_never_send_crash_summary">By sending in stack traces you are helping the ongoing development of Conversations</string>
+    <string name="pref_notification_grace_period">Grace Period</string>
+    <string name="pref_notification_grace_period_summary">The length of time Conversations keeps quiet after seeing activity on another device</string>
+    <string name="pref_notification_settings">Notification</string>
+    <string name="pref_notifications">Notifications</string>
+    <string name="pref_notifications_from_strangers">Notifications from strangers</string>
+    <string name="pref_notifications_from_strangers_summary">Notify for messages received from strangers.</string>
+    <string name="pref_notifications_summary">Notify when a new message arrives</string>
+    <string name="pref_picture_compression">Compress Pictures</string>
+    <string name="pref_picture_compression_summary">Resize and compress pictures</string>
+    <string name="pref_presence_settings">Presence</string>
+    <string name="pref_privacy">Privacy</string>
+    <string name="pref_quick_action">Quick Action</string>
+    <string name="pref_quick_action_summary">Replace send button with quick action</string>
+    <string name="pref_quiet_hours_summary">Notifications will be silenced during quiet hours</string>
+    <string name="pref_remove_trusted_certificates_summary">Delete manually approved certificates</string>
+    <string name="pref_remove_trusted_certificates_title">Remove certificates</string>
+    <string name="pref_return_to_previous">Quick Sharing</string>
+    <string name="pref_return_to_previous_summary">Immediately return to previous activity instead of opening the conversation after sharing something</string>
+    <string name="pref_security_settings">Security</string>
+    <string name="pref_show_connection_options">Extended connection settings</string>
+    <string name="pref_show_connection_options_summary">Show hostname and port settings when setting up an account</string>
+    <string name="pref_show_dynamic_tags">Show dynamic tags</string>
+    <string name="pref_show_dynamic_tags_summary">Display read-only tags underneath contacts</string>
+    <string name="pref_sound">Ringtone</string>
+    <string name="pref_sound_summary">Play sound when a new message arrives</string>
+    <string name="pref_theme_dark">Dark theme</string>
+    <string name="pref_theme_light">Light theme</string>
+    <string name="pref_theme_options">Theme</string>
+    <string name="pref_theme_options_summary">Select the color palette</string>
+    <string name="pref_treat_vibrate_as_dnd_summary">Marks your resource as “Do not disturb” when device is on vibrate</string>
+    <string name="pref_treat_vibrate_as_silent">Treat vibrate as silent mode</string>
+    <string name="pref_ui_options">UI</string>
+    <string name="pref_use_green_background">Green Background</string>
+    <string name="pref_use_green_background_summary">Use green background for received messages</string>
+    <string name="pref_use_indicate_received">Request message receipts</string>
+    <string name="pref_use_indicate_received_summary">Received messages will be marked with a green tick if supported</string>
+    <string name="pref_use_larger_font">Increase font size</string>
+    <string name="pref_use_larger_font_summary">Use larger font sizes across the entire app</string>
+    <string name="pref_use_send_button_to_indicate_status">Send button indicates status</string>
+    <string name="pref_use_send_button_to_indicate_status_summary">Colorize send button to indicate contact status</string>
+    <string name="pref_use_tor">Connect via Tor</string>
+    <string name="pref_use_tor_summary">Tunnel all connections through the Tor network. Requires Orbot</string>
+    <string name="pref_use_white_background">Use white background</string>
+    <string name="pref_use_white_background_summary">Show received messages as black text on a white background</string>
+    <string name="pref_validate_hostname">Validate hostname with DNSSEC</string>
+    <string name="pref_validate_hostname_summary">Server certificates that contain the validated hostname are considered verified</string>
+    <string name="pref_vibrate">Vibrate</string>
+    <string name="pref_vibrate_summary">Vibrate when a new message arrives</string>
+    <string name="pref_xmpp_resource">XMPP resource</string>
+    <string name="pref_xmpp_resource_summary">The name this client identifies itself with</string>
+    <string name="preparing_file">Preparing file for transmission</string>
+    <string name="preparing_image">Preparing image for transmission</string>
+    <string name="preparing_images">Preparing images for transmission</string>
+    <string name="presence_away">Away</string>
+    <string name="presence_chat">Free for Chat</string>
+    <string name="presence_dnd">Busy</string>
+    <string name="presence_online">Online</string>
+    <string name="presence_xa">Not Available</string>
+    <string name="private_conference">Private, members only conference</string>
+    <string name="private_message">whispered</string>
+    <string name="private_message_to">to %s</string>
+    <string name="problem_connecting_to_account">Unable to connect to account</string>
+    <string name="problem_connecting_to_accounts">Unable to connect to multiple accounts</string>
+    <string name="public_conference">Publicly accessible conference</string>
+    <string name="publish">Publish</string>
+    <string name="publish_avatar_explanation">Please note: Everyone subscribed to your presence updates will be allowed to see this picture.</string>
+    <string name="publishing">Publishing…</string>
+    <string name="quick_action">recent</string>
+    <string name="quote">Quote</string>
+    <string name="receive_presence_updates">Receive presence updates</string>
+    <string name="received_location">Received location</string>
+    <string name="received_message_from_stranger">Received message from stranger</string>
+    <string name="received_x_file">Received %s</string>
+    <string name="receiving_x_file">Receiving %1$s (%2$d%% completed)</string>
+    <string name="recently_used">Most recently used</string>
+    <string name="reception_failed">Reception failed</string>
+    <string name="regenerate_omemo_key">Regenerate OMEMO key</string>
+    <string name="register_account">Register new account on server</string>
+    <string name="registration_password_too_weak">Registration failed: Password too weak</string>
+    <string name="registration_please_wait">Registration failed: Try again later</string>
+    <string name="remote_fingerprint">Remote Fingerprint</string>
+    <string name="remote_server_not_found">Remote server not found</string>
+    <string name="remove_admin_privileges">Revoke admin privileges</string>
+    <string name="remove_bookmark_text">Would you like to remove %s as a bookmark? The conversation associated with this bookmark will not be removed.</string>
+    <string name="remove_contact_text">Would you like to remove %s from your roster? The conversation associated with this contact will not be removed.</string>
+    <string name="remove_from_room">Remove from conference</string>
+    <string name="remove_membership">Revoke membership</string>
+    <string name="removing_from_public_conference">You are trying to remove %s from a public conference. The only way to do that is to ban that user for ever.</string>
+    <string name="report_jid_as_spammer">Report this JID as sending unwanted messages.</string>
+    <string name="republish_pgp_keys">Remember to republish your OpenPGP public keys!</string>
+    <string name="request_now">Request now</string>
+    <string name="request_presence_updates">Please request presence updates from your contact first.\n\n<small>This will be used to determine what client(s) your contact is using.</small></string>
+    <string name="resend_code">Resend code</string>
+    <string name="reset">Reset</string>
+    <string name="respond">Respond</string>
+    <string name="restart">Restart</string>
+    <string name="retry_decryption">Retry decryption</string>
+    <string name="sasl_downgrade">Downgraded SASL mechanism</string>
+    <string name="save">Save</string>
+    <string name="save_as_bookmark">Save as bookmark</string>
+    <string name="scan">scan</string>
+    <string name="scan_qr_code">Scan 2D Barcode</string>
+    <string name="search">Search</string>
+    <string name="search_for_contacts_or_groups">Search for contacts or groups</string>
+    <string name="secret_accepted">Secret accepted!</string>
+    <string name="secrets_do_not_match">Secrets do not match</string>
+    <string name="secure_password_generated">A secure password has been generated</string>
+    <string name="security_error_invalid_file_access">Security error: Invalid file access</string>
+    <string name="select">Select</string>
+    <string name="select_image_and_crop">Select image and crop</string>
+    <string name="select_text">Select text</string>
+    <string name="selection_too_large">The selected area is too large</string>
+    <string name="send_again">Send again</string>
+    <string name="send_code">Send code</string>
+    <string name="send_corrected_message">Send corrected message</string>
+    <string name="send_failed">delivery failed</string>
+    <string name="send_location">Send location</string>
+    <string name="send_message">Send message</string>
+    <string name="send_message_to_x">Send message to %s</string>
+    <string name="send_never">Never ask again</string>
+    <string name="send_now">Send now</string>
+    <string name="send_omemo_message">Send OMEMO encrypted message</string>
+    <string name="send_omemo_x509_message">Send v\\OMEMO encrypted message</string>
+    <string name="send_otr_message">Send OTR encrypted message</string>
+    <string name="send_pgp_message">Send OpenPGP encrypted message</string>
+    <string name="send_presence_updates">Send presence updates</string>
+    <string name="send_private_message">Send private message</string>
+    <string name="send_private_message_to">Send private message to %s</string>
+    <string name="send_rejected">rejected</string>
+    <string name="send_unencrypted">Send unencrypted</string>
+    <string name="send_unencrypted_message">Send unencrypted message</string>
+    <string name="sending">sending…</string>
+    <string name="sending_file">sending (%1$d%% completed)</string>
+    <string name="sending_x_file">Sending %s</string>
+    <string name="server_info_available">available</string>
+    <string name="server_info_blocking">XEP-0191: Blocking Command</string>
+    <string name="server_info_broken">Broken</string>
+    <string name="server_info_carbon_messages">XEP-0280: Message Carbons</string>
+    <string name="server_info_csi">XEP-0352: Client State Indication</string>
+    <string name="server_info_http_upload">XEP-0363: HTTP File Upload</string>
+    <string name="server_info_mam">XEP-0313: MAM</string>
+    <string name="server_info_pep">XEP-0163: PEP (Avatars / OMEMO)</string>
+    <string name="server_info_push">XEP-0357: Push</string>
+    <string name="server_info_roster_version">XEP-0237: Roster Versioning</string>
+    <string name="server_info_session_established">Current session established</string>
+    <string name="server_info_show_more">Server info</string>
+    <string name="server_info_stream_management">XEP-0198: Stream Management</string>
+    <string name="server_info_unavailable">unavailable</string>
+    <string name="server_side_mam_prefs">Server-side archiving preferences</string>
+    <string name="session_failure">Session failure</string>
+    <string name="set">Set</string>
+    <string name="share_as_barcode">Share as Barcode</string>
+    <string name="share_as_http">Share as HTTP link</string>
+    <string name="share_as_uri">Share as XMPP URI</string>
+    <string name="share_uri_with">Share URI with…</string>
+    <string name="share_with">Share with…</string>
+    <string name="shared_file_with_x">Shared file with %s</string>
+    <string name="shared_image_with_x">Shared image with %s</string>
+    <string name="shared_images_with_x">Shared images with %s</string>
+    <string name="shared_secret_can_not_be_empty">Your shared secret can not be empty</string>
+    <string name="shared_secret_hint">Hint or Question</string>
+    <string name="shared_secret_hint_should_not_be_empty">Your hint should not be empty</string>
+    <string name="shared_secret_secret">Shared Secret</string>
+    <string name="shared_text_with_x">Shared text with %s</string>
+    <string name="sharing_files_please_wait">Sharing files. Please wait…</string>
+    <string name="show_block_list">Show block list</string>
+    <string name="show_error_message">Show error message</string>
+    <string name="show_inactive_devices">Show inactive devices</string>
+    <string name="show_location">Show location</string>
+    <string name="show_password">Show password</string>
+    <string name="show_qr_code">Show 2D Barcode</string>
+    <string name="skip">Skip</string>
+    <string name="smp">Socialist Millionaire Protocol</string>
+    <string name="smp_explain_answer">Your contact would like to verify your fingerprint by challenging you with a shared secret. Your contact provided the following hint or question for that secret.</string>
+    <string name="smp_explain_question">If you and your contact have a secret in common that no one else knows (like an inside joke or simply what you had for lunch the last time you met) you can use that secret to verify each other’s fingerprints.\n\nYou provide a hint or a question for your contact who will respond with a case-sensitive answer.</string>
+    <string name="smp_requested">Contact requested SMP verification</string>
+    <string name="start_conversation">Start Chat</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="status_message">Status message</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="sure_delete_fingerprint">Are you sure you would like to delete this fingerprint?</string>
+    <string name="sync_with_contacts">Synchronize with contacts</string>
+    <string name="sync_with_contacts_long">Conversations wants to match your XMPP roster with your contacts to show their full names and avatars.\n\nConversations will only read your contacts and match them locally without uploading them to your server.\n\nYou will now be asked to grant permission to access your contacts.</string>
+    <string name="theme">light</string>
+    <string name="thirty_minutes">30 minutes</string>
+    <string name="this_account_is_disabled">You have disabled this account</string>
+    <string name="this_conference_has_no_members">There are no members in this conference.</string>
+    <string name="this_device_has_been_verified">This device has been verified</string>
+    <string name="this_device_is_no_longer_in_use">This device is no longer in use</string>
+    <string name="this_device_omemo_fingerprint">Own OMEMO fingerprint</string>
+    <string name="this_field_is_required">This field is required</string>
+    <string name="timeout_24_hours">24 hours</string>
+    <string name="timeout_30_days">30 days</string>
+    <string name="timeout_6_months">6 months</string>
+    <string name="timeout_7_days">7 days</string>
+    <string name="title_activity_about">About Conversations</string>
+    <string name="title_activity_block_list">Block list</string>
+    <string name="title_activity_choose_contact">Choose contact</string>
+    <string name="title_activity_conference_details">Conference Details</string>
+    <string name="title_activity_contact_details">Contact Details</string>
+    <string name="title_activity_manage_accounts">Manage Accounts</string>
+    <string name="title_activity_phone_verification">Verify your phone number</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_sharewith">Share with Conversation</string>
+    <string name="title_activity_start_conversation">Start Chat</string>
+    <string name="title_pref_enable_quiet_hours">Enable quiet hours</string>
+    <string name="title_pref_quiet_hours">Quiet Hours</string>
+    <string name="title_pref_quiet_hours_end_time">End time</string>
+    <string name="title_pref_quiet_hours_start_time">Start time</string>
+    <string name="title_undo_swipe_out_conversation">Conversation closed</string>
+    <string name="title_undo_swipe_out_muc">Left conference</string>
+    <string name="toast_message_omemo_fingerprint">OMEMO fingerprint copied to clipboard!</string>
+    <string name="toast_message_otr_fingerprint">OTR fingerprint copied to clipboard!</string>
+    <string name="toast_no_trusted_certs">No manually approved certificates</string>
+    <string name="today">Today</string>
+    <string name="touch_to_choose_picture">Touch avatar to select picture from gallery</string>
+    <string name="touch_to_fix">Touch here to manage your accounts</string>
+    <string name="touch_to_open_conversations">Touch to open Conversations</string>
+    <string name="transcoding_video_progress">Compressing video (%s%% completed)</string>
+    <string name="trust_omemo_fingerprints">Trust OMEMO Fingerprints</string>
+    <string name="try_again">Try again</string>
+    <string name="two_hours">2 hours</string>
+    <string name="type_console">Console</string>
+    <string name="type_pc">Computer</string>
+    <string name="type_phone">Mobile phone</string>
+    <string name="type_tablet">Tablet</string>
+    <string name="type_web">Web browser</string>
+    <string name="unable_to_connect_to_keychain">Unable to connect to OpenKeychain</string>
+    <string name="unable_to_fetch_mam_prefs">Unable to fetch archiving preferences</string>
+    <string name="unable_to_parse_certificate">Unable to parse certificate</string>
+    <string name="unable_to_update_account">Unable to update account</string>
+    <string name="unblock">Unblock</string>
+    <string name="unblock_contact">Unblock contact</string>
+    <string name="unblock_contact_text">Would you like to unblock %s and allow them to send you messages?</string>
+    <string name="unblock_domain_text">Unblock all contacts from %s?</string>
+    <string name="unknown_otr_fingerprint">Unknown OTR fingerprint</string>
+    <string name="unpublish_pgp">Remove OpenPGP public key</string>
+    <string name="unpublish_pgp_message">Are you sure you want to remove your OpenPGP public key from your presence announcement?\nYour contacts will no longer be able to send you OpenPGP encrypted messages.</string>
+    <string name="unread_conversations">unread Conversations</string>
+    <string name="until_further_notice">Until further notice</string>
+    <string name="updating">Updating…</string>
+    <string name="url_copied_to_clipboard">URL copied to clipboard</string>
+    <string name="use_camera_icon_to_scan_barcode">Use the camera to scan a contact’s barcode</string>
+    <string name="use_own_provider">Use my own provider</string>
+    <string name="user_has_left_conference">%s has left the conference!</string>
+    <string name="username">Username</string>
+    <string name="username_hint">Username</string>
+    <string name="using_account">using account %s</string>
+    <string name="vcard">Contact</string>
+    <string name="verification_code_hint">Verification code</string>
+    <string name="verified">Verified!</string>
+    <string name="verified_fingerprints">Verified fingerprints</string>
+    <string name="verified_omemo_key_with_certificate">Verified OMEMO key with certificate!</string>
+    <string name="verify">Verify</string>
+    <string name="verify_code">Verify</string>
+    <string name="verify_omemo_keys">Verify OMEMO keys</string>
+    <string name="verify_otr">Verify OTR</string>
+    <string name="verifying_omemo_keys_trusted_source">You are about to verify the OMEMO keys of %1$s after clicking a link. This is only secure if you followed this link from a trusted source where only %2$s could have published this link.</string>
+    <string name="video">video</string>
+    <string name="view_contact_details">View contact details</string>
+    <string name="visitor">Visitor</string>
+    <string name="waiting">waiting…</string>
+    <string name="welcome_header" translatable="false">Join the Conversation</string>
+    <string name="welcome_text">XMPP is a provider independent protocol. You can use this client with what ever XMPP server you choose.\nHowever for your convenience we made it easy to create an account on msg.rikitiki.pl¹; a provider specially suited for the use with Rikitiki.</string>
+    <string name="wipe_omemo_pep">Wipe other devices from PEP</string>
+    <string name="without_mutual_presence_updates"><b>Warning:</b> Sending this without mutual presence updates could cause unexpected problems.\n\n<small>Go to contact details to verify your presence subscriptions.</small></string>
+    <string name="wrong_conference_configuration">This is not a private, non-anonymous conference.</string>
+    <string name="x_file_offered_for_download">%s offered for download</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="you">You</string>
+    <string name="you_are_not_participating">You are not participating</string>
+    <string name="your_account">Your account</string>
+    <string name="your_fingerprint">Your fingerprint</string>
+    <string name="your_full_jid_will_be">Your full Jabber ID will be: %s</string>
+    <string name="your_nick_has_been_changed">Your nickname has been changed</string>
+    <style name="ConversationsActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/primary500</item>
+        <item name="android:backgroundStacked">@color/primary700</item>
+        <item name="android:displayOptions">showHome|homeAsUp|showTitle</item>
+        <item name="android:icon">@android:color/transparent</item>
+    </style>
+    <style name="ConversationsActionBar.Dark" parent="@android:style/Widget.Holo.ActionBar.Solid">
+        <item name="android:background">@color/primary800</item>
+        <item name="android:backgroundStacked">@color/primary900</item>
+        <item name="android:displayOptions">showHome|homeAsUp|showTitle</item>
+        <item name="android:icon">@android:color/transparent</item>
+    </style>
+    <style name="ConversationsActionBarTabs" parent="@android:style/Widget.Holo.ActionBar.TabView">
+        <item name="android:background">@drawable/actionbar_tab_indicator</item>
+    </style>
+    <style name="ConversationsActionBarWidget" parent="android:Theme.Holo.Light">
+        <item name="android:popupMenuStyle">@android:style/Widget.Holo.Light.PopupMenu</item>
+        <item name="android:dropDownListViewStyle">@android:style/Widget.Holo.Light.ListView.DropDown</item>
+    </style>
+    <style name="ConversationsActionBarWidget.Dark" parent="android:Theme.Holo">
+        <item name="android:popupMenuStyle">@android:style/Widget.Holo.PopupMenu</item>
+        <item name="android:dropDownListViewStyle">@android:style/Widget.Holo.ListView.DropDown</item>
+    </style>
+    <style name="ConversationsTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/ConversationsActionBar</item>
+        <item name="android:actionBarWidgetTheme">@style/ConversationsActionBarWidget</item>
+        <item name="android:actionBarTabStyle">@style/ConversationsActionBarTabs</item>
+        <item name="TextSizeInfo">12sp</item>
+        <item name="TextSizeBody">14sp</item>
+        <item name="TextSizeHeadline">20sp</item>
+        <item name="TextSeparation">5sp</item>
+        <item name="IconSize">18sp</item>
+
+        <item name="color_text_primary">@color/black87</item>
+        <item name="color_text_secondary">@color/black54</item>
+
+        <item name="color_background_primary">@color/grey50</item>
+        <item name="color_background_secondary">@color/grey200</item>
+
+        <item name="infocard_border">@drawable/infocard_border</item>
+        <item name="divider">@color/black12</item>
+
+        <item name="ic_send_cancel_offline">@drawable/ic_send_cancel_offline</item>
+        <item name="ic_send_location_offline">@drawable/ic_send_location_offline</item>
+        <item name="ic_send_photo_offline">@drawable/ic_send_photo_offline</item>
+        <item name="ic_send_picture_offline">@drawable/ic_send_picture_offline</item>
+        <item name="ic_send_text_offline">@drawable/ic_send_text_offline</item>
+        <item name="ic_send_voice_offline">@drawable/ic_send_voice_offline</item>
+
+        <item name="ic_attach_camera">@drawable/ic_attach_camera</item>
+        <item name="ic_attach_document">@drawable/ic_attach_document</item>
+        <item name="ic_attach_location">@drawable/ic_attach_location</item>
+        <item name="ic_attach_photo">@drawable/ic_attach_photo</item>
+        <item name="ic_attach_record">@drawable/ic_attach_record</item>
+
+        <item name="icon_add_group">@drawable/ic_action_add_group</item>
+        <item name="icon_add_person">@drawable/ic_action_add_person</item>
+        <item name="icon_cancel">@drawable/ic_action_cancel</item>
+        <item name="icon_copy">@drawable/ic_action_copy</item>
+        <item name="icon_discard">@drawable/ic_action_discard</item>
+        <item name="icon_download">@drawable/ic_action_download</item>
+        <item name="icon_edit">@drawable/ic_action_edit</item>
+        <item name="icon_edit_body">@drawable/ic_action_edit_dark</item>
+        <item name="icon_done">@drawable/ic_action_done</item>
+
+        <item name="message_bubble_received_monochrome">@drawable/message_bubble_received_white</item>
+        <item name="message_bubble_sent">@drawable/message_bubble_sent</item>
+        <item name="message_bubble_received_green">@drawable/message_bubble_received</item>
+
+        <item name="unread_count">@color/unreadcountlight</item>
+
+        <item name="conversations_overview_background">@color/primary700</item>
+
+        <item name="icon_alpha">1.0</item>
+
+        <item name="dialog_horizontal_padding">16dp</item>
+        <item name="dialog_vertical_padding">16dp</item>
+
+        <item name="icon_group">@drawable/ic_action_group</item>
+        <item name="icon_new">@drawable/ic_action_new</item>
+        <item name="icon_new_attachment">@drawable/ic_action_new_attachment</item>
+        <item name="icon_not_secure">@drawable/ic_action_not_secure</item>
+        <item name="icon_quote">@drawable/ic_action_reply</item>
+        <item name="icon_refresh">@drawable/ic_action_refresh</item>
+        <item name="icon_remove">@drawable/ic_action_remove</item>
+        <item name="icon_search">@drawable/ic_action_search</item>
+        <item name="icon_secure">@drawable/ic_action_secure</item>
+        <item name="icon_settings">@drawable/ic_action_settings</item>
+        <item name="icon_import_export">@drawable/ic_stat_communication_import_export</item>
+        <item name="icon_share">@drawable/ic_action_share</item>
+        <item name="icon_scan_qr_code">@drawable/ic_action_camera</item>
+
+        <item name="icon_notifications">@drawable/ic_notifications_black_24dp</item>
+        <item name="icon_notifications_off">@drawable/ic_notifications_off_black_24dp</item>
+        <item name="icon_notifications_paused">@drawable/ic_notifications_paused_black_24dp</item>
+        <item name="icon_notifications_none">@drawable/ic_notifications_none_black_24dp</item>
+    </style>
+    <style name="ConversationsTheme.Dark" parent="@android:style/Theme.Holo">
+        <item name="android:actionBarStyle">@style/ConversationsActionBar.Dark</item>
+        <item name="android:actionBarWidgetTheme">@style/ConversationsActionBarWidget.Dark</item>
+        <item name="android:actionBarTabStyle">@style/ConversationsActionBarTabs</item>
+        <item name="TextSizeInfo">12sp</item>
+        <item name="TextSizeBody">14sp</item>
+        <item name="TextSeparation">5sp</item>
+        <item name="IconSize">18sp</item>
+        <item name="TextSizeHeadline">20sp</item>
+
+        <item name="color_text_primary">@color/white</item>
+        <item name="color_text_secondary">@color/white70</item>
+
+        <item name="color_background_primary">@color/grey800</item>
+        <item name="color_background_secondary">@color/grey900</item>
+
+        <item name="infocard_border">@drawable/infocard_border_dark</item>
+        <item name="divider">@color/white12</item>
+
+        <item name="ic_send_cancel_offline">@drawable/ic_send_cancel_offline_white</item>
+        <item name="ic_send_location_offline">@drawable/ic_send_location_offline_white</item>
+        <item name="ic_send_photo_offline">@drawable/ic_send_photo_offline_white</item>
+        <item name="ic_send_picture_offline">@drawable/ic_send_picture_offline_white</item>
+        <item name="ic_send_text_offline">@drawable/ic_send_text_offline_white</item>
+        <item name="ic_send_voice_offline">@drawable/ic_send_voice_offline_white</item>
+
+        <item name="ic_attach_camera">@drawable/ic_attach_camera_white</item>
+        <item name="ic_attach_document">@drawable/ic_attach_document_white</item>
+        <item name="ic_attach_location">@drawable/ic_attach_location_white</item>
+        <item name="ic_attach_photo">@drawable/ic_attach_photo_white</item>
+        <item name="ic_attach_record">@drawable/ic_attach_record_white</item>
+
+        <item name="message_bubble_received_monochrome">@drawable/message_bubble_received_grey</item>
+        <item name="message_bubble_sent">@drawable/message_bubble_sent_grey</item>
+        <item name="message_bubble_received_green">@drawable/message_bubble_received_dark</item>
+
+        <item name="unread_count">@color/unreadcountdark</item>
+
+        <item name="conversations_overview_background">@color/primary900</item>
+
+        <item name="icon_alpha">1.0</item>
+
+        <item name="dialog_horizontal_padding">16dp</item>
+        <item name="dialog_vertical_padding">16dp</item>
+
+        <item name="icon_add_group">@drawable/ic_action_add_group</item>
+        <item name="icon_add_person">@drawable/ic_action_add_person</item>
+        <item name="icon_cancel">@drawable/ic_action_cancel</item>
+        <item name="icon_copy">@drawable/ic_action_copy_white</item>
+        <item name="icon_discard">@drawable/ic_action_discard</item>
+        <item name="icon_download">@drawable/ic_action_download</item>
+        <item name="icon_edit">@drawable/ic_action_edit</item>
+        <item name="icon_edit_body">@drawable/ic_action_edit</item>
+        <item name="icon_done">@drawable/ic_action_done</item>
+
+        <item name="icon_group">@drawable/ic_action_group</item>
+        <item name="icon_new">@drawable/ic_action_new</item>
+        <item name="icon_new_attachment">@drawable/ic_action_new_attachment</item>
+        <item name="icon_not_secure">@drawable/ic_action_not_secure</item>
+        <item name="icon_quote">@drawable/ic_action_reply</item>
+        <item name="icon_refresh">@drawable/ic_action_refresh_white</item>
+        <item name="icon_remove">@drawable/ic_action_remove_white</item>
+        <item name="icon_search">@drawable/ic_action_search</item>
+        <item name="icon_secure">@drawable/ic_action_secure</item>
+        <item name="icon_settings">@drawable/ic_action_settings_white</item>
+        <item name="icon_import_export">@drawable/ic_stat_communication_import_export</item>
+        <item name="icon_share">@drawable/ic_action_share</item>
+        <item name="icon_scan_qr_code">@drawable/ic_action_camera</item>
+
+        <item name="icon_notifications">@drawable/ic_notifications_white80</item>
+        <item name="icon_notifications_off">@drawable/ic_notifications_off_white80</item>
+        <item name="icon_notifications_paused">@drawable/ic_notifications_paused_white80</item>
+        <item name="icon_notifications_none">@drawable/ic_notifications_none_white80</item>
+    </style>
+    <style name="ConversationsTheme.Dark.LargerText" parent="ConversationsTheme.Dark">
+        <item name="TextSizeInfo">14sp</item>
+        <item name="TextSizeBody">16sp</item>
+        <item name="IconSize">20sp</item>
+        <item name="TextSeparation">6sp</item>
+        <item name="TextSizeHeadline">22sp</item>
+    </style>
+    <style name="ConversationsTheme.LargerText" parent="ConversationsTheme">
+        <item name="TextSizeInfo">14sp</item>
+        <item name="TextSizeBody">16sp</item>
+        <item name="TextSeparation">6sp</item>
+        <item name="IconSize">20sp</item>
+        <item name="TextSizeHeadline">22sp</item>
+    </style>
+    <style name="Crop"/>
+    <style name="Crop.ActionButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/crop__selectable_background</item>
+    </style>
+    <style name="Crop.ActionButtonText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingRight">20dp</item> 
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:textColor">@color/crop__button_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+    <style name="Crop.ActionButtonText.Cancel">
+        <item name="android:drawableLeft">@drawable/crop__ic_cancel</item>
+        <item name="android:text">@string/crop__cancel</item>
+    </style>
+    <style name="Crop.ActionButtonText.Done">
+        <item name="android:drawableLeft">@drawable/crop__ic_done</item>
+        <item name="android:text">@string/crop__done</item>
+    </style>
+    <style name="Crop.DoneCancelBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/crop__bar_height</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:divider">@drawable/crop__divider</item>
+        <item name="android:showDividers" ns1:ignore="NewApi">middle</item>
+        <item name="android:dividerPadding" ns1:ignore="NewApi">12dp</item>
+        <item name="android:background">@color/crop__button_bar</item>
+    </style>
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1.5dp</item>
+        <item name="android:background">@color/black12</item>
+    </style>
+    <style name="MD">
+        <item name="kswThumbDrawable">@drawable/switch_thumb</item>
+        <item name="kswBackDrawable">@drawable/switch_back</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    <style name="SwitchButtonMD" ns1:ignore="ResourceName">
+		<item name="kswThumbDrawable">@drawable/ksw_md_thumb</item>
+		<item name="kswBackColor">@color/ksw_md_back_color</item>
+		<item name="kswThumbRangeRatio">1.45</item>
+		<item name="kswThumbMarginLeft">-16dp</item>
+		<item name="kswThumbMarginTop">-14dp</item>
+		<item name="kswThumbMarginRight">-16dp</item>
+		<item name="kswThumbMarginBottom">-14dp</item>
+		<item name="kswThumbWidth">@dimen/ksw_md_thumb_ripple_size</item>
+		<item name="kswThumbHeight">@dimen/ksw_md_thumb_ripple_size</item>
+	</style>
+    <style name="TextAppearance.Compat.Notification" parent="@android:style/TextAppearance.StatusBar.EventContent"/>
+    <style name="TextAppearance.Compat.Notification.Info">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification.Info.Media"/>
+    <style name="TextAppearance.Compat.Notification.Line2" parent="TextAppearance.Compat.Notification.Info"/>
+    <style name="TextAppearance.Compat.Notification.Line2.Media" parent="TextAppearance.Compat.Notification.Info.Media"/>
+    <style name="TextAppearance.Compat.Notification.Media"/>
+    <style name="TextAppearance.Compat.Notification.Time">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification.Time.Media"/>
+    <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
+    <style name="TextAppearance.Compat.Notification.Title.Media"/>
+    <style name="Widget.Compat.NotificationActionContainer" parent=""/>
+    <style name="Widget.Compat.NotificationActionText" parent=""/>
+    <style name="Widget.Support.CoordinatorLayout" parent="android:Widget">
+        <item name="statusBarBackground">#000000</item>
+    </style>
+    <style name="elv_fade_animation">
+        <item name="@android:windowEnterAnimation">@anim/elv_popup_show</item>
+        <item name="@android:windowExitAnimation">@anim/elv_popup_hide</item>
+    </style>
+    <declare-styleable name="ActivityFilter">
+        
+        <attr format="string" name="activityName"/>
+        
+        <attr format="string" name="activityAction"/>
+    </declare-styleable>
+    <declare-styleable name="ActivityRule">
+        
+        <attr format="boolean" name="alwaysExpand"/>
+    </declare-styleable>
+    <declare-styleable name="Capability">
+        
+        <attr format="reference" name="queryPatterns"/>
+        
+        <attr format="boolean" name="shortcutMatchRequired"/>
+    </declare-styleable>
+    <declare-styleable name="ColorStateListItem">
+        
+        <attr name="android:color"/>
+        
+        <attr format="float" name="alpha"/>
+        <attr name="android:alpha"/>
+        
+        <attr format="float" name="lStar"/>
+        <attr name="android:lStar"/>
+    </declare-styleable>
+    <declare-styleable name="CoordinatorLayout">
+        
+        <attr format="reference" name="keylines"/>
+        
+        <attr format="color|reference" name="statusBarBackground"/>
+    </declare-styleable>
+    <declare-styleable name="CoordinatorLayout_Layout">
+        <attr name="android:layout_gravity"/>
+        
+        <attr format="string" name="layout_behavior"/>
+        
+        <attr format="reference" name="layout_anchor"/>
+        
+        <attr format="integer" name="layout_keyline"/>
+
+        
+        <attr name="layout_anchorGravity">
+            <!-- Push object to the top of its container, not changing its size. -->
+            <flag name="top" value="0x30"/>
+            <!-- Push object to the bottom of its container, not changing its size. -->
+            <flag name="bottom" value="0x50"/>
+            <!-- Push object to the left of its container, not changing its size. -->
+            <flag name="left" value="0x03"/>
+            <!-- Push object to the right of its container, not changing its size. -->
+            <flag name="right" value="0x05"/>
+            <!-- Place object in the vertical center of its container, not changing its size. -->
+            <flag name="center_vertical" value="0x10"/>
+            <!-- Grow the vertical size of the object if needed so it completely fills its container. -->
+            <flag name="fill_vertical" value="0x70"/>
+            <!-- Place object in the horizontal center of its container, not changing its size. -->
+            <flag name="center_horizontal" value="0x01"/>
+            <!-- Grow the horizontal size of the object if needed so it completely fills its container. -->
+            <flag name="fill_horizontal" value="0x07"/>
+            <!-- Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. -->
+            <flag name="center" value="0x11"/>
+            <!-- Grow the horizontal and vertical size of the object if needed so it completely fills its container. -->
+            <flag name="fill" value="0x77"/>
+            <!-- Additional option that can be set to have the top and/or bottom edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the vertical gravity: a top gravity will clip the bottom
+                 edge, a bottom gravity will clip the top edge, and neither will clip both edges. -->
+            <flag name="clip_vertical" value="0x80"/>
+            <!-- Additional option that can be set to have the left and/or right edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the horizontal gravity: a left gravity will clip the right
+                 edge, a right gravity will clip the left edge, and neither will clip both edges. -->
+            <flag name="clip_horizontal" value="0x08"/>
+            <!-- Push object to the beginning of its container, not changing its size. -->
+            <flag name="start" value="0x00800003"/>
+            <!-- Push object to the end of its container, not changing its size. -->
+            <flag name="end" value="0x00800005"/>
+        </attr>
+
+        
+        <attr format="enum" name="layout_insetEdge">
+            <!-- Don't inset. -->
+            <enum name="none" value="0x0"/>
+            <!-- Inset the top edge. -->
+            <enum name="top" value="0x30"/>
+            <!-- Inset the bottom edge. -->
+            <enum name="bottom" value="0x50"/>
+            <!-- Inset the left edge. -->
+            <enum name="left" value="0x03"/>
+            <!-- Inset the right edge. -->
+            <enum name="right" value="0x05"/>
+            <!-- Inset the start edge. -->
+            <enum name="start" value="0x00800003"/>
+            <!-- Inset the end edge. -->
+            <enum name="end" value="0x00800005"/>
+        </attr>
+        
+        <attr name="layout_dodgeInsetEdges">
+            <!-- Don't dodge any edges -->
+            <flag name="none" value="0x0"/>
+            <!-- Dodge the top inset edge. -->
+            <flag name="top" value="0x30"/>
+            <!-- Dodge the bottom inset edge. -->
+            <flag name="bottom" value="0x50"/>
+            <!-- Dodge the left inset edge. -->
+            <flag name="left" value="0x03"/>
+            <!-- Dodge the right inset edge. -->
+            <flag name="right" value="0x05"/>
+            <!-- Dodge the start inset edge. -->
+            <flag name="start" value="0x00800003"/>
+            <!-- Dodge the end inset edge. -->
+            <flag name="end" value="0x00800005"/>
+            <!-- Dodge all the inset edges. -->
+            <flag name="all" value="0x77"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CropImageView"><attr format="reference|color" name="highlightColor"/><attr format="boolean" name="showThirds"/><attr format="boolean" name="showCircle"/><attr name="showHandles"><enum name="changing" value="0"/><enum name="always" value="1"/><enum name="never" value="2"/></attr></declare-styleable>
+    <declare-styleable name="FlowLayout"><attr name="android:gravity"/></declare-styleable>
+    <declare-styleable name="FlowLayout_Layout"><attr name="android:layout_gravity"/></declare-styleable>
+    <declare-styleable name="FontFamily">
+        
+        <attr format="string" name="fontProviderAuthority"/>
+        
+        <attr format="string" name="fontProviderPackage"/>
+        
+        <attr format="string" name="fontProviderQuery"/>
+        
+        <attr format="string" name="fontProviderFallbackQuery"/>
+        
+        <attr format="reference" name="fontProviderCerts"/>
+        
+        <attr name="fontProviderFetchStrategy">
+            <!-- The blocking font fetch works as follows.
+              First, check the local cache, then if the requested font is not cached, request the
+              font from the provider and wait until it is finished.  You can change the length of
+              the timeout by modifying fontProviderFetchTimeout.  If the timeout happens, the
+              default typeface will be used instead. -->
+            <enum name="blocking" value="0"/>
+            <!-- The async font fetch works as follows.
+              First, check the local cache, then if the requested font is not cached, trigger a
+              request the font and continue with layout inflation. Once the font fetch succeeds, the
+              target text view will be refreshed with the downloaded font data. The
+              fontProviderFetchTimeout will be ignored if async loading is specified. -->
+            <enum name="async" value="1"/>
+        </attr>
+        
+        <attr format="integer" name="fontProviderFetchTimeout">
+            <!-- A special value for the timeout. In this case, the blocking font fetching will not
+              timeout and wait until a reply is received from the font provider. -->
+            <enum name="forever" value="-1"/>
+        </attr>
+        
+        <attr format="string" name="fontProviderSystemFontFamily"/>
+    </declare-styleable>
+    <declare-styleable name="FontFamilyFont">
+        
+        <attr name="fontStyle">
+            <enum name="normal" value="0"/>
+            <enum name="italic" value="1"/>
+        </attr>
+        
+        <attr format="reference" name="font"/>
+        
+        <attr format="integer" name="fontWeight"/>
+        
+        <attr format="string" name="fontVariationSettings"/>
+        
+        <attr format="integer" name="ttcIndex"/>
+        
+        <attr name="android:fontStyle"/>
+        <attr name="android:font"/>
+        <attr name="android:fontWeight"/>
+        <attr name="android:fontVariationSettings"/>
+        <attr name="android:ttcIndex"/>
+    </declare-styleable>
+    <declare-styleable name="GradientColor">
+        
+        <attr name="android:startColor"/>
+        
+        <attr name="android:centerColor"/>
+        
+        <attr name="android:endColor"/>
+        
+        <attr name="android:type"/>
+
+        
+        
+        <attr name="android:gradientRadius"/>
+
+        
+        
+        <attr name="android:centerX"/>
+        
+        <attr name="android:centerY"/>
+
+        
+        
+        <attr name="android:startX"/>
+        
+        <attr name="android:startY"/>
+        
+        <attr name="android:endX"/>
+        
+        <attr name="android:endY"/>
+
+        
+        <attr name="android:tileMode"/>
+    </declare-styleable>
+    <declare-styleable name="GradientColorItem">
+        
+        <attr name="android:offset"/>
+        
+        <attr name="android:color"/>
+    </declare-styleable>
+    <declare-styleable name="RoundedImageView"><attr format="dimension" name="riv_corner_radius"/><attr format="dimension" name="riv_corner_radius_top_left"/><attr format="dimension" name="riv_corner_radius_top_right"/><attr format="dimension" name="riv_corner_radius_bottom_left"/><attr format="dimension" name="riv_corner_radius_bottom_right"/><attr format="dimension" name="riv_border_width"/><attr format="color" name="riv_border_color"/><attr format="boolean" name="riv_mutate_background"/><attr format="boolean" name="riv_oval"/><attr name="android:scaleType"/><attr name="riv_tile_mode">
+      <enum name="clamp" value="0"/>
+      <enum name="repeat" value="1"/>
+      <enum name="mirror" value="2"/>
+    </attr><attr name="riv_tile_mode_x">
+      <enum name="clamp" value="0"/>
+      <enum name="repeat" value="1"/>
+      <enum name="mirror" value="2"/>
+    </attr><attr name="riv_tile_mode_y">
+      <enum name="clamp" value="0"/>
+      <enum name="repeat" value="1"/>
+      <enum name="mirror" value="2"/>
+    </attr></declare-styleable>
+    <declare-styleable name="SplitPairFilter">
+        
+        <attr format="string" name="primaryActivityName"/>
+        
+        <attr format="string" name="secondaryActivityName"/>
+        
+        <attr format="string" name="secondaryActivityAction"/>
+    </declare-styleable>
+    <declare-styleable name="SplitPairRule">
+        
+        <attr format="boolean" name="finishPrimaryWithSecondary"/>
+        
+        <attr format="boolean" name="finishSecondaryWithPrimary"/>
+        
+        <attr format="boolean" name="clearTop"/>
+        <attr name="splitRatio"/>
+        <attr name="splitMinWidth"/>
+        <attr name="splitMinSmallestWidth"/>
+        <attr name="splitLayoutDirection"/>
+    </declare-styleable>
+    <declare-styleable name="SplitPlaceholderRule">
+        
+        <attr format="string" name="placeholderActivityName"/>
+        <attr name="splitRatio"/>
+        <attr name="splitMinWidth"/>
+        <attr name="splitMinSmallestWidth"/>
+        <attr name="splitLayoutDirection"/>
+    </declare-styleable>
+    <declare-styleable name="SwitchButton" ns1:ignore="ResourceName">
+        <attr format="reference" name="kswThumbDrawable"/>
+        <attr format="color|reference" name="kswThumbColor"/>
+        <attr format="dimension|reference" name="kswThumbMargin"/>
+        <attr format="dimension|reference" name="kswThumbMarginTop"/>
+        <attr format="dimension|reference" name="kswThumbMarginBottom"/>
+        <attr format="dimension|reference" name="kswThumbMarginLeft"/>
+        <attr format="dimension|reference" name="kswThumbMarginRight"/>
+        <attr format="dimension|reference" name="kswThumbWidth"/>
+        <attr format="dimension|reference" name="kswThumbHeight"/>
+        <attr format="dimension|reference" name="kswThumbRadius"/>
+        <attr format="dimension|reference" name="kswBackRadius"/>
+        <attr format="reference" name="kswBackDrawable"/>
+        <attr format="color|reference" name="kswBackColor"/>
+        <attr format="boolean" name="kswFadeBack"/>
+        <attr format="float" name="kswThumbRangeRatio"/>
+        <attr format="integer" name="kswAnimationDuration"/>
+        <attr format="color|reference" name="kswTintColor"/>
+        <attr format="string" name="kswTextOn"/>
+        <attr format="string" name="kswTextOff"/>
+        <attr format="dimension" name="kswTextThumbInset"/>
+        <attr format="dimension" name="kswTextExtra"/>
+        <attr format="dimension" name="kswTextAdjust"/>
+    </declare-styleable>
+    <declare-styleable name="UnreadCountCustomView">
+        <attr format="reference|color" name="backgroundColor"/>
+    </declare-styleable>
+</resources>

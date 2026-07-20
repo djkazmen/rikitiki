@@ -1,0 +1,8 @@
+pl.rikitiki.im-pngs-0 /home/kazmen/Documents/projects/claude/rikitiki/build/generated/res/pngs/debug
+pl.rikitiki.im-updated_navigation_xml-1 /home/kazmen/Documents/projects/claude/rikitiki/build/generated/updated_navigation_xml/debug
+pl.rikitiki.im-packageDebugResources-2 /home/kazmen/Documents/projects/claude/rikitiki/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+pl.rikitiki.im-packageDebugResources-3 /home/kazmen/Documents/projects/claude/rikitiki/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+pl.rikitiki.im-debug-4 /home/kazmen/Documents/projects/claude/rikitiki/build/intermediates/merged_res/debug/mergeDebugResources
+pl.rikitiki.im-debug-5 /home/kazmen/Documents/projects/claude/rikitiki/src/debug/res
+pl.rikitiki.im-main-6 /home/kazmen/Documents/projects/claude/rikitiki/src/main/res
+gradleHome-0 /home/kazmen/.gradle

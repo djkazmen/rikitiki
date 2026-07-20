@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="pl.rikitiki.im"
+    android:versionCode="229"
+    android:versionName="1.20.0-beta" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="36" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <permission
+        android:name="pl.rikitiki.im.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="pl.rikitiki.im.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- for android -->
+    <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/> -->
+    <!-- <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/> -->
+    <!-- <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> -->
+    <!-- <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> -->
+    <!-- for Samsung -->
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- for htc -->
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- for sony -->
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- for apex -->
+    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- for solid -->
+    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- for huawei -->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" /> <!-- for ZUK -->
+    <uses-permission android:name="android.permission.READ_APP_BADGE" /> <!-- for OPPO -->
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" /> <!-- for EvMe -->
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:extractNativeLibs="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_configuration"
+        android:testOnly="true"
+        android:theme="@style/ConversationsTheme" >
+        <meta-data
+            android:name="com.google.android.gms.car.application"
+            android:resource="@xml/automotive_app_desc" />
+
+        <service android:name="pl.rikitiki.im.services.XmppConnectionService" />
+
+        <receiver
+            android:name="pl.rikitiki.im.services.EventReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+                <action android:name="android.media.RINGER_MODE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="pl.rikitiki.im.ui.ConversationActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:minHeight="300dp"
+            android:minWidth="300dp"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="pl.rikitiki.im.ui.StartConversationActivity"
+            android:exported="true"
+            android:label="@string/title_activity_start_conversation"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="imto" />
+                <data android:host="jabber" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="xmpp" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="xmpp" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true" >
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="https" />
+                <data android:host="conversations.im" />
+                <data android:pathPrefix="/i/" />
+                <data android:pathPrefix="/j/" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="pl.rikitiki.im.ui.WelcomeActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="pl.rikitiki.im.ui.MagicCreateActivity"
+            android:label="@string/create_account"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="pl.rikitiki.im.ui.PhoneVerificationActivity"
+            android:label="@string/title_activity_phone_verification"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="pl.rikitiki.im.ui.SetPresenceActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/change_presence"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="pl.rikitiki.im.ui.SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name="pl.rikitiki.im.ui.ChooseContactActivity"
+            android:label="@string/title_activity_choose_contact" />
+        <activity
+            android:name="pl.rikitiki.im.ui.BlocklistActivity"
+            android:label="@string/title_activity_block_list" />
+        <activity
+            android:name="pl.rikitiki.im.ui.ChangePasswordActivity"
+            android:label="@string/change_password_on_server" />
+        <activity
+            android:name="pl.rikitiki.im.ui.ManageAccountActivity"
+            android:label="@string/title_activity_manage_accounts"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="pl.rikitiki.im.ui.EditAccountActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="pl.rikitiki.im.ui.ConferenceDetailsActivity"
+            android:label="@string/title_activity_conference_details"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="pl.rikitiki.im.ui.ContactDetailsActivity"
+            android:label="@string/title_activity_contact_details"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="pl.rikitiki.im.ui.PublishProfilePictureActivity"
+            android:label="@string/mgmt_account_publish_avatar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="pl.rikitiki.im.ui.VerifyOTRActivity"
+            android:label="@string/verify_otr"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="pl.rikitiki.im.ui.ShareWithActivity"
+            android:exported="true"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="*/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.service.chooser.chooser_target_service"
+                android:value=".services.ContactChooserTargetService" />
+        </activity>
+        <activity
+            android:name="pl.rikitiki.im.ui.TrustKeysActivity"
+            android:label="@string/trust_omemo_fingerprints"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="de.duenndns.ssl.MemorizingActivity"
+            android:theme="@style/ConversationsTheme" />
+        <activity
+            android:name="pl.rikitiki.im.ui.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:parentActivityName="pl.rikitiki.im.ui.SettingsActivity" />
+        <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
+
+        <service android:name="pl.rikitiki.im.services.ExportLogsService" />
+        <service
+            android:name="pl.rikitiki.im.services.ContactChooserTargetService"
+            android:exported="true"
+            android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE" >
+            <intent-filter>
+                <action android:name="android.service.chooser.ChooserTargetService" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="pl.rikitiki.im.files"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="androidx.core.content.FileProvider.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <provider
+            android:name="pl.rikitiki.im.services.BarcodeProvider"
+            android:authorities="pl.rikitiki.im.barcodes"
+            android:exported="false"
+            android:grantUriPermissions="true" />
+
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="pl.rikitiki.im.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+                android:value="androidx.startup" />
+        </provider>
+
+        <receiver
+            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+            android:directBootAware="false"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.DUMP" >
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

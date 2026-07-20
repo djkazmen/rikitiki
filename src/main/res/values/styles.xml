@@ -1,0 +1,13 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1.5dp</item>
+        <item name="android:background">@color/black12</item>
+    </style>
+    <style name="MD">
+        <item name="kswThumbDrawable">@drawable/switch_thumb</item>
+        <item name="kswBackDrawable">@drawable/switch_back</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+</resources>

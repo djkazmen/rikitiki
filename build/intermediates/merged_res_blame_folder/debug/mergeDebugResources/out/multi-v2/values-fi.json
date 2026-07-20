@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "pl.rikitiki.im-mergeDebugResources-23:/values-fi/values-fi.xml",
+            "map": [
+                {
+                    "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/res/values-fi/values-fi.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,151,253,351,456,561,673,789",
+                        "endColumns": "95,101,97,104,104,111,115,100",
+                        "endOffsets": "146,248,346,451,556,668,784,885"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,19",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,151,253,351,456,561,673,1632",
+                        "endColumns": "95,101,97,104,104,111,115,100",
+                        "endOffsets": "146,248,346,451,556,668,784,1728"
+                    }
+                },
+                {
+                    "source": "/home/kazmen/Documents/projects/claude/rikitiki/libs/MemorizingTrustManager/build/intermediates/packaged_res/debug/packageDebugResources/values-fi/values-fi.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,152,274,341,428,484,537,590,717,783",
+                        "endColumns": "96,121,66,86,55,52,52,126,65,114",
+                        "endOffsets": "147,269,336,423,479,532,585,712,778,893"
+                    },
+                    "to": {
+                        "startLines": "9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "789,886,1008,1075,1162,1218,1271,1324,1451,1517",
+                        "endColumns": "96,121,66,86,55,52,52,126,65,114",
+                        "endOffsets": "881,1003,1070,1157,1213,1266,1319,1446,1512,1627"
+                    }
+                }
+            ]
+        }
+    ]
+}

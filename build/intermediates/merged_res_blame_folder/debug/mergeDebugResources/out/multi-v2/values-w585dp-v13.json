@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "pl.rikitiki.im-mergeDebugResources-23:/values-w585dp-v13/values-w585dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/kazmen/Documents/projects/claude/rikitiki/src/main/res/values-w585dp/dimens.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "16,74",
+                        "endColumns": "57,48",
+                        "endOffsets": "69,118"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,113",
+                        "endColumns": "57,48",
+                        "endOffsets": "108,157"
+                    }
+                }
+            ]
+        }
+    ]
+}

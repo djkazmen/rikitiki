@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application' version '9.2.0'
+}
+
+android {
+    namespace = 'pl.rikitiki.im'
+    compileSdk 36
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 36
+        versionCode 229
+        versionName "1.20.0-beta"
+        applicationId "pl.rikitiki.im"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    if (project.hasProperty('mStoreFile') &&
+            project.hasProperty('mStorePassword') &&
+            project.hasProperty('mKeyAlias') &&
+            project.hasProperty('mKeyPassword')) {
+        signingConfigs {
+            release {
+                storeFile file(mStoreFile)
+                storePassword mStorePassword
+                keyAlias mKeyAlias
+                keyPassword mKeyPassword
+            }
+        }
+        buildTypes.release.signingConfig = signingConfigs.release
+    } else {
+        buildTypes.release.signingConfig = null
+    }
+
+    lint {
+        disable 'ExtraTranslation', 'MissingTranslation', 'InvalidPackage', 'MissingQuantity', 'AppCompatResource'
+    }
+
+    packaging {
+        resources {
+            excludes += ['META-INF/BCKEY.DSA', 'META-INF/BCKEY.SF', 'META-INF/LICENSE.md']
+        }
+    }
+}
+
+dependencies {
+    implementation project(':libs:MemorizingTrustManager')
+    implementation 'com.github.open-keychain:openpgp-api:v10'
+    implementation 'com.soundcloud.android:android-crop:1.0.1@aar'
+    implementation 'androidx.annotation:annotation:1.10.0'
+    implementation 'androidx.core:core:1.15.0'
+    implementation 'androidx.viewpager:viewpager:1.1.0'
+    implementation 'androidx.slidingpanelayout:slidingpanelayout:1.2.0'
+    implementation 'org.bouncycastle:bcprov-jdk18on:1.85'
+    implementation 'org.bouncycastle:bcmail-jdk18on:1.85'
+    implementation 'org.jitsi:org.otr4j:0.23'
+    implementation 'org.gnu.inet:libidn:1.15'
+    implementation 'com.google.zxing:core:3.5.4'
+    implementation 'com.google.zxing:android-integration:3.3.0'
+    implementation 'de.measite.minidns:minidns-hla:0.2.4'
+    implementation 'de.timroes.android:EnhancedListView:0.3.4'
+    implementation 'me.leolin:ShortcutBadger:1.1.17@aar'
+    implementation 'com.kyleduo.switchbutton:library:2.1.0'
+    implementation 'org.whispersystems:signal-protocol-java:2.8.1'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation('com.wefika:flowlayout:0.4.1') {
+        exclude group: 'com.intellij', module: 'annotations'
+    }
+    implementation 'com.github.ypresto:android-transcoder:v0.2.0'
+    implementation('com.vdurmont:emoji-java:5.1.1') {
+        exclude group: 'org.json', module: 'json'
+    }
+}

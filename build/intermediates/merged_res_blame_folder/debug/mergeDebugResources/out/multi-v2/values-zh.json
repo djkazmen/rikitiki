@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "pl.rikitiki.im-mergeDebugResources-23:/values-zh/values-zh.xml",
+            "map": [
+                {
+                    "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/4d19f0a38c09ad0d902e73c32bb0a26c/transformed/jetified-openpgp-api-v10/res/values-zh/values-zh.xml",
+                    "from": {
+                        "startLines": "4,5",
+                        "startColumns": "4,4",
+                        "startOffsets": "165,221",
+                        "endColumns": "55,58",
+                        "endOffsets": "216,275"
+                    },
+                    "to": {
+                        "startLines": "7,8",
+                        "startColumns": "4,4",
+                        "startOffsets": "354,410",
+                        "endColumns": "55,58",
+                        "endOffsets": "405,464"
+                    }
+                },
+                {
+                    "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/e4b4978e79e3e6d5f8c9bf4cff9cbc26/transformed/jetified-android-crop-1.0.1/res/values-zh/values-zh.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "215,283,325,376,425",
+                        "endColumns": "67,41,50,48,43",
+                        "endOffsets": "278,320,371,420,464"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "100,168,210,261,310",
+                        "endColumns": "67,41,50,48,43",
+                        "endOffsets": "163,205,256,305,349"
+                    }
+                }
+            ]
+        }
+    ]
+}
