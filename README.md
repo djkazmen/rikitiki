@@ -1,0 +1,2 @@
+# rikitiki
+xmpp android client
