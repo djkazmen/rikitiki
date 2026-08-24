@@ -1,4 +1,4 @@
-<h1 align="center">Conversations</h1>
+<h1 align="center">Rikitiki</h1>
 
 <p align="center">Conversations: the very last word in instant messaging</p>
 
