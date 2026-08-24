@@ -12,7 +12,7 @@ public final class Config {
 	private static final int OTR = 4;
 	private static final int OMEMO = 8;
 
-	private static final int ENCRYPTION_MASK = UNENCRYPTED | OPENPGP | OTR | OMEMO;
+	private static final int ENCRYPTION_MASK = UNENCRYPTED | OMEMO;
 
 	public static boolean supportUnencrypted() {
 		return (ENCRYPTION_MASK & UNENCRYPTED) != 0;
@@ -44,7 +44,7 @@ public final class Config {
 	// Base URL of the registration backend (see the php-reg/ project, sibling to
 	// this one under claude/), no trailing slash. Must be HTTPS.
 	public static final String REGISTRATION_BACKEND_URL = "https://reg.rikitiki.pl";
-	public static final boolean DISALLOW_REGISTRATION_IN_UI = false; //hide the register checkbox
+	public static final boolean DISALLOW_REGISTRATION_IN_UI = true; //hide the register checkbox
 
 	public static final boolean ALLOW_NON_TLS_CONNECTIONS = false; //very dangerous. you should have a good reason to set this to true
 	public static final boolean FORCE_ORBOT = false; // always use TOR
@@ -101,7 +101,7 @@ public final class Config {
 
 	public static final boolean X509_VERIFICATION = false; //use x509 certificates to verify OMEMO keys
 
-	public static final boolean ONLY_INTERNAL_STORAGE = false; //use internal storage instead of sdcard to save attachments
+	public static final boolean ONLY_INTERNAL_STORAGE = true; //use internal storage instead of sdcard to save attachments
 
 	public static final boolean IGNORE_ID_REWRITE_IN_MUC = true;
 

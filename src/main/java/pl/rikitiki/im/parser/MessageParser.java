@@ -367,6 +367,14 @@ public class MessageParser extends AbstractParser implements OnMessagePacketRece
 			isForwarded = false;
 		}
 
+		if (packet.hasChild("propose", Namespace.JINGLE_MESSAGE)
+				|| packet.hasChild("proceed", Namespace.JINGLE_MESSAGE)
+				|| packet.hasChild("reject", Namespace.JINGLE_MESSAGE)
+				|| packet.hasChild("retract", Namespace.JINGLE_MESSAGE)) {
+			mXmppConnectionService.getJingleConnectionManager().deliverMessage(account, packet);
+			return;
+		}
+
 		if (timestamp == null) {
 			timestamp = AbstractParser.parseTimestamp(original,AbstractParser.parseTimestamp(packet));
 		}

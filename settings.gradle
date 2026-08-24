@@ -17,4 +17,4 @@ dependencyResolutionManagement {
 
 include ':libs:MemorizingTrustManager'
 
-rootProject.name = 'Conversations'
+rootProject.name = 'Rikitiki'

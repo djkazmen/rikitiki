@@ -296,7 +296,6 @@
     <string name="leave">Verlaten</string>
     <string name="load_more_messages">Laad meer berichten</string>
     <string name="location">Locatie</string>
-    <string name="magic_create_text">We zullen je helpen een account op conversations.im¹ aan te maken.\nWanneer je conversations.im als je provider kiest kan je met gebruikers van andere providers communiceren door hen je volledige Jabber-ID te geven.</string>
     <string name="mam_prefs">Archiefvoorkeuren</string>
     <string name="manual_verification_explanation">Vergelijk met zorg de vingerafdruk hieronder met de vingerafdruk van je contact.\nJe kan hiervoor een andere betrouwbare vorm van communicatie gebruiken, zoals een versleutelde e-mail of een telefoongesprek.</string>
     <string name="manually_verify">Handmatig verifiëren</string>

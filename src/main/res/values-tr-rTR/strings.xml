@@ -589,7 +589,6 @@
   <string name="no_application_to_share_uri">URI paylaşmak için uygulama bulunamadı</string>
   <string name="share_uri_with">URI paylaş ile...</string>
   <string name="welcome_text">XMPP servis sağlayıcısından bağımsız bir iletişim kuralıdır. Bu istemciyi dilediğiniz XMPP sunucusuyla birlikte kullanabilirsiniz\nLakin rahat etmeniz için Conversations istemcisiyle kullanmanız için oluşturduğumuz conversation.im¹ sunucusu üzerinde hesap açmayı kolaylaştırdık.</string>
-  <string name="magic_create_text">conversation.im sağlayıcısında hesap açma sürecinde size yol göstereceğiz.\nconversation.im\'i bir servis sağlayıcı olarak kullandığınızda diğer sağlayıcıları kullananlarla tam Jabber kimliğinizi vererek iletişim kurabilirsiniz.</string>
   <string name="your_full_jid_will_be">Tam Jabber kimliğiniz %s olacak</string>
   <string name="create_account">Hesap Oluştur</string>
   <string name="use_own_provider">Kendi sağlayıcımı kullan</string>

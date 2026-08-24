@@ -3,11 +3,20 @@ package pl.rikitiki.im.ui;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.CancellationSignal;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
+import androidx.credentials.CreateCredentialResponse;
+import androidx.credentials.CreatePasswordRequest;
+import androidx.credentials.CredentialManager;
+import androidx.credentials.CredentialManagerCallback;
+import androidx.credentials.exceptions.CreateCredentialException;
 
 import pl.rikitiki.im.Config;
 import pl.rikitiki.im.R;
@@ -17,10 +26,14 @@ import pl.rikitiki.im.xmpp.jid.InvalidJidException;
 import pl.rikitiki.im.xmpp.jid.Jid;
 
 /**
- * Phone/OTP verification step inserted between MagicCreateActivity (username
- * picking) and EditAccountActivity. The account is not created locally until
- * the backend confirms it was actually registered on msg.rikitiki.pl via
- * ejabberd's admin API — see the php-reg/ project, sibling to this one under claude/.
+ * Phone/OTP verification screen, launched directly from WelcomeActivity's
+ * "create account" button. The phone number itself becomes the account's JID
+ * localpart and the password is generated server-side — this activity never
+ * invents either. The account is not created locally until the backend
+ * confirms it was actually registered (or its password reset, if the phone
+ * was already registered — i.e. this is also the "log in on a new device"
+ * path) on msg.rikitiki.pl via ejabberd's admin API — see the php-reg/
+ * project, sibling to this one under claude/.
  */
 public class PhoneVerificationActivity extends XmppActivity {
 
@@ -32,8 +45,6 @@ public class PhoneVerificationActivity extends XmppActivity {
 	private TextView mErrorMessage;
 	private ProgressBar mProgress;
 
-	private String mUsername;
-	private String mPassword;
 	private String mRequestedPhone;
 
 	private final RegistrationBackendConnection mBackend = new RegistrationBackendConnection();
@@ -64,9 +75,6 @@ public class PhoneVerificationActivity extends XmppActivity {
 		}
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_phone_verification);
-
-		mUsername = getIntent().getStringExtra("username");
-		mPassword = getIntent().getStringExtra("password");
 
 		mPhoneNumber = findViewById(R.id.phone_number);
 		mOtpCode = findViewById(R.id.otp_code);
@@ -137,11 +145,11 @@ public class PhoneVerificationActivity extends XmppActivity {
 		hideError();
 		setLoading(true);
 		mVerifyCode.setEnabled(false);
-		mBackend.verifyOtp(mRequestedPhone, otp, mUsername, mPassword, new RegistrationBackendConnection.OnOtpVerified() {
+		mBackend.verifyOtp(mRequestedPhone, otp, new RegistrationBackendConnection.OnOtpVerified() {
 			@Override
-			public void onOtpVerifySuccess(String jid) {
+			public void onOtpVerifySuccess(String jid, String password) {
 				setLoading(false);
-				onAccountCreated(jid);
+				onAccountCreated(jid, password);
 			}
 
 			@Override
@@ -153,7 +161,7 @@ public class PhoneVerificationActivity extends XmppActivity {
 		});
 	}
 
-	private void onAccountCreated(final String jidString) {
+	private void onAccountCreated(final String jidString, final String password) {
 		final Jid jid;
 		try {
 			jid = Jid.fromString(jidString);
@@ -163,19 +171,53 @@ public class PhoneVerificationActivity extends XmppActivity {
 		}
 		Account account = xmppConnectionService.findAccountByJid(jid);
 		if (account == null) {
-			account = new Account(jid, mPassword);
+			account = new Account(jid, password);
 			// No OPTION_REGISTER here: the backend already created this account
 			// server-side via ejabberd's admin API, so in-band XMPP registration
 			// is neither necessary nor wanted.
 			account.setOption(Account.OPTION_DISABLED, true);
 			account.setOption(Account.OPTION_MAGIC_CREATE, true);
 			xmppConnectionService.createAccount(account);
+		} else {
+			// Phone was already registered — the backend treated this as a
+			// "log in on a new device" recovery and reset the password.
+			account.setPassword(password);
+			account.setOption(Account.OPTION_DISABLED, false);
+			xmppConnectionService.updateAccount(account);
 		}
+		offerToSaveCredential(account.getJid().toBareJid().toString(), password);
 		final Intent intent = new Intent(PhoneVerificationActivity.this, EditAccountActivity.class);
 		intent.putExtra("jid", account.getJid().toBareJid().toString());
 		intent.putExtra("init", true);
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 		startActivity(intent);
+	}
+
+	// This is the app's only additional copy of the password beyond its own
+	// local account storage — best-effort only. Failure here (no Credential
+	// Manager provider configured, device without Play Services, etc.) must
+	// never block account creation, since the account already exists and
+	// works locally regardless of whether this succeeds.
+	private void offerToSaveCredential(final String jid, final String password) {
+		try {
+			final CredentialManager credentialManager = CredentialManager.create(this);
+			final CreatePasswordRequest request = new CreatePasswordRequest(jid, password);
+			credentialManager.createCredentialAsync(this, request, new CancellationSignal(),
+					ContextCompat.getMainExecutor(this),
+					new CredentialManagerCallback<CreateCredentialResponse, CreateCredentialException>() {
+						@Override
+						public void onResult(final CreateCredentialResponse result) {
+							Log.d(Config.LOGTAG, "offered to save credential for " + jid);
+						}
+
+						@Override
+						public void onError(final CreateCredentialException e) {
+							Log.d(Config.LOGTAG, "could not offer to save credential: " + e.getMessage());
+						}
+					});
+		} catch (final Exception e) {
+			Log.d(Config.LOGTAG, "credential manager unavailable", e);
+		}
 	}
 
 	private String mapError(final String error) {

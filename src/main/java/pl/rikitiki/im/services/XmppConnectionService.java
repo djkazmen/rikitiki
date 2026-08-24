@@ -69,6 +69,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
@@ -139,6 +140,7 @@ import pl.rikitiki.im.xmpp.chatstate.ChatState;
 import pl.rikitiki.im.xmpp.forms.Data;
 import pl.rikitiki.im.xmpp.jid.InvalidJidException;
 import pl.rikitiki.im.xmpp.jid.Jid;
+import pl.rikitiki.im.xmpp.jingle.ExternalService;
 import pl.rikitiki.im.xmpp.jingle.JingleConnectionManager;
 import pl.rikitiki.im.xmpp.jingle.OnJinglePacketReceived;
 import pl.rikitiki.im.xmpp.jingle.stanzas.JinglePacket;
@@ -165,6 +167,9 @@ public class XmppConnectionService extends Service {
 	private static final String ACTION_MERGE_PHONE_CONTACTS = "merge_phone_contacts";
 	public static final String ACTION_GCM_TOKEN_REFRESH = "gcm_token_refresh";
 	public static final String ACTION_GCM_MESSAGE_RECEIVED = "gcm_message_received";
+	public static final String ACTION_ACCEPT_CALL = "accept_call";
+	public static final String ACTION_DECLINE_CALL = "decline_call";
+	public static final String ACTION_HANGUP_CALL = "hangup_call";
 	private final SerialSingleThreadExecutor mFileAddingExecutor = new SerialSingleThreadExecutor();
 	private final SerialSingleThreadExecutor mDatabaseExecutor = new SerialSingleThreadExecutor();
 	private ReplacingSerialSingleThreadExecutor mContactMergerExecutor = new ReplacingSerialSingleThreadExecutor(true);
@@ -714,6 +719,27 @@ public class XmppConnectionService extends Service {
 					Log.d(Config.LOGTAG,"gcm push message arrived in service. extras="+intent.getExtras());
 					pushedAccountHash = intent.getStringExtra("account");
 					break;
+				case ACTION_ACCEPT_CALL: {
+					final pl.rikitiki.im.xmpp.jingle.JingleRtpConnection connection = mJingleConnectionManager.getRtpConnection();
+					if (connection != null) {
+						connection.accept();
+					}
+					break;
+				}
+				case ACTION_DECLINE_CALL: {
+					final pl.rikitiki.im.xmpp.jingle.JingleRtpConnection connection = mJingleConnectionManager.getRtpConnection();
+					if (connection != null) {
+						connection.terminate("decline");
+					}
+					break;
+				}
+				case ACTION_HANGUP_CALL: {
+					final pl.rikitiki.im.xmpp.jingle.JingleRtpConnection connection = mJingleConnectionManager.getRtpConnection();
+					if (connection != null) {
+						connection.terminate("success");
+					}
+					break;
+				}
 			}
 		}
 		synchronized (this) {
@@ -1098,6 +1124,26 @@ public class XmppConnectionService extends Service {
 		} else {
 			stopForeground(true);
 		}
+	}
+
+	/**
+	 * Promotes the service to a microphone-type foreground service for the
+	 * duration of a call — required on Android 14+ to keep capturing audio
+	 * if the app is backgrounded mid-call. Reuses the same notification the
+	 * call UI already shows (ongoing-call notification), just registered as
+	 * the service's foreground notification too.
+	 */
+	public void startCallForeground(final android.app.Notification notification, final boolean isVideoCall) {
+		final int type = isVideoCall
+				? android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE | android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_CAMERA
+				: android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE;
+		androidx.core.app.ServiceCompat.startForeground(this, NotificationService.CALL_NOTIFICATION_ID,
+				notification, type);
+	}
+
+	/** Reverts to the normal (or absent) always-on foreground notification once a call ends. */
+	public void stopCallForeground() {
+		toggleForegroundService();
 	}
 
 	public boolean keepForegroundService() {
@@ -1545,45 +1591,100 @@ public class XmppConnectionService extends Service {
 			public void run() {
 				PhoneHelper.loadPhoneContacts(XmppConnectionService.this, new OnPhoneContactsLoadedListener() {
 					@Override
-					public void onPhoneContactsLoaded(List<Bundle> phoneContacts) {
-						Log.d(Config.LOGTAG, "start merging phone contacts with roster");
-						for (Account account : accounts) {
-							List<Contact> withSystemAccounts = account.getRoster().getWithSystemAccounts();
-							for (Bundle phoneContact : phoneContacts) {
-								Jid jid;
-								try {
-									jid = Jid.fromString(phoneContact.getString("jid"));
-								} catch (final InvalidJidException e) {
-									continue;
-								}
-								final Contact contact = account.getRoster().getContact(jid);
-								String systemAccount = phoneContact.getInt("phoneid")
-										+ "#"
-										+ phoneContact.getString("lookup");
-								contact.setSystemAccount(systemAccount);
-								boolean needsCacheClean = contact.setPhotoUri(phoneContact.getString("photouri"));
-								needsCacheClean |= contact.setSystemName(phoneContact.getString("displayname"));
-								if (needsCacheClean) {
-									getAvatarService().clear(contact);
-								}
-								withSystemAccounts.remove(contact);
+					public void onPhoneContactsLoaded(final List<Bundle> phoneContacts) {
+						// Phone-number-as-JID accounts (see php-reg/) never have a
+						// Jabber IM field set in anyone's address book, so the
+						// lookup above never matches them. Cross-reference actual
+						// phone numbers too, so those contacts still get a real
+						// name instead of falling back to the raw number.
+						PhoneHelper.loadPhoneContactsWithNumbers(XmppConnectionService.this, new OnPhoneContactsLoadedListener() {
+							@Override
+							public void onPhoneContactsLoaded(final List<Bundle> phoneContactsWithNumbers) {
+								mergePhoneContacts(phoneContacts, phoneContactsWithNumbers);
 							}
-							for (Contact contact : withSystemAccounts) {
-								contact.setSystemAccount(null);
-								boolean needsCacheClean = contact.setPhotoUri(null);
-								needsCacheClean |= contact.setSystemName(null);
-								if (needsCacheClean) {
-									getAvatarService().clear(contact);
-								}
-							}
-						}
-						Log.d(Config.LOGTAG, "finished merging phone contacts");
-						mShortcutService.refresh(mInitialAddressbookSyncCompleted.compareAndSet(false,true));
-						updateAccountUi();
+						});
 					}
 				});
 			}
 		});
+	}
+
+	private void mergePhoneContacts(final List<Bundle> phoneContacts, final List<Bundle> phoneContactsWithNumbers) {
+		Log.d(Config.LOGTAG, "start merging phone contacts with roster");
+		final Map<String, Bundle> byNormalizedNumber = new HashMap<>();
+		for (final Bundle phoneContact : phoneContactsWithNumbers) {
+			final String localpart = PhoneHelper.normalizeToJidLocalpart(this, phoneContact.getString("phonenumber"));
+			if (localpart != null && !byNormalizedNumber.containsKey(localpart)) {
+				byNormalizedNumber.put(localpart, phoneContact);
+			}
+		}
+		for (Account account : accounts) {
+			List<Contact> withSystemAccounts = account.getRoster().getWithSystemAccounts();
+			// Contacts matched by the Jabber-IM-field pass below, this run —
+			// distinct from "has a non-null systemAccount", which can also be
+			// true purely because a *previous* run's match was persisted to
+			// disk and just got restored. Gating the phone-number pass on
+			// getSystemAccount() != null conflated the two: a contact
+			// correctly matched last run (and correctly still matching now)
+			// would get skipped here, never removed from withSystemAccounts,
+			// and then wrongly wiped by the cleanup loop below — flipping a
+			// real contact's name on and off every other app restart.
+			final Set<Contact> matchedThisRun = new HashSet<>();
+			for (Bundle phoneContact : phoneContacts) {
+				Jid jid;
+				try {
+					jid = Jid.fromString(phoneContact.getString("jid"));
+				} catch (final InvalidJidException e) {
+					continue;
+				}
+				final Contact contact = account.getRoster().getContact(jid);
+				applyPhoneContact(contact, phoneContact);
+				withSystemAccounts.remove(contact);
+				matchedThisRun.add(contact);
+			}
+			// getWithSystemAccounts() only returns contacts that were already
+			// matched in a previous run (it's a cleanup list, not "everyone
+			// eligible") — a never-matched contact has systemAccount == null
+			// and wouldn't appear in it at all, so this phone-number pass has
+			// to scan every roster contact, not just withSystemAccounts.
+			for (final Contact contact : account.getRoster().getContacts()) {
+				if (matchedThisRun.contains(contact)) {
+					continue;
+				}
+				final Bundle phoneContact = byNormalizedNumber.get(contact.getJid().getUnescapedLocalpart());
+				if (phoneContact != null) {
+					applyPhoneContact(contact, phoneContact);
+					withSystemAccounts.remove(contact);
+				}
+			}
+			for (Contact contact : withSystemAccounts) {
+				contact.setSystemAccount(null);
+				boolean needsCacheClean = contact.setPhotoUri(null);
+				needsCacheClean |= contact.setSystemName(null);
+				if (needsCacheClean) {
+					getAvatarService().clear(contact);
+				}
+			}
+			// setSystemName()/setSystemAccount()/setPhotoUri() above only
+			// update the in-memory Contact objects — without this, the match
+			// only survives for as long as this process stays alive, and a
+			// restart shows raw JIDs again until loadPhoneContacts() happens
+			// to re-run and re-match from scratch.
+			databaseBackend.writeRoster(account.getRoster());
+		}
+		Log.d(Config.LOGTAG, "finished merging phone contacts");
+		mShortcutService.refresh(mInitialAddressbookSyncCompleted.compareAndSet(false,true));
+		updateAccountUi();
+	}
+
+	private void applyPhoneContact(final Contact contact, final Bundle phoneContact) {
+		final String systemAccount = phoneContact.getInt("phoneid") + "#" + phoneContact.getString("lookup");
+		contact.setSystemAccount(systemAccount);
+		boolean needsCacheClean = contact.setPhotoUri(phoneContact.getString("photouri"));
+		needsCacheClean |= contact.setSystemName(phoneContact.getString("displayname"));
+		if (needsCacheClean) {
+			getAvatarService().clear(contact);
+		}
 	}
 
 	public List<Conversation> getConversations() {
@@ -3598,6 +3699,24 @@ public class XmppConnectionService extends Service {
 		if (connection != null) {
 			connection.sendIqPacket(packet, callback);
 		}
+	}
+
+	public interface OnExternalServicesReceived {
+		void onExternalServicesReceived(List<ExternalService> services);
+	}
+
+	public void requestExternalServices(final Account account, final OnExternalServicesReceived callback) {
+		sendIqPacket(account, mIqGenerator.requestExternalServices(account), new OnIqPacketReceived() {
+			@Override
+			public void onIqPacketReceived(Account account, IqPacket packet) {
+				if (packet.getType() == IqPacket.TYPE.RESULT) {
+					Element services = packet.findChild("services", Namespace.EXTERNAL_SERVICE_DISCOVERY);
+					callback.onExternalServicesReceived(ExternalService.parse(services));
+				} else {
+					callback.onExternalServicesReceived(ExternalService.parse(null));
+				}
+			}
+		});
 	}
 
 	public void sendPresence(final Account account) {

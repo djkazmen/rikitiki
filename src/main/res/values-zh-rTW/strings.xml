@@ -595,7 +595,6 @@
   <string name="no_application_to_share_uri">找不到可以分享網址(URI)的應用程式</string>
   <string name="share_uri_with">分享網址(URI)…</string>
   <string name="welcome_text">XMPP 是一個獨立協議的提供者。你可以用這個用戶端連接任何你選擇的 XMPP 伺服器。\n為了讓你更便捷，我們讓你可以在 conversations.im¹ 上方便的註冊帳號；特意為使用 Conversations 的人準備。</string>
-  <string name="magic_create_text">我們將會引導你完成在 conversations.im¹ 上註冊帳號的過程。\n當獲得了 conversations.im 提供的帳號以後，你可以通過添加使用其他提供商的好友的完整 Jabber ID 來與他們聯絡。</string>
   <string name="your_full_jid_will_be">您完整的 Jabble ID 是：%s </string>
   <string name="create_account">創建帳戶</string>
   <string name="use_own_provider">使用我自己的服務端</string>

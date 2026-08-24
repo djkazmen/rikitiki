@@ -296,7 +296,6 @@
     <string name="leave">Partir</string>
     <string name="load_more_messages">Charger plus de messages</string>
     <string name="location">Position</string>
-    <string name="magic_create_text">Nous vous guiderons pendant toute la procédure de création d\'un compte utilisateur sur conversations.im.¹\nEn choisissant conversations.im comme fournisseur, vous pourrez communiquer avec les utilisateurs d\'autres fournisseurs en leur transmettant votre Jabber ID complet. </string>
     <string name="mam_prefs">Paramètres d\'archivage</string>
     <string name="manual_verification_explanation">Comparez avec soin l\'empreinte ci-dessous avec celle de votre contact.\nPour ce faire, vous pouvez utiliser n\'importe quel moyen de communication auquel vous avez confiance : appel téléphonique, e-mail encrypté...</string>
     <string name="manually_verify">Vérifier manuellement</string>

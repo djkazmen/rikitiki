@@ -6,11 +6,49 @@
     android:baselineAligned="false">
 
     <LinearLayout
+        android:id="@+id/conversation_list_pane"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="?attr/color_background_primary"
         android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/conversation_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:background="?android:attr/colorPrimary" >
+
+            <TextView
+                android:id="@+id/tab_chats"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/title_chats"
+                android:textAllCaps="true"
+                android:textColor="@color/conversation_tab_text"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tab_rooms"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/title_rooms"
+                android:textAllCaps="true"
+                android:textColor="@color/conversation_tab_text"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <de.timroes.android.listview.EnhancedListView
             android:id="@+id/list"

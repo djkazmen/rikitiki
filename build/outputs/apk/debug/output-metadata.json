@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 229,
-      "versionName": "1.20.0-beta",
-      "outputFile": "Conversations-debug.apk"
+      "versionCode": 232,
+      "versionName": "1.23",
+      "outputFile": "Rikitiki-debug.apk"
     }
   ],
   "elementType": "File",

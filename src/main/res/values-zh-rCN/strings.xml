@@ -600,7 +600,6 @@
   <string name="no_application_to_share_uri">没有可以分享此链接的应用</string>
   <string name="share_uri_with">分享链接...</string>
   <string name="welcome_text">XMPP 是一个独立协议的提供者。你可以用这个客户端连接任何你选择的 XMPP 服务器。\n为了让你更便捷，我们让你可以在 conversations.im¹ 上方便的注册账号；特意为使用 Conversations 的人准备。</string>
-  <string name="magic_create_text">我们将会引导你完成在 conversations.im¹ 上注册账号的过程。\n当获得了 conversations.im 提供的账号以后，你可以通过添加使用其他提供商的好友的完整 Jabber ID 来与他们联络。</string>
   <string name="your_full_jid_will_be">您完整的 Jabble ID 是：%s </string>
   <string name="create_account">创建账户</string>
   <string name="use_own_provider">使用我自己的服务端</string>

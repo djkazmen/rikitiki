@@ -427,11 +427,18 @@ public abstract class XmppActivity extends Activity {
 		// needing android:fitsSystemWindows="true" hand-added to every XML file.
 		//
 		// SlidingPaneLayout (ConversationActivity's two-pane list/detail
-		// container) is excluded: marking it fitsSystemWindows interferes with
-		// its own width/position calculations for the second (detail) pane,
-		// pushing it off-screen. That screen doesn't have the ActionBar-overlap
-		// problem this fix targets in the first place (its top content is a
-		// plain list, not a label/field sitting flush against the top).
+		// container) is excluded: marking it, or any ancestor of it,
+		// fitsSystemWindows interferes with its own width/position
+		// calculations for the second (detail) pane, pushing it off-screen —
+		// confirmed this applies not just when SlidingPaneLayout is the root
+		// itself, but also when it's nested a level down (e.g. under a
+		// wrapper LinearLayout adding a header row above it): marking that
+		// wrapper fitsSystemWindows corrupted the pane math the same way,
+		// via window-inset dispatch still reaching the SlidingPaneLayout
+		// underneath. ConversationActivity applies the fix directly to its
+		// own tab-row header instead (a sibling of the SlidingPaneLayout,
+		// not an ancestor), since that view has no path to dispatch insets
+		// into the pane layout at all.
 		final View content = findViewById(android.R.id.content);
 		if (content instanceof ViewGroup && ((ViewGroup) content).getChildCount() > 0) {
 			final View root = ((ViewGroup) content).getChildAt(0);
@@ -806,6 +813,74 @@ public abstract class XmppActivity extends Activity {
 			}
 		} else {
 			return true;
+		}
+	}
+
+	public boolean hasRecordAudioPermission(int requestCode) {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+				requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, requestCode);
+				return false;
+			} else {
+				return true;
+			}
+		} else {
+			return true;
+		}
+	}
+
+	public boolean hasReadContactsPermission(int requestCode) {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			if (checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+				requestPermissions(new String[]{Manifest.permission.READ_CONTACTS}, requestCode);
+				return false;
+			} else {
+				return true;
+			}
+		} else {
+			return true;
+		}
+	}
+
+	public boolean hasCameraPermission(int requestCode) {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+				requestPermissions(new String[]{Manifest.permission.CAMERA}, requestCode);
+				return false;
+			} else {
+				return true;
+			}
+		} else {
+			return true;
+		}
+	}
+
+	// BLUETOOTH_CONNECT only exists (and is only needed) from API 31 onward —
+	// before that, enumerating/using a paired Bluetooth headset for calls
+	// didn't require runtime consent.
+	public boolean hasBluetoothConnectPermission(int requestCode) {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+			if (checkSelfPermission(Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+				requestPermissions(new String[]{Manifest.permission.BLUETOOTH_CONNECT}, requestCode);
+				return false;
+			} else {
+				return true;
+			}
+		} else {
+			return true;
+		}
+	}
+
+	/**
+	 * Fire-and-forget: Android 13+ requires this for any notification to show
+	 * at all (messages, calls, everything) — there's nothing meaningful to
+	 * gate on it, just ask once so the OS notification prompt appears.
+	 */
+	public void requestNotificationPermissionIfNeeded(int requestCode) {
+		if (Build.VERSION.SDK_INT >= 33) {
+			if (checkSelfPermission("android.permission.POST_NOTIFICATIONS") != PackageManager.PERMISSION_GRANTED) {
+				requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, requestCode);
+			}
 		}
 	}
 

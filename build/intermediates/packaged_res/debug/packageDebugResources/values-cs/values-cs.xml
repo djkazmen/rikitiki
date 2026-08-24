@@ -280,7 +280,6 @@
     <string name="leave">Odejít</string>
     <string name="load_more_messages">Načíst více zpráv</string>
     <string name="location">Pozice</string>
-    <string name="magic_create_text">Provedeme vás procesem založení uživatelského účtu u conversations.im.¹\nVybráním conversations.im za svého poskytovatele budete moci komunikovat s uživateli u jiných poskytovatelů, poté co jim sdělíte své Jabber ID.</string>
     <string name="mam_prefs">Nastavení archivace</string>
     <string name="manual_verification_explanation">Opatrně porovnejte otisk zobrazený níže s otiskem vašeho kontatku.\nMůžete využít jakoukoliv bezpečnou formu komunikace pro jejich výměnu, jako třeba šifrovaný email nebo telefonát.</string>
     <string name="manually_verify">Ruční ověření</string>

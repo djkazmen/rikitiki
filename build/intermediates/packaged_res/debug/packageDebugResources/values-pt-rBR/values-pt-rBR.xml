@@ -296,7 +296,6 @@
     <string name="leave">Sair</string>
     <string name="load_more_messages">Carregar mais mensagens</string>
     <string name="location">Localização</string>
-    <string name="magic_create_text">Nós guiaremos você ao longo do processo de criar uma conta em conversations.im.¹\nAo usar esse provedor você também poderá se comunicar com usuários de outros provedores. Basta fornecê-los a sua identificação Jabber completa.</string>
     <string name="mam_prefs">Preferências de arquivamento</string>
     <string name="manual_verification_explanation">Compare cuidadosamente a impressão digital abaixo com aquela do seu contato.\nVocê pode usar qualquer forma de comunicação segura, como um e-mail criptografado ou uma ligação telefônica para efetuar a troca.</string>
     <string name="manually_verify">Verificado manualmente</string>

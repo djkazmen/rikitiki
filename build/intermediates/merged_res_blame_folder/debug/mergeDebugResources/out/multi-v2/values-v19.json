@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "pl.rikitiki.im-mergeDebugResources-23:/values-v19/values-v19.xml",
+            "outputFile": "pl.rikitiki.im-mergeDebugResources-24:/values-v19/values-v19.xml",
             "map": [
                 {
                     "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/2e7b42f0977e1c18d4cee22b47946847/transformed/jetified-EnhancedListView-0.3.4/res/values-v19/values.xml",

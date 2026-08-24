@@ -304,7 +304,6 @@ Conversations będzie wciąż ograniczał transfer danych, kiedy tylko to jest m
     <string name="leave">Opuść pokój</string>
     <string name="load_more_messages">Załaduj wiecej wiadomości</string>
     <string name="location">Lokalizacja</string>
-    <string name="magic_create_text">Przeprowadzimy Cię przez proces tworzenia konta na conversations.im.\nKiedy wybierzesz konto na serwerze conversations.im, będziesz mógł komunikować się z użytkownikami na innych serwerach podając im swój pełen Jabber ID.</string>
     <string name="mam_prefs">Preferencje archiwizacji</string>
     <string name="manual_verification_explanation">Ostrożnie porównaj odcisk klucza pokazany poniżej z odciskiem klucza twojego kontaktu.\nMożesz użyć bezpiecznego kanału komunikacji takiego, jak szyfrowany e-mail lub rozmowa telefoniczna, by wymienić odciski klucza.</string>
     <string name="manually_verify">Weryfikuj ręcznie</string>

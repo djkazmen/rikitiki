@@ -1,8 +1,18 @@
 {
     "logs": [
         {
-            "outputFile": "pl.rikitiki.im-mergeDebugResources-23:/values-ky/values-ky.xml",
+            "outputFile": "pl.rikitiki.im-mergeDebugResources-24:/values-ky/values-ky.xml",
             "map": [
+                {
+                    "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/c0db9cbfa50dc6e9e0ae6465c429237a/transformed/jetified-credentials-1.5.0/res/values-ky/values-ky.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,165",
+                        "endColumns": "109,122",
+                        "endOffsets": "160,283"
+                    }
+                },
                 {
                     "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/res/values-ky/values-ky.xml",
                     "from": {
@@ -11,6 +21,13 @@
                         "startOffsets": "55,155,257,360,467,569,673,784",
                         "endColumns": "99,101,102,106,101,103,110,100",
                         "endOffsets": "150,252,355,462,564,668,779,880"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "288,388,490,593,700,802,906,1017",
+                        "endColumns": "99,101,102,106,101,103,110,100",
+                        "endOffsets": "383,485,588,695,797,901,1012,1113"
                     }
                 }
             ]

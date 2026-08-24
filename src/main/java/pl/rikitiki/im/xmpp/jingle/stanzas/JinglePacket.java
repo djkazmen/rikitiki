@@ -2,12 +2,15 @@ package pl.rikitiki.im.xmpp.jingle.stanzas;
 
 import android.util.Base64;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import pl.rikitiki.im.xml.Element;
 import pl.rikitiki.im.xmpp.jid.Jid;
 import pl.rikitiki.im.xmpp.stanzas.IqPacket;
 
 public class JinglePacket extends IqPacket {
-	Content content = null;
+	List<Content> contents = new ArrayList<>();
 	Reason reason = null;
 	Element checksum = null;
 	Element jingle = new Element("jingle");
@@ -15,11 +18,14 @@ public class JinglePacket extends IqPacket {
 	@Override
 	public Element addChild(Element child) {
 		if ("jingle".equals(child.getName())) {
-			Element contentElement = child.findChild("content");
-			if (contentElement != null) {
-				this.content = new Content();
-				this.content.setChildren(contentElement.getChildren());
-				this.content.setAttributes(contentElement.getAttributes());
+			this.contents = new ArrayList<>();
+			for (final Element contentElement : child.getChildren()) {
+				if ("content".equals(contentElement.getName())) {
+					final Content content = new Content();
+					content.setChildren(contentElement.getChildren());
+					content.setAttributes(contentElement.getAttributes());
+					this.contents.add(content);
+				}
 			}
 			Element reasonElement = child.findChild("reason");
 			if (reasonElement != null) {
@@ -34,15 +40,30 @@ public class JinglePacket extends IqPacket {
 	}
 
 	public JinglePacket setContent(Content content) {
-		this.content = content;
+		this.contents = new ArrayList<>();
+		this.contents.add(content);
 		return this;
 	}
 
+	// Used for multi-media sessions (e.g. audio+video calls) where a single
+	// session-initiate/session-accept carries more than one <content/>.
+	public JinglePacket addContent(Content content) {
+		this.contents.add(content);
+		return this;
+	}
+
+	// Back-compat accessor for every existing single-content call site
+	// (audio-only calls, file transfer) — always the first content, same
+	// fallback-to-empty-Content behavior as before this class supported lists.
 	public Content getJingleContent() {
-		if (this.content == null) {
-			this.content = new Content();
+		if (this.contents.isEmpty()) {
+			this.contents.add(new Content());
 		}
-		return this.content;
+		return this.contents.get(0);
+	}
+
+	public List<Content> getContents() {
+		return this.contents;
 	}
 
 	public JinglePacket setReason(Reason reason) {
@@ -62,8 +83,8 @@ public class JinglePacket extends IqPacket {
 		this.children.clear();
 		this.jingle.clearChildren();
 		this.jingle.setAttribute("xmlns", "urn:xmpp:jingle:1");
-		if (this.content != null) {
-			jingle.addChild(this.content);
+		for (final Content content : this.contents) {
+			jingle.addChild(content);
 		}
 		if (this.reason != null) {
 			jingle.addChild(this.reason);

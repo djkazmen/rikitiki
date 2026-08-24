@@ -293,7 +293,6 @@
     <string name="leave">Lämna</string>
     <string name="load_more_messages">Ladda fler meddelanden</string>
     <string name="location">Position</string>
-    <string name="magic_create_text">Du kommer nu att få hjälp med att skapa ett konto på conversations.im.¹\nNär conversations.im väljs som leverantör kommer du kunna kommunicera med användare hos andra leverantörer genom att ge dem ditt Jabber ID.</string>
     <string name="mam_prefs">Arkiveringsinställningar</string>
     <string name="manual_verification_explanation">Jämför noggrant fingeravtrycket nedan med din kontakts fingeravtryck.\nDu kan använda valfri typ av betrodd kommunikation som ett krypterat e-mail eller ett telefonsamtal för att utbyta dessa.</string>
     <string name="manually_verify">Verifiera manuellt</string>

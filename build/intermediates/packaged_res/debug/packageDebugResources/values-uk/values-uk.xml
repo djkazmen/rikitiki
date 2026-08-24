@@ -299,7 +299,6 @@
     <string name="leave">Залишити</string>
     <string name="load_more_messages">Завантажити більше повідомлень</string>
     <string name="location">Місцезнаходження</string>
-    <string name="magic_create_text">Ми допоможемо вам крок за кроком створити обліковий запис на conversations.im.¹\nОбравши conversations.im постачальником послуг, ви зможете спілкуватися з користувачами інших постачальників, надавши їм ваш повний Jabber ID.</string>
     <string name="mam_prefs">Налаштування збереження</string>
     <string name="manual_verification_explanation">Обережно порівняльте відбиток, показаний нижче, з відбитком Вашого контакта.\nВи можете використати будь-яку форму комунікації, таку як зашифрований лист або телефонний дзвінок, щоб обмінятися відбитками.</string>
     <string name="manually_verify">Перевірити вручну</string>

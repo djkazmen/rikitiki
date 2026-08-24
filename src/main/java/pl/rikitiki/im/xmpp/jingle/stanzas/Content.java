@@ -5,6 +5,10 @@ import pl.rikitiki.im.xml.Element;
 
 public class Content extends Element {
 
+	public static final String RTP_NS = "urn:xmpp:jingle:apps:rtp:1";
+	public static final String ICE_UDP_TRANSPORT_NS = "urn:xmpp:jingle:transports:ice-udp:1";
+	public static final String DTLS_NS = "urn:xmpp:jingle:apps:dtls:0";
+
 	public enum Version {
 		FT_3("urn:xmpp:jingle:apps:file-transfer:3"),
 		FT_4("urn:xmpp:jingle:apps:file-transfer:4"),
@@ -128,5 +132,31 @@ public class Content extends Element {
 
 	public boolean hasIbbTransport() {
 		return this.hasChild("transport", "urn:xmpp:jingle:transports:ibb:1");
+	}
+
+	public boolean hasRtpDescription() {
+		return this.hasChild("description", RTP_NS);
+	}
+
+	public Element getRtpDescription() {
+		return this.findChild("description", RTP_NS);
+	}
+
+	public Element setRtpDescription(String media) {
+		Element description = this.addChild("description", RTP_NS);
+		description.setAttribute("media", media);
+		return description;
+	}
+
+	public boolean hasIceUdpTransport() {
+		return this.hasChild("transport", ICE_UDP_TRANSPORT_NS);
+	}
+
+	public Element iceUdpTransport() {
+		Element transport = this.findChild("transport", ICE_UDP_TRANSPORT_NS);
+		if (transport == null) {
+			transport = this.addChild("transport", ICE_UDP_TRANSPORT_NS);
+		}
+		return transport;
 	}
 }

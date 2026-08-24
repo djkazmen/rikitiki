@@ -1,31 +1,31 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:207:9-215:20
+INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:228:9-236:20
 	android:grantUriPermissions
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:211:13-47
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:232:13-47
 	android:authorities
 		INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:209:13-57
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:230:13-57
 	android:exported
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:210:13-37
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:231:13-37
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:208:13-62
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:229:13-62
 provider#pl.rikitiki.im.services.BarcodeProvider
-INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:216:9-220:49
+INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:237:9-241:49
 	android:grantUriPermissions
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:220:13-47
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:241:13-47
 	android:authorities
 		INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:217:13-60
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:238:13-60
 	android:exported
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:219:13-37
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:240:13-37
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:218:13-53
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:239:13-53
 manifest
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:2:1-225:12
-INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:2:1-225:12
-INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:2:1-225:12
-INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:2:1-225:12
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:2:1-246:12
+INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:2:1-246:12
+INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:2:1-246:12
+INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:2:1-246:12
 MERGED from [:libs:MemorizingTrustManager] /home/kazmen/Documents/projects/claude/rikitiki/libs/MemorizingTrustManager/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-15:12
 MERGED from [de.timroes.android:EnhancedListView:0.3.4] /home/kazmen/.gradle/caches/9.4.1/transforms/2e7b42f0977e1c18d4cee22b47946847/transformed/jetified-EnhancedListView-0.3.4/AndroidManifest.xml:2:1-15:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/6704f29c0538bf64832b43d99d518faf/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -33,6 +33,7 @@ MERGED from [androidx.fragment:fragment:1.0.0] /home/kazmen/.gradle/caches/9.4.1
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/c6c7250b0f63f7080bc833e6184b3b73/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.1.0] /home/kazmen/.gradle/caches/9.4.1/transforms/1996cc6f0ab88d558b492241575e233a/transformed/viewpager-1.1.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/kazmen/.gradle/caches/9.4.1/transforms/b1cb15448523e3cc26591e3664f7fefd/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.credentials:credentials:1.5.0] /home/kazmen/.gradle/caches/9.4.1/transforms/c0db9cbfa50dc6e9e0ae6465c429237a/transformed/jetified-credentials-1.5.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/434ddac6c5323c8128a6dfaa3ca171a1/transformed/coordinatorlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/47dba02d856820f809232b36f2c72b8b/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.1.0] /home/kazmen/.gradle/caches/9.4.1/transforms/c9ab3946b25c3f3c89afc65aeee55843/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -44,6 +45,7 @@ MERGED from [androidx.loader:loader:1.0.0] /home/kazmen/.gradle/caches/9.4.1/tra
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/62a10198e12ba832d97ed448a4b6f2f0/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/6c740637f9103a424d33f2cf6554b2c3/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:17:1-30:12
+MERGED from [io.getstream:stream-webrtc-android:1.3.8] /home/kazmen/.gradle/caches/9.4.1/transforms/dc1ab5ab1f2d18781384b45a9ccbac89/transformed/jetified-stream-webrtc-android-1.3.8/AndroidManifest.xml:17:1-25:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/055f38517b8c2421aa923bc5072b90b1/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /home/kazmen/.gradle/caches/9.4.1/transforms/a5e524ad0dc321a22651373022a43381/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /home/kazmen/.gradle/caches/9.4.1/transforms/4bd4decddd19c7028bce30c1e50e72df/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:17:1-22:12
@@ -94,10 +96,14 @@ ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManif
 		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:8:22-68
 uses-permission#android.permission.INTERNET
 ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:9:5-67
+MERGED from [io.getstream:stream-webrtc-android:1.3.8] /home/kazmen/.gradle/caches/9.4.1/transforms/dc1ab5ab1f2d18781384b45a9ccbac89/transformed/jetified-stream-webrtc-android-1.3.8/AndroidManifest.xml:22:5-67
+MERGED from [io.getstream:stream-webrtc-android:1.3.8] /home/kazmen/.gradle/caches/9.4.1/transforms/dc1ab5ab1f2d18781384b45a9ccbac89/transformed/jetified-stream-webrtc-android-1.3.8/AndroidManifest.xml:22:5-67
 	android:name
 		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:9:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:10:5-79
+MERGED from [io.getstream:stream-webrtc-android:1.3.8] /home/kazmen/.gradle/caches/9.4.1/transforms/dc1ab5ab1f2d18781384b45a9ccbac89/transformed/jetified-stream-webrtc-android-1.3.8/AndroidManifest.xml:23:5-79
+MERGED from [io.getstream:stream-webrtc-android:1.3.8] /home/kazmen/.gradle/caches/9.4.1/transforms/dc1ab5ab1f2d18781384b45a9ccbac89/transformed/jetified-stream-webrtc-android-1.3.8/AndroidManifest.xml:23:5-79
 	android:name
 		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:10:22-76
 uses-permission#android.permission.WAKE_LOCK
@@ -120,10 +126,58 @@ uses-permission#android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
 ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:15:5-95
 	android:name
 		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:15:22-92
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:18:5-71
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:18:22-68
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:19:5-80
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:19:22-77
+uses-permission#android.permission.CAMERA
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:20:5-65
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:20:22-62
+uses-permission#android.permission.BLUETOOTH
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:22:5-95
+	android:maxSdkVersion
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:22:66-92
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:22:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:23:5-101
+	android:maxSdkVersion
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:23:72-98
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:23:22-71
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:24:5-76
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:24:22-73
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:25:5-77
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:25:22-74
+uses-permission#android.permission.FOREGROUND_SERVICE_MICROPHONE
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:26:5-88
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:26:22-85
+uses-permission#android.permission.FOREGROUND_SERVICE_CAMERA
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:27:5-84
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:27:22-81
+uses-permission#android.permission.USE_FULL_SCREEN_INTENT
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:28:5-81
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:28:22-78
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:29:5-77
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:29:22-74
 uses-sdk
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:17:5-71
-INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:17:5-71
-INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:17:5-71
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:31:5-71
+INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:31:5-71
+INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:31:5-71
 MERGED from [:libs:MemorizingTrustManager] /home/kazmen/Documents/projects/claude/rikitiki/libs/MemorizingTrustManager/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-44
 MERGED from [:libs:MemorizingTrustManager] /home/kazmen/Documents/projects/claude/rikitiki/libs/MemorizingTrustManager/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-44
 MERGED from [de.timroes.android:EnhancedListView:0.3.4] /home/kazmen/.gradle/caches/9.4.1/transforms/2e7b42f0977e1c18d4cee22b47946847/transformed/jetified-EnhancedListView-0.3.4/AndroidManifest.xml:8:5-10:41
@@ -138,6 +192,8 @@ MERGED from [androidx.viewpager:viewpager:1.1.0] /home/kazmen/.gradle/caches/9.4
 MERGED from [androidx.viewpager:viewpager:1.1.0] /home/kazmen/.gradle/caches/9.4.1/transforms/1996cc6f0ab88d558b492241575e233a/transformed/viewpager-1.1.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/kazmen/.gradle/caches/9.4.1/transforms/b1cb15448523e3cc26591e3664f7fefd/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/kazmen/.gradle/caches/9.4.1/transforms/b1cb15448523e3cc26591e3664f7fefd/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.credentials:credentials:1.5.0] /home/kazmen/.gradle/caches/9.4.1/transforms/c0db9cbfa50dc6e9e0ae6465c429237a/transformed/jetified-credentials-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.credentials:credentials:1.5.0] /home/kazmen/.gradle/caches/9.4.1/transforms/c0db9cbfa50dc6e9e0ae6465c429237a/transformed/jetified-credentials-1.5.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/434ddac6c5323c8128a6dfaa3ca171a1/transformed/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/434ddac6c5323c8128a6dfaa3ca171a1/transformed/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/47dba02d856820f809232b36f2c72b8b/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
@@ -160,6 +216,8 @@ MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/kazme
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/6c740637f9103a424d33f2cf6554b2c3/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:20:5-44
+MERGED from [io.getstream:stream-webrtc-android:1.3.8] /home/kazmen/.gradle/caches/9.4.1/transforms/dc1ab5ab1f2d18781384b45a9ccbac89/transformed/jetified-stream-webrtc-android-1.3.8/AndroidManifest.xml:20:5-44
+MERGED from [io.getstream:stream-webrtc-android:1.3.8] /home/kazmen/.gradle/caches/9.4.1/transforms/dc1ab5ab1f2d18781384b45a9ccbac89/transformed/jetified-stream-webrtc-android-1.3.8/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/055f38517b8c2421aa923bc5072b90b1/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/055f38517b8c2421aa923bc5072b90b1/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /home/kazmen/.gradle/caches/9.4.1/transforms/a5e524ad0dc321a22651373022a43381/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:20:5-44
@@ -205,14 +263,14 @@ MERGED from [com.wefika:flowlayout:0.4.1] /home/kazmen/.gradle/caches/9.4.1/tran
 MERGED from [com.github.ypresto:android-transcoder:v0.2.0] /home/kazmen/.gradle/caches/9.4.1/transforms/922948919d20cbe0f624cffb2823cadb/transformed/jetified-android-transcoder-v0.2.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.ypresto:android-transcoder:v0.2.0] /home/kazmen/.gradle/caches/9.4.1/transforms/922948919d20cbe0f624cffb2823cadb/transformed/jetified-android-transcoder-v0.2.0/AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:17:15-68
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:31:15-68
 	android:targetSdkVersion
 		INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml
 application
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:20:5-223:19
-INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:20:5-223:19
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:34:5-244:19
+INJECTED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:34:5-244:19
 MERGED from [:libs:MemorizingTrustManager] /home/kazmen/Documents/projects/claude/rikitiki/libs/MemorizingTrustManager/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:5-13:19
 MERGED from [:libs:MemorizingTrustManager] /home/kazmen/Documents/projects/claude/rikitiki/libs/MemorizingTrustManager/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:5-13:19
 MERGED from [de.timroes.android:EnhancedListView:0.3.4] /home/kazmen/.gradle/caches/9.4.1/transforms/2e7b42f0977e1c18d4cee22b47946847/transformed/jetified-EnhancedListView-0.3.4/AndroidManifest.xml:12:5-13:19
@@ -238,319 +296,331 @@ MERGED from [com.github.ypresto:android-transcoder:v0.2.0] /home/kazmen/.gradle/
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:24:9-41
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:38:9-41
 		REJECTED from [:libs:MemorizingTrustManager] /home/kazmen/Documents/projects/claude/rikitiki/libs/MemorizingTrustManager/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:18-56
 	android:icon
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:23:9-45
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:37:9-45
 	android:allowBackup
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:22:9-35
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:36:9-35
 	android:theme
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:25:9-50
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:39:9-50
 	android:networkSecurityConfig
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:21:9-76
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:35:9-76
 	tools:replace
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:26:9-38
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:40:9-38
 meta-data#com.google.android.gms.car.application
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:28:9-29:59
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:42:9-43:59
 	android:resource
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:29:13-56
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:43:13-56
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:28:20-73
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:42:20-73
 service#pl.rikitiki.im.services.XmppConnectionService
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:31:9-67
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:45:9-47:65
+	android:foregroundServiceType
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:47:13-62
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:31:18-64
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:46:13-59
 receiver#pl.rikitiki.im.services.EventReceiver
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:33:9-42:20
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:49:9-58:20
 	android:exported
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:35:13-37
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:51:13-37
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:34:13-51
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:50:13-51
 intent-filter#action:name:android.intent.action.ACTION_SHUTDOWN+action:name:android.intent.action.BOOT_COMPLETED+action:name:android.media.RINGER_MODE_CHANGED+action:name:android.net.conn.CONNECTIVITY_CHANGE
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:36:13-41:29
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:52:13-57:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:37:17-79
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:53:17-79
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:37:25-76
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:53:25-76
 action#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:38:17-79
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:54:17-79
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:38:25-76
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:54:25-76
 action#android.intent.action.ACTION_SHUTDOWN
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:39:17-80
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:55:17-80
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:39:25-77
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:55:25-77
 action#android.media.RINGER_MODE_CHANGED
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:40:17-76
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:56:17-76
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:40:25-73
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:56:25-73
 activity#pl.rikitiki.im.ui.ConversationActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:44:9-57:20
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:60:9-73:20
 	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:46:13-45
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:62:13-45
 	android:minWidth
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:48:13-37
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:64:13-37
 	android:minHeight
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:49:13-38
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:65:13-38
 	android:launchMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:47:13-44
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:63:13-44
 	android:windowSoftInputMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:50:13-54
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:13-54
 	android:exported
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:51:13-36
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:67:13-36
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:45:13-52
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:61:13-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:52:13-56:29
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:13-72:29
 action#android.intent.action.MAIN
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:53:17-69
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:69:17-69
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:53:25-66
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:69:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:55:17-77
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:71:17-77
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:55:27-74
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:71:27-74
 activity#pl.rikitiki.im.ui.StartConversationActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:58:9-98:20
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:74:9-114:20
 	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:60:13-70
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:76:13-70
 	android:launchMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:61:13-44
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:77:13-44
 	android:exported
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:62:13-36
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:78:13-36
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:59:13-57
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:75:13-57
 intent-filter#action:name:android.intent.action.SENDTO+category:name:android.intent.category.DEFAULT+data:host:jabber+data:scheme:imto
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:63:13-70:29
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:79:13-86:29
 action#android.intent.action.SENDTO
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:64:17-71
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:80:17-71
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:64:25-68
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:80:25-68
 category#android.intent.category.DEFAULT
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:17-76
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:17-76
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:27-73
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:27-73
 data
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:17-47
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:17-47
 	android:host
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:69:23-44
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:85:23-44
 	android:scheme
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:23-44
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:23-44
 	android:mimeType
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:162:23-52
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:183:23-52
 	android:pathPrefix
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:94:23-47
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:110:23-47
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:xmpp
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:71:13-78:29
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:87:13-94:29
 action#android.intent.action.VIEW
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:72:17-69
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:88:17-69
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:72:25-66
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:88:25-66
 category#android.intent.category.BROWSABLE
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:75:17-78
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:91:17-78
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:75:27-75
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:91:27-75
 intent-filter#action:name:android.nfc.action.NDEF_DISCOVERED+category:name:android.intent.category.DEFAULT+data:scheme:xmpp
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:79:13-85:29
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:95:13-101:29
 action#android.nfc.action.NDEF_DISCOVERED
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:80:17-77
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:96:17-77
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:80:25-74
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:96:25-74
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:conversations.im+data:pathPrefix:/i/+data:pathPrefix:/j/+data:scheme:https
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:86:13-96:29
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:102:13-112:29
 	android:autoVerify
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:86:28-53
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:102:28-53
 activity#pl.rikitiki.im.ui.WelcomeActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:99:9-102:46
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:115:9-118:46
 	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:101:13-45
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:117:13-45
 	android:launchMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:102:13-44
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:118:13-44
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:100:13-47
-activity#pl.rikitiki.im.ui.MagicCreateActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:103:9-106:46
-	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:105:13-51
-	android:launchMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:106:13-44
-	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:104:13-51
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:116:13-47
 activity#pl.rikitiki.im.ui.PhoneVerificationActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:107:9-110:46
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:119:9-122:46
 	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:109:13-70
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:121:13-70
 	android:launchMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:110:13-44
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:122:13-44
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:108:13-57
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:120:13-57
+activity#pl.rikitiki.im.ui.PhoneContactsActivity
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:123:9-125:60
+	android:label
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:125:13-57
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:124:13-53
 activity#pl.rikitiki.im.ui.SetPresenceActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:111:9-116:70
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:126:9-131:70
 	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:114:13-52
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:129:13-52
 	android:launchMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:115:13-44
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:130:13-44
 	android:windowSoftInputMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:116:13-67
-	android:configChanges
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:113:13-59
-	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:112:13-51
-activity#pl.rikitiki.im.ui.SettingsActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:117:9-119:63
-	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:119:13-60
-	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:118:13-48
-activity#pl.rikitiki.im.ui.ChooseContactActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:120:9-122:69
-	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:122:13-66
-	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:121:13-53
-activity#pl.rikitiki.im.ui.BlocklistActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:123:9-125:65
-	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:125:13-62
-	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:124:13-49
-activity#pl.rikitiki.im.ui.ChangePasswordActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:126:9-128:65
-	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:128:13-62
-	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:127:13-54
-activity#pl.rikitiki.im.ui.ManageAccountActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:129:9-132:47
-	android:label
 		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:131:13-67
-	android:launchMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:132:13-44
+	android:configChanges
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:128:13-59
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:130:13-53
-activity#pl.rikitiki.im.ui.EditAccountActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:133:9-136:70
-	android:launchMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:135:13-44
-	android:windowSoftInputMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:136:13-67
-	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:134:13-51
-activity#pl.rikitiki.im.ui.ConferenceDetailsActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:137:9-140:57
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:127:13-51
+activity#pl.rikitiki.im.ui.SettingsActivity
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:132:9-134:63
 	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:139:13-70
-	android:windowSoftInputMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:140:13-54
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:134:13-60
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:138:13-57
-activity#pl.rikitiki.im.ui.ContactDetailsActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:141:9-144:57
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:133:13-48
+activity#pl.rikitiki.im.ui.ChooseContactActivity
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:135:9-137:69
 	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:143:13-67
-	android:windowSoftInputMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:144:13-54
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:137:13-66
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:136:13-53
+activity#pl.rikitiki.im.ui.BlocklistActivity
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:138:9-140:65
+	android:label
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:140:13-62
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:139:13-49
+activity#pl.rikitiki.im.ui.ChangePasswordActivity
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:141:9-143:65
+	android:label
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:143:13-62
 	android:name
 		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:142:13-54
+activity#pl.rikitiki.im.ui.ManageAccountActivity
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:144:9-147:47
+	android:label
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:146:13-67
+	android:launchMode
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:147:13-44
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:145:13-53
+activity#pl.rikitiki.im.ui.EditAccountActivity
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:148:9-151:70
+	android:launchMode
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:150:13-44
+	android:windowSoftInputMode
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:151:13-67
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:149:13-51
+activity#pl.rikitiki.im.ui.ConferenceDetailsActivity
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:152:9-155:57
+	android:label
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:154:13-70
+	android:windowSoftInputMode
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:155:13-54
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:153:13-57
+activity#pl.rikitiki.im.ui.RtpSessionActivity
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:156:9-161:43
+	android:turnScreenOn
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:161:13-40
+	android:excludeFromRecents
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:159:13-46
+	android:showWhenLocked
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:160:13-42
+	android:launchMode
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:158:13-44
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:157:13-50
+activity#pl.rikitiki.im.ui.ContactDetailsActivity
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:162:9-165:57
+	android:label
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:164:13-67
+	android:windowSoftInputMode
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:165:13-54
+	android:name
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:163:13-54
 activity#pl.rikitiki.im.ui.PublishProfilePictureActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:145:9-148:57
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:166:9-169:57
 	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:147:13-64
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:168:13-64
 	android:windowSoftInputMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:148:13-54
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:169:13-54
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:146:13-61
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:167:13-61
 activity#pl.rikitiki.im.ui.VerifyOTRActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:149:9-152:57
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:170:9-173:57
 	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:151:13-47
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:172:13-47
 	android:windowSoftInputMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:152:13-54
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:173:13-54
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:150:13-49
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:171:13-49
 activity#pl.rikitiki.im.ui.ShareWithActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:153:9-182:20
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:174:9-203:20
 	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:155:13-45
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:176:13-45
 	android:exported
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:156:13-36
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:177:13-36
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:154:13-49
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:175:13-49
 intent-filter#action:name:android.intent.action.SEND+category:name:android.intent.category.DEFAULT+data:mimeType:text/plain
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:157:13-163:29
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:178:13-184:29
 action#android.intent.action.SEND
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:158:17-69
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:179:17-69
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:158:25-66
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:179:25-66
 intent-filter#action:name:android.intent.action.SEND+category:name:android.intent.category.DEFAULT+data:mimeType:*/*
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:164:13-170:29
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:185:13-191:29
 intent-filter#action:name:android.intent.action.SEND_MULTIPLE+category:name:android.intent.category.DEFAULT+data:mimeType:image/*
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:171:13-177:29
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:192:13-198:29
 action#android.intent.action.SEND_MULTIPLE
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:172:17-78
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:193:17-78
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:172:25-75
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:193:25-75
 meta-data#android.service.chooser.chooser_target_service
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:179:13-181:73
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:200:13-202:73
 	android:value
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:181:17-70
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:202:17-70
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:180:17-78
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:201:17-78
 activity#pl.rikitiki.im.ui.TrustKeysActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:183:9-186:63
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:204:9-207:63
 	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:185:13-61
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:206:13-61
 	android:windowSoftInputMode
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:186:13-60
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:207:13-60
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:184:13-49
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:205:13-49
 activity#de.duenndns.ssl.MemorizingActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:187:9-190:45
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:208:9-211:45
 MERGED from [:libs:MemorizingTrustManager] /home/kazmen/Documents/projects/claude/rikitiki/libs/MemorizingTrustManager/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:9-12:75
 MERGED from [:libs:MemorizingTrustManager] /home/kazmen/Documents/projects/claude/rikitiki/libs/MemorizingTrustManager/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:9-12:75
 	android:theme
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:189:13-54
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:210:13-54
 		REJECTED from [:libs:MemorizingTrustManager] /home/kazmen/Documents/projects/claude/rikitiki/libs/MemorizingTrustManager/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:12:13-72
 	tools:replace
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:190:13-42
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:211:13-42
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:188:13-62
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:209:13-62
 activity#pl.rikitiki.im.ui.AboutActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:191:9-194:65
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:212:9-215:65
 	android:parentActivityName
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:194:13-62
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:215:13-62
 	android:label
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:193:13-57
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:214:13-57
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:192:13-45
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:213:13-45
 activity#com.soundcloud.android.crop.CropImageActivity
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:195:9-82
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:216:9-82
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:195:19-79
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:216:19-79
 service#pl.rikitiki.im.services.ExportLogsService
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:197:9-63
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:218:9-63
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:197:18-60
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:218:18-60
 service#pl.rikitiki.im.services.ContactChooserTargetService
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:198:9-205:19
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:219:9-226:19
 	android:exported
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:200:13-36
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:221:13-36
 	android:permission
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:201:13-80
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:222:13-80
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:199:13-65
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:220:13-65
 intent-filter#action:name:android.service.chooser.ChooserTargetService
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:202:13-204:29
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:223:13-225:29
 action#android.service.chooser.ChooserTargetService
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:203:17-87
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:224:17-87
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:203:25-84
-meta-data#androidx.core.content.FileProvider.FILE_PROVIDER_PATHS
-ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:212:13-214:54
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:224:25-84
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:233:13-235:54
 	android:resource
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:214:17-51
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:235:17-51
 	android:name
-		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:213:17-86
+		ADDED from /home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:234:17-67
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/cb04fd3ec863acffe3455609b091a714/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
 	android:required

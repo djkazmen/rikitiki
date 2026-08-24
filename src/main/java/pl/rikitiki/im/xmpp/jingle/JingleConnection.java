@@ -40,7 +40,7 @@ import pl.rikitiki.im.xmpp.jingle.stanzas.JinglePacket;
 import pl.rikitiki.im.xmpp.jingle.stanzas.Reason;
 import pl.rikitiki.im.xmpp.stanzas.IqPacket;
 
-public class JingleConnection implements Transferable {
+public class JingleConnection implements Transferable, JingleSession {
 
 	private JingleConnectionManager mJingleConnectionManager;
 	private XmppConnectionService mXmppConnectionService;

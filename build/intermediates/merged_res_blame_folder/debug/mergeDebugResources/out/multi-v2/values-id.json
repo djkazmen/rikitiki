@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "pl.rikitiki.im-mergeDebugResources-23:/values-id/values-id.xml",
+            "outputFile": "pl.rikitiki.im-mergeDebugResources-24:/values-id/values-id.xml",
             "map": [
                 {
                     "source": "/home/kazmen/Documents/projects/claude/rikitiki/src/main/res/values-id/strings.xml",

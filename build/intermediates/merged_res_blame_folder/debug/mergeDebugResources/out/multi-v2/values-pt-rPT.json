@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "pl.rikitiki.im-mergeDebugResources-23:/values-pt-rPT/values-pt-rPT.xml",
+            "outputFile": "pl.rikitiki.im-mergeDebugResources-24:/values-pt-rPT/values-pt-rPT.xml",
             "map": [
                 {
                     "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/res/values-pt-rPT/values-pt-rPT.xml",
@@ -11,6 +11,23 @@
                         "startOffsets": "55,152,254,353,453,560,666,787",
                         "endColumns": "96,101,98,99,106,105,120,100",
                         "endOffsets": "147,249,348,448,555,661,782,883"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "294,391,493,592,692,799,905,1026",
+                        "endColumns": "96,101,98,99,106,105,120,100",
+                        "endOffsets": "386,488,587,687,794,900,1021,1122"
+                    }
+                },
+                {
+                    "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/c0db9cbfa50dc6e9e0ae6465c429237a/transformed/jetified-credentials-1.5.0/res/values-pt-rPT/values-pt-rPT.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,172",
+                        "endColumns": "116,121",
+                        "endOffsets": "167,289"
                     }
                 }
             ]

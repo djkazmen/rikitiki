@@ -296,7 +296,6 @@
     <string name="leave">Verlassen</string>
     <string name="load_more_messages">Weitere Nachrichten laden</string>
     <string name="location">Standort</string>
-    <string name="magic_create_text">Wir führen dich durch den Prozess der Kontoerstellung auf conversations.im.¹\nWenn du conversations.im als Provider wählst, kannst du mit Nutzern anderer Anbieter kommunizieren, indem du ihnen deine vollständige Jabber-ID gibst.</string>
     <string name="mam_prefs">Archivierungseinstellungen</string>
     <string name="manual_verification_explanation">Vergleiche den angezeigten Fingerabdruck sorgfältig mit dem deines Kontakts.\nDu kannst dazu einen sicheren Kommunikationsweg (z.B. verschlüsselte E-Mail oder Telefonanruf) zum Austausch nutzen.</string>
     <string name="manually_verify">Manuell überprüfen</string>

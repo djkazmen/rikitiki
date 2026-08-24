@@ -47,8 +47,10 @@ import pl.rikitiki.im.entities.Message;
 import pl.rikitiki.im.persistance.FileBackend;
 import pl.rikitiki.im.ui.ConversationActivity;
 import pl.rikitiki.im.ui.ManageAccountActivity;
+import pl.rikitiki.im.ui.RtpSessionActivity;
 import pl.rikitiki.im.ui.SettingsActivity;
 import pl.rikitiki.im.ui.TimePreference;
+import pl.rikitiki.im.utils.CallRingtonePlayer;
 import pl.rikitiki.im.utils.GeoHelper;
 import pl.rikitiki.im.utils.UIHelper;
 import pl.rikitiki.im.xmpp.XmppConnection;
@@ -62,6 +64,7 @@ public class NotificationService {
 	private static final String CHANNEL_MESSAGES = "messages";
 	private static final String CHANNEL_FOREGROUND_SERVICE = "foreground_service";
 	private static final String CHANNEL_ERRORS = "errors";
+	private static final String CHANNEL_CALLS = "calls";
 
 	private final XmppConnectionService mXmppConnectionService;
 
@@ -72,6 +75,7 @@ public class NotificationService {
 	public static final int NOTIFICATION_ID = 2 * NOTIFICATION_ID_MULTIPLIER;
 	public static final int FOREGROUND_NOTIFICATION_ID = NOTIFICATION_ID_MULTIPLIER * 4;
 	public static final int ERROR_NOTIFICATION_ID = NOTIFICATION_ID_MULTIPLIER * 6;
+	public static final int CALL_NOTIFICATION_ID = NOTIFICATION_ID_MULTIPLIER * 8;
 
 	private Conversation mOpenConversation;
 	private boolean mIsInForeground;
@@ -108,6 +112,12 @@ public class NotificationService {
 				mXmppConnectionService.getString(R.string.problem_connecting_to_account),
 				NotificationManager.IMPORTANCE_DEFAULT);
 		notificationManager.createNotificationChannel(errors);
+
+		final NotificationChannel calls = new NotificationChannel(CHANNEL_CALLS,
+				mXmppConnectionService.getString(R.string.action_call),
+				NotificationManager.IMPORTANCE_HIGH);
+		calls.setLightColor(0xff00FF00);
+		notificationManager.createNotificationChannel(calls);
 	}
 
 	public boolean notify(final Message message) {
@@ -747,6 +757,72 @@ public class NotificationService {
 					createDisableForeground());
 		}
 		return mBuilder.build();
+	}
+
+	public void showIncomingCallNotification(final pl.rikitiki.im.xmpp.jingle.JingleRtpConnection connection) {
+		final String displayName = connection.getAccount().getRoster().getContact(connection.getCounterPart()).getDisplayName();
+		final NotificationCompat.Builder builder = new NotificationCompat.Builder(mXmppConnectionService, CHANNEL_CALLS);
+		builder.setContentTitle(displayName);
+		builder.setContentText(mXmppConnectionService.getString(R.string.incoming_call));
+		builder.setSmallIcon(R.drawable.ic_action_call);
+		builder.setPriority(NotificationCompat.PRIORITY_HIGH);
+		builder.setCategory(NotificationCompat.CATEGORY_CALL);
+		builder.setOngoing(true);
+		builder.setAutoCancel(false);
+		builder.addAction(0, mXmppConnectionService.getString(R.string.accept_call), createCallActionIntent(XmppConnectionService.ACTION_ACCEPT_CALL));
+		builder.addAction(0, mXmppConnectionService.getString(R.string.decline_call), createCallActionIntent(XmppConnectionService.ACTION_DECLINE_CALL));
+		// Guarantees the call screen jumps to the foreground/over the lock
+		// screen like a real incoming call, instead of relying on a raw
+		// startActivity() from a background service context (blocked by
+		// Android 10+ background-activity-launch restrictions).
+		builder.setFullScreenIntent(createFullScreenCallIntent(), true);
+		NotificationManagerCompat.from(mXmppConnectionService).notify(CALL_NOTIFICATION_ID, builder.build());
+	}
+
+	private PendingIntent createFullScreenCallIntent() {
+		final Intent intent = new Intent(mXmppConnectionService, RtpSessionActivity.class);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		return PendingIntent.getActivity(mXmppConnectionService, CALL_NOTIFICATION_ID, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+	}
+
+	private final CallRingtonePlayer callRingtonePlayer = new CallRingtonePlayer();
+
+	public void startRinging() {
+		final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mXmppConnectionService);
+		final boolean vibrate = preferences.getBoolean("vibrate_on_call", mXmppConnectionService.getResources().getBoolean(R.bool.vibrate_on_call));
+		final String ringtone = preferences.getString("incoming_call_ringtone", mXmppConnectionService.getString(R.string.incoming_call_ringtone));
+		final Uri ringtoneUri = ringtone == null || ringtone.isEmpty() ? null : Uri.parse(ringtone);
+		callRingtonePlayer.start(mXmppConnectionService, vibrate, ringtoneUri);
+	}
+
+	public void stopRinging() {
+		callRingtonePlayer.stop();
+	}
+
+	public Notification showOngoingCallNotification(final pl.rikitiki.im.xmpp.jingle.JingleRtpConnection connection) {
+		final String displayName = connection.getAccount().getRoster().getContact(connection.getCounterPart()).getDisplayName();
+		final NotificationCompat.Builder builder = new NotificationCompat.Builder(mXmppConnectionService, CHANNEL_CALLS);
+		builder.setContentTitle(displayName);
+		builder.setContentText(mXmppConnectionService.getString(R.string.ongoing_call));
+		builder.setSmallIcon(R.drawable.ic_action_call);
+		builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+		builder.setCategory(NotificationCompat.CATEGORY_CALL);
+		builder.setOngoing(true);
+		builder.setAutoCancel(false);
+		builder.addAction(0, mXmppConnectionService.getString(R.string.hangup_call), createCallActionIntent(XmppConnectionService.ACTION_HANGUP_CALL));
+		final Notification notification = builder.build();
+		NotificationManagerCompat.from(mXmppConnectionService).notify(CALL_NOTIFICATION_ID, notification);
+		return notification;
+	}
+
+	public void cancelCallNotification() {
+		NotificationManagerCompat.from(mXmppConnectionService).cancel(CALL_NOTIFICATION_ID);
+	}
+
+	private PendingIntent createCallActionIntent(final String action) {
+		final Intent intent = new Intent(mXmppConnectionService, XmppConnectionService.class);
+		intent.setAction(action);
+		return PendingIntent.getService(mXmppConnectionService, CALL_NOTIFICATION_ID, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 	}
 
 	private PendingIntent createOpenConversationsIntent() {

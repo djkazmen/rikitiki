@@ -287,7 +287,6 @@
     <string name="leave">Покинуть</string>
     <string name="load_more_messages">Загрузить больше сообщений</string>
     <string name="location">Местоположение</string>
-    <string name="magic_create_text">Мы поможем Вам создать аккаунт на conversations.im¹.\nВыбрав conversations.im в качестве провайдера, вы сможете общаться с пользователями других провайдеров, сообщив им свой полный Jabber ID.</string>
     <string name="mam_prefs">Настройки архивирования</string>
     <string name="manual_verification_explanation">Внимательно сверьте отпечаток, показанный ниже с отпечатком вашего собеседника.\nДля обмена ими вы можете использовать любое доверенное средство связи, например, зашифрованное электронное письмо или телефонный звонок.</string>
     <string name="manually_verify">Ручная проверка</string>

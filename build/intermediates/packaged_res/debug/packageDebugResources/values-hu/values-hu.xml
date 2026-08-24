@@ -296,7 +296,6 @@
     <string name="leave">Távozás</string>
     <string name="load_more_messages">További üzenetek betöltése</string>
     <string name="location">Hely</string>
-    <string name="magic_create_text">Végigvezetjük a fiók létrehozás folyamatán a conversations.im-en.¹ \ nHa a conversations.im-et választja szolgáltatójának, akkor képes lesz kommunikálni a más szolgáltatóknál lévő felhasználókkal, ha megadja nekik a teljes Jabber ID-jét.</string>
     <string name="mam_prefs">Archívum beállításai</string>
     <string name="manual_verification_explanation">Óvatosan hasonlítsa össze az alábbi ujjlenyomatot a kapcsolatának ujjlenyomatával.\nBármilyen megbízható kommunikációs formát használhat, például titkosított e-mailt vagy telefonhívást azok cseréjéhez.</string>
     <string name="manually_verify">Manuális ellenőrzés</string>

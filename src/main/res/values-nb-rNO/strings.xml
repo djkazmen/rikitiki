@@ -601,7 +601,6 @@
   <string name="no_application_to_share_uri">Fant inget program til deling av URI</string>
   <string name="share_uri_with">Del URI med…</string>
   <string name="welcome_text">XMPP er en protokoll uavhengig av tilbydere. Du kan bruke denne klienten med hvilken XMPP-tjener du ønsker.\nAv beleilighetshensyn har vi dog gjort det lett å opprette en konto på conversations.im¹; en tilbyder spesielt myntet på bruk med Conversations.</string>
-  <string name="magic_create_text">Vi geleider deg gjennom prosessen med å opprette en konto på conversations.im.¹\nNår du velger conversations.im som tilbyder vil du kunne snakke med brukere fra andre tilbyder ved å gi dem din fulle Jabber-ID.</string>
   <string name="your_full_jid_will_be">Din fulle Jabber-ID vil være: %s</string>
   <string name="create_account">Opprett konto</string>
   <string name="use_own_provider">Bruk min egen tilbyder</string>

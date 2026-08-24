@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "pl.rikitiki.im-mergeDebugResources-23:/values-in/values-in.xml",
+            "outputFile": "pl.rikitiki.im-mergeDebugResources-24:/values-in/values-in.xml",
             "map": [
                 {
                     "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/res/values-in/values-in.xml",
@@ -13,11 +13,11 @@
                         "endOffsets": "145,247,344,441,547,665,780,881"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,14",
+                        "startLines": "4,5,6,7,8,9,10,16",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "100,195,297,394,491,597,715,1145",
+                        "startOffsets": "327,422,524,621,718,824,942,1372",
                         "endColumns": "94,101,96,96,105,117,114,100",
-                        "endOffsets": "190,292,389,486,592,710,825,1241"
+                        "endOffsets": "417,519,616,713,819,937,1052,1468"
                     }
                 },
                 {
@@ -30,11 +30,28 @@
                         "endOffsets": "281,328,411,470,525"
                     },
                     "to": {
-                        "startLines": "9,10,11,12,13",
+                        "startLines": "11,12,13,14,15",
                         "startColumns": "4,4,4,4,4",
-                        "startOffsets": "830,901,948,1031,1090",
+                        "startOffsets": "1057,1128,1175,1258,1317",
                         "endColumns": "70,46,82,58,54",
-                        "endOffsets": "896,943,1026,1085,1140"
+                        "endOffsets": "1123,1170,1253,1312,1367"
+                    }
+                },
+                {
+                    "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/c0db9cbfa50dc6e9e0ae6465c429237a/transformed/jetified-credentials-1.5.0/res/values-in/values-in.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,164",
+                        "endColumns": "108,117",
+                        "endOffsets": "159,277"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "100,209",
+                        "endColumns": "108,117",
+                        "endOffsets": "204,322"
                     }
                 }
             ]

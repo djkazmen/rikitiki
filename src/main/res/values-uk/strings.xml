@@ -604,7 +604,6 @@
   <string name="no_application_to_share_uri">Не знайдено програми, щоб поділитися URI</string>
   <string name="share_uri_with">Поділитися URI з…</string>
   <string name="welcome_text">XMPP — це протокол, який не залежить від постачальника послуг. Ви можете використовувати цю програму з будь-яким постачальником послуг XMPP, якого оберете.\nАле для вашої зручності, ми забезпечили вас простим способом створити новий обліковий запис на conversations.im¹; це ресурс, який особливо прилаштований для використання з програмою Conversations.</string>
-  <string name="magic_create_text">Ми допоможемо вам крок за кроком створити обліковий запис на conversations.im.¹\nОбравши conversations.im постачальником послуг, ви зможете спілкуватися з користувачами інших постачальників, надавши їм ваш повний Jabber ID.</string>
   <string name="your_full_jid_will_be">Ваш повний Jabber ID буде: %s</string>
   <string name="create_account">Створити обліковий запис</string>
   <string name="use_own_provider">Використати мого власного провайдера</string>

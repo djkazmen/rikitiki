@@ -105,6 +105,19 @@
             android:entryValues="@array/grace_periods_values"
             />
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_call_settings">
+        <CheckBoxPreference
+            android:defaultValue="@bool/vibrate_on_call"
+            android:key="vibrate_on_call"
+            android:summary="@string/pref_vibrate_on_call_summary"
+            android:title="@string/pref_vibrate_on_call"/>
+        <RingtonePreference
+            android:defaultValue="@string/incoming_call_ringtone"
+            android:key="incoming_call_ringtone"
+            android:ringtoneType="ringtone"
+            android:summary="@string/pref_call_ringtone_summary"
+            android:title="@string/pref_call_ringtone"/>
+    </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_attachments">
         <ListPreference
             android:defaultValue="@integer/auto_accept_filesize"

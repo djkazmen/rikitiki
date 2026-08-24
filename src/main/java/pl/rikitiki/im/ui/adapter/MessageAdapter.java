@@ -9,8 +9,10 @@ import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Handler;
 import androidx.core.content.ContextCompat;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -31,8 +33,10 @@ import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -115,6 +119,11 @@ public class MessageAdapter extends ArrayAdapter<Message> implements CopyTextVie
 
 	private boolean mIndicateReceived = false;
 	private boolean mUseGreenBackground = false;
+
+	private MediaPlayer mCurrentAudioPlayer;
+	private String mCurrentAudioMessageUuid;
+	private final Handler mAudioTickHandler = new Handler();
+	private Runnable mAudioTicker;
 
 	private OnQuoteListener onQuoteListener;
 
@@ -220,12 +229,21 @@ public class MessageAdapter extends ArrayAdapter<Message> implements CopyTextVie
 				info = getContext().getString(R.string.offering);
 				break;
 			case Message.STATUS_SEND_RECEIVED:
+				// Delivered (XEP-0184) but not yet read — single check, same
+				// icon this indicator always used before read receipts were
+				// visually distinguished from delivery receipts.
 				if (mIndicateReceived) {
+					viewHolder.indicatorReceived.setImageResource(R.drawable.ic_received_indicator);
 					viewHolder.indicatorReceived.setVisibility(View.VISIBLE);
 				}
 				break;
 			case Message.STATUS_SEND_DISPLAYED:
+				// Read (XEP-0333 "displayed" chat marker) — double check, so
+				// delivered-but-unread and actually-read are distinguishable
+				// at a glance, matching the familiar WhatsApp/Telegram/
+				// Messenger convention.
 				if (mIndicateReceived) {
+					viewHolder.indicatorReceived.setImageResource(R.drawable.ic_received_indicator_read);
 					viewHolder.indicatorReceived.setVisibility(View.VISIBLE);
 				}
 				break;
@@ -302,6 +320,9 @@ public class MessageAdapter extends ArrayAdapter<Message> implements CopyTextVie
 		if (viewHolder.download_button != null) {
 			viewHolder.download_button.setVisibility(View.GONE);
 		}
+		if (viewHolder.audioPlayer != null) {
+			viewHolder.audioPlayer.setVisibility(View.GONE);
+		}
 		viewHolder.image.setVisibility(View.GONE);
 		viewHolder.messageBody.setVisibility(View.VISIBLE);
 		viewHolder.messageBody.setText(text);
@@ -313,6 +334,9 @@ public class MessageAdapter extends ArrayAdapter<Message> implements CopyTextVie
 	private void displayDecryptionFailed(ViewHolder viewHolder, boolean darkBackground) {
 		if (viewHolder.download_button != null) {
 			viewHolder.download_button.setVisibility(View.GONE);
+		}
+		if (viewHolder.audioPlayer != null) {
+			viewHolder.audioPlayer.setVisibility(View.GONE);
 		}
 		viewHolder.image.setVisibility(View.GONE);
 		viewHolder.messageBody.setVisibility(View.VISIBLE);
@@ -326,6 +350,9 @@ public class MessageAdapter extends ArrayAdapter<Message> implements CopyTextVie
 	private void displayEmojiMessage(final ViewHolder viewHolder, final String body) {
 		if (viewHolder.download_button != null) {
 			viewHolder.download_button.setVisibility(View.GONE);
+		}
+		if (viewHolder.audioPlayer != null) {
+			viewHolder.audioPlayer.setVisibility(View.GONE);
 		}
 		viewHolder.image.setVisibility(View.GONE);
 		viewHolder.messageBody.setVisibility(View.VISIBLE);
@@ -408,6 +435,9 @@ public class MessageAdapter extends ArrayAdapter<Message> implements CopyTextVie
 	private void displayTextMessage(final ViewHolder viewHolder, final Message message, boolean darkBackground, int type) {
 		if (viewHolder.download_button != null) {
 			viewHolder.download_button.setVisibility(View.GONE);
+		}
+		if (viewHolder.audioPlayer != null) {
+			viewHolder.audioPlayer.setVisibility(View.GONE);
 		}
 		viewHolder.image.setVisibility(View.GONE);
 		viewHolder.messageBody.setVisibility(View.VISIBLE);
@@ -496,6 +526,7 @@ public class MessageAdapter extends ArrayAdapter<Message> implements CopyTextVie
 			final Message message, String text) {
 		viewHolder.image.setVisibility(View.GONE);
 		viewHolder.messageBody.setVisibility(View.GONE);
+		viewHolder.audioPlayer.setVisibility(View.GONE);
 		viewHolder.download_button.setVisibility(View.VISIBLE);
 		viewHolder.download_button.setText(text);
 		viewHolder.download_button.setOnClickListener(new OnClickListener() {
@@ -510,6 +541,7 @@ public class MessageAdapter extends ArrayAdapter<Message> implements CopyTextVie
 	private void displayOpenableMessage(ViewHolder viewHolder,final Message message) {
 		viewHolder.image.setVisibility(View.GONE);
 		viewHolder.messageBody.setVisibility(View.GONE);
+		viewHolder.audioPlayer.setVisibility(View.GONE);
 		viewHolder.download_button.setVisibility(View.VISIBLE);
 		viewHolder.download_button.setText(activity.getString(R.string.open_x_file, UIHelper.getFileDescriptionString(activity, message)));
 		viewHolder.download_button.setOnClickListener(new OnClickListener() {
@@ -521,9 +553,157 @@ public class MessageAdapter extends ArrayAdapter<Message> implements CopyTextVie
 		});
 	}
 
+	private boolean isAudioMessage(final Message message) {
+		final String mime = message.getMimeType();
+		return mime != null && mime.startsWith("audio/");
+	}
+
+	private void displayAudioMessage(final ViewHolder viewHolder, final Message message) {
+		viewHolder.image.setVisibility(View.GONE);
+		viewHolder.messageBody.setVisibility(View.GONE);
+		viewHolder.download_button.setVisibility(View.GONE);
+		viewHolder.audioPlayer.setVisibility(View.VISIBLE);
+		viewHolder.audioPlayer.setTag(message.getUuid());
+
+		final boolean isCurrent = message.getUuid().equals(mCurrentAudioMessageUuid) && mCurrentAudioPlayer != null;
+		final boolean isPlaying = isCurrent && mCurrentAudioPlayer.isPlaying();
+		viewHolder.audioPlayerPlayPause.setImageResource(isPlaying ? R.drawable.ic_action_pause : R.drawable.ic_action_play);
+		if (isCurrent) {
+			final int duration = mCurrentAudioPlayer.getDuration();
+			final int position = mCurrentAudioPlayer.getCurrentPosition();
+			viewHolder.audioPlayerSeekbar.setMax(Math.max(duration, 1));
+			viewHolder.audioPlayerSeekbar.setProgress(position);
+			viewHolder.audioPlayerDuration.setText(formatAudioMillis(duration - position));
+			if (isPlaying) {
+				startAudioTicker(viewHolder, message);
+			}
+		} else {
+			viewHolder.audioPlayerSeekbar.setMax(1);
+			viewHolder.audioPlayerSeekbar.setProgress(0);
+			viewHolder.audioPlayerDuration.setText(formatAudioMillis(0));
+		}
+
+		viewHolder.audioPlayerSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+				if (fromUser && message.getUuid().equals(mCurrentAudioMessageUuid) && mCurrentAudioPlayer != null) {
+					mCurrentAudioPlayer.seekTo(progress);
+				}
+			}
+
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {}
+
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {}
+		});
+
+		viewHolder.audioPlayerPlayPause.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				toggleAudioPlayback(viewHolder, message);
+			}
+		});
+	}
+
+	private void toggleAudioPlayback(final ViewHolder viewHolder, final Message message) {
+		if (message.getUuid().equals(mCurrentAudioMessageUuid) && mCurrentAudioPlayer != null) {
+			if (mCurrentAudioPlayer.isPlaying()) {
+				mCurrentAudioPlayer.pause();
+				stopAudioTicker();
+				viewHolder.audioPlayerPlayPause.setImageResource(R.drawable.ic_action_play);
+			} else {
+				mCurrentAudioPlayer.start();
+				viewHolder.audioPlayerPlayPause.setImageResource(R.drawable.ic_action_pause);
+				startAudioTicker(viewHolder, message);
+			}
+			return;
+		}
+		stopAudioPlayback();
+		final DownloadableFile file = activity.xmppConnectionService.getFileBackend().getFile(message);
+		if (!file.exists()) {
+			Toast.makeText(activity, R.string.file_deleted, Toast.LENGTH_SHORT).show();
+			return;
+		}
+		try {
+			final MediaPlayer mediaPlayer = new MediaPlayer();
+			mediaPlayer.setDataSource(file.getAbsolutePath());
+			mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+				@Override
+				public void onCompletion(MediaPlayer mp) {
+					stopAudioTicker();
+					viewHolder.audioPlayerPlayPause.setImageResource(R.drawable.ic_action_play);
+					viewHolder.audioPlayerSeekbar.setProgress(0);
+					viewHolder.audioPlayerDuration.setText(formatAudioMillis(mp.getDuration()));
+					mCurrentAudioMessageUuid = null;
+				}
+			});
+			mediaPlayer.prepare();
+			mediaPlayer.start();
+			mCurrentAudioPlayer = mediaPlayer;
+			mCurrentAudioMessageUuid = message.getUuid();
+			viewHolder.audioPlayerSeekbar.setMax(Math.max(mediaPlayer.getDuration(), 1));
+			viewHolder.audioPlayerPlayPause.setImageResource(R.drawable.ic_action_pause);
+			startAudioTicker(viewHolder, message);
+		} catch (final Exception e) {
+			Toast.makeText(activity, R.string.voice_message_playback_failed, Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	private void startAudioTicker(final ViewHolder viewHolder, final Message message) {
+		stopAudioTicker();
+		mAudioTicker = new Runnable() {
+			@Override
+			public void run() {
+				if (mCurrentAudioPlayer == null || !message.getUuid().equals(mCurrentAudioMessageUuid)) {
+					return;
+				}
+				if (!message.getUuid().equals(viewHolder.audioPlayer.getTag())) {
+					return;
+				}
+				if (mCurrentAudioPlayer.isPlaying()) {
+					final int position = mCurrentAudioPlayer.getCurrentPosition();
+					viewHolder.audioPlayerSeekbar.setProgress(position);
+					viewHolder.audioPlayerDuration.setText(formatAudioMillis(mCurrentAudioPlayer.getDuration() - position));
+					mAudioTickHandler.postDelayed(this, 200);
+				}
+			}
+		};
+		mAudioTickHandler.post(mAudioTicker);
+	}
+
+	private void stopAudioTicker() {
+		if (mAudioTicker != null) {
+			mAudioTickHandler.removeCallbacks(mAudioTicker);
+			mAudioTicker = null;
+		}
+	}
+
+	public void stopAudioPlayback() {
+		stopAudioTicker();
+		if (mCurrentAudioPlayer != null) {
+			try {
+				mCurrentAudioPlayer.release();
+			} catch (final Exception ignored) {
+			}
+			mCurrentAudioPlayer = null;
+		}
+		mCurrentAudioMessageUuid = null;
+	}
+
+	private static String formatAudioMillis(int millis) {
+		if (millis < 0) {
+			millis = 0;
+		}
+		final long minutes = (millis / 1000) / 60;
+		final long seconds = (millis / 1000) % 60;
+		return String.format(Locale.US, "%02d:%02d", minutes, seconds);
+	}
+
 	private void displayLocationMessage(ViewHolder viewHolder, final Message message) {
 		viewHolder.image.setVisibility(View.GONE);
 		viewHolder.messageBody.setVisibility(View.GONE);
+		viewHolder.audioPlayer.setVisibility(View.GONE);
 		viewHolder.download_button.setVisibility(View.VISIBLE);
 		viewHolder.download_button.setText(R.string.show_location);
 		viewHolder.download_button.setOnClickListener(new OnClickListener() {
@@ -539,6 +719,9 @@ public class MessageAdapter extends ArrayAdapter<Message> implements CopyTextVie
 			final Message message) {
 		if (viewHolder.download_button != null) {
 			viewHolder.download_button.setVisibility(View.GONE);
+		}
+		if (viewHolder.audioPlayer != null) {
+			viewHolder.audioPlayer.setVisibility(View.GONE);
 		}
 		viewHolder.messageBody.setVisibility(View.GONE);
 		viewHolder.image.setVisibility(View.VISIBLE);
@@ -627,6 +810,10 @@ public class MessageAdapter extends ArrayAdapter<Message> implements CopyTextVie
 						.findViewById(R.id.message_time);
 					viewHolder.indicatorReceived = (ImageView) view
 						.findViewById(R.id.indicator_received);
+					viewHolder.audioPlayer = (LinearLayout) view.findViewById(R.id.audio_player);
+					viewHolder.audioPlayerPlayPause = (ImageButton) view.findViewById(R.id.audio_player_play_pause);
+					viewHolder.audioPlayerSeekbar = (SeekBar) view.findViewById(R.id.audio_player_seekbar);
+					viewHolder.audioPlayerDuration = (TextView) view.findViewById(R.id.audio_player_duration);
 					break;
 				case RECEIVED:
 					view = activity.getLayoutInflater().inflate(
@@ -649,6 +836,10 @@ public class MessageAdapter extends ArrayAdapter<Message> implements CopyTextVie
 					viewHolder.indicatorReceived = (ImageView) view
 						.findViewById(R.id.indicator_received);
 					viewHolder.encryption = (TextView) view.findViewById(R.id.message_encryption);
+					viewHolder.audioPlayer = (LinearLayout) view.findViewById(R.id.audio_player);
+					viewHolder.audioPlayerPlayPause = (ImageButton) view.findViewById(R.id.audio_player_play_pause);
+					viewHolder.audioPlayerSeekbar = (SeekBar) view.findViewById(R.id.audio_player_seekbar);
+					viewHolder.audioPlayerDuration = (TextView) view.findViewById(R.id.audio_player_duration);
 					break;
 				case STATUS:
 					view = activity.getLayoutInflater().inflate(R.layout.message_status, parent, false);
@@ -764,6 +955,8 @@ public class MessageAdapter extends ArrayAdapter<Message> implements CopyTextVie
 		} else if (message.getType() == Message.TYPE_FILE && message.getEncryption() != Message.ENCRYPTION_PGP && message.getEncryption() != Message.ENCRYPTION_DECRYPTION_FAILED) {
 			if (message.getFileParams().width > 0) {
 				displayImageMessage(viewHolder,message);
+			} else if (isAudioMessage(message)) {
+				displayAudioMessage(viewHolder, message);
 			} else {
 				displayOpenableMessage(viewHolder, message);
 			}
@@ -1004,6 +1197,10 @@ public class MessageAdapter extends ArrayAdapter<Message> implements CopyTextVie
 		protected TextView encryption;
 		public Button load_more_messages;
 		public ImageView edit_indicator;
+		protected LinearLayout audioPlayer;
+		protected ImageButton audioPlayerPlayPause;
+		protected SeekBar audioPlayerSeekbar;
+		protected TextView audioPlayerDuration;
 	}
 
 	class BitmapWorkerTask extends AsyncTask<Message, Void, Bitmap> {

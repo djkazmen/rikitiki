@@ -454,6 +454,19 @@ public class ConversationFragment extends Fragment implements EditMessage.Keyboa
 	public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		final View view = inflater.inflate(R.layout.fragment_conversation, container, false);
 		view.setOnClickListener(null);
+		// This fragment's root sits inside ConversationActivity's
+		// SlidingPaneLayout, which XmppActivity.setContentView() deliberately
+		// skips when applying the app's edge-to-edge fix (fitsSystemWindows
+		// on a SlidingPaneLayout breaks its own pane width/position
+		// calculations — see that comment). That leaves this fragment with
+		// no inset handling of its own, so on Android 15+ (edge-to-edge
+		// enforced by default at targetSdk 35+) the gesture navigation bar
+		// draws over the message input/send button at the bottom. Applying
+		// the same fitsSystemWindows(true) fix directly to this fragment's
+		// own root — one level below the excluded SlidingPaneLayout — pads
+		// just this content for the nav bar without touching the pane
+		// layout that caused problems before.
+		view.setFitsSystemWindows(true);
 
 		String[] allImagesMimeType = {"image/*"};
 		mEditMessage = (EditMessage) view.findViewById(R.id.textinput);
@@ -471,6 +484,16 @@ public class ConversationFragment extends Fragment implements EditMessage.Keyboa
 
 		mSendButton = (ImageButton) view.findViewById(R.id.textSendButton);
 		mSendButton.setOnClickListener(this.mSendButtonListener);
+
+		final ImageButton voiceButton = (ImageButton) view.findViewById(R.id.textSendVoiceButton);
+		voiceButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(final View v) {
+				if (activity != null) {
+					activity.startVoiceMessageRecording(activity.getSelectedConversation());
+				}
+			}
+		});
 
 		snackbar = (RelativeLayout) view.findViewById(R.id.snackbar);
 		snackbarMessage = (TextView) view.findViewById(R.id.snackbar_message);
@@ -873,6 +896,9 @@ public class ConversationFragment extends Fragment implements EditMessage.Keyboa
 	@Override
 	public void onStop() {
 		super.onStop();
+		if (messageListAdapter != null) {
+			messageListAdapter.stopAudioPlayback();
+		}
 		if (this.conversation != null) {
 			final String msg = mEditMessage.getText().toString();
 			this.conversation.setNextMessage(msg);

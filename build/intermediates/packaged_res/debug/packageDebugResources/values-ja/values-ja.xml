@@ -293,7 +293,6 @@
     <string name="leave">退出</string>
     <string name="load_more_messages">さらにメッセージをロード</string>
     <string name="location">位置</string>
-    <string name="magic_create_text">conversations.imのアカウントを作成する手順をガイドします。\nプロバイダーとしてconversations.imを選択すると、あなたの完全なJabber IDを指定することによって、他のプロバイダーのユーザと通信することができるようになります。</string>
     <string name="mam_prefs">アーカイブの設定</string>
     <string name="manual_verification_explanation">慎重に、連絡先のフィンガープリントと、以下に表示されるフィンガープリントを比較してください。\nこれを交換するためには、暗号化されたメールや、電話のような信頼できる形式の通信を使用することができます。</string>
     <string name="manually_verify">手動で検証</string>

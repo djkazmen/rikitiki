@@ -296,7 +296,6 @@
     <string name="leave">Forlat</string>
     <string name="load_more_messages">Last inn flere meldinger</string>
     <string name="location">Plasseringsdata</string>
-    <string name="magic_create_text">Vi geleider deg gjennom prosessen med å opprette en konto på conversations.im.¹\nNår du velger conversations.im som tilbyder vil du kunne snakke med brukere fra andre tilbyder ved å gi dem din fulle Jabber-ID.</string>
     <string name="mam_prefs">Arkiveringsinnstillinger</string>
     <string name="manual_verification_explanation">Jamfør nøye fingeravtrykket vis nedenfor med din kontakts fingeravtrykk.\nDu kan bruke enhver form for betrodd kommunikasjon som kryptert e-post eller en telefonsamtale for å utveksle disse.</string>
     <string name="manually_verify">Bekreft manuelt</string>

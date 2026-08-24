@@ -223,7 +223,7 @@ public class ManageAccountActivity extends XmppActivity implements OnAccountUpda
 	public boolean onNavigateUp() {
 		if (xmppConnectionService.getConversations().size() == 0) {
 			Intent contactsIntent = new Intent(this,
-					StartConversationActivity.class);
+					PhoneContactsActivity.class);
 			contactsIntent.setFlags(
 					// if activity exists in stack, pop the stack and go back to it
 					Intent.FLAG_ACTIVITY_CLEAR_TOP |

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "pl.rikitiki.im-mergeDebugResources-23:/values-large-v4/values-large-v4.xml",
+            "outputFile": "pl.rikitiki.im-mergeDebugResources-24:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
                     "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/e4b4978e79e3e6d5f8c9bf4cff9cbc26/transformed/jetified-android-crop-1.0.1/res/values-large/values-large.xml",

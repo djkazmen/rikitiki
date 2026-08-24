@@ -294,7 +294,6 @@
     <string name="leave">Напусти</string>
     <string name="load_more_messages">Учитај још порука</string>
     <string name="location">Локација</string>
-    <string name="magic_create_text">Водићемо вас кроз процес прављења налога на conversations.im.¹\nАко изаберете conversations.im за даваоца услуге моћи ћете да комуницирате са корисницима других сервера ако им дате ваш Џабер ИД.</string>
     <string name="mam_prefs">Поставке архивисања</string>
     <string name="manual_verification_explanation">Пажљиво упоредите отисак испод са отиском вашег контакта.\nМожете да употребите било који поверљив облик комуникације као што је шифрована е-пошта или позив телефоном да бисте разменили отиске.</string>
     <string name="manually_verify">Овери ручно</string>

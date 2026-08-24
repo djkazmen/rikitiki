@@ -17,8 +17,10 @@ import pl.rikitiki.im.Config;
 
 /**
  * Talks to the Rikitiki registration backend (phone/OTP verification in front
- * of ejabberd's admin API on msg.rikitiki.pl). The backend holds the SMSAPI.pl
- * and ejabberd admin credentials; this class never sees either.
+ * of ejabberd's admin API on msg.rikitiki.pl). The backend holds the Kannel
+ * and ejabberd admin credentials; this class never sees either. The phone
+ * number itself is the account's JID localpart and password is generated
+ * server-side — this class never sends or invents either.
  */
 public class RegistrationBackendConnection {
 
@@ -32,7 +34,7 @@ public class RegistrationBackendConnection {
 	}
 
 	public interface OnOtpVerified {
-		void onOtpVerifySuccess(String jid);
+		void onOtpVerifySuccess(String jid, String password);
 		void onOtpVerifyFailure(String error);
 	}
 
@@ -61,7 +63,7 @@ public class RegistrationBackendConnection {
 		}).start();
 	}
 
-	public void verifyOtp(final String phone, final String otp, final String username, final String password, final OnOtpVerified callback) {
+	public void verifyOtp(final String phone, final String otp, final OnOtpVerified callback) {
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -69,15 +71,14 @@ public class RegistrationBackendConnection {
 					final JSONObject body = new JSONObject();
 					body.put("phone", phone);
 					body.put("otp", otp);
-					body.put("username", username);
-					body.put("password", password);
 					final JSONObject response = post(Config.REGISTRATION_BACKEND_URL + "/otp_verify.php", body);
 					if (response.optBoolean("success", false)) {
 						final String jid = response.optString("jid");
+						final String password = response.optString("password");
 						mainThread.post(new Runnable() {
 							@Override
 							public void run() {
-								callback.onOtpVerifySuccess(jid);
+								callback.onOtpVerifySuccess(jid, password);
 							}
 						});
 					} else {

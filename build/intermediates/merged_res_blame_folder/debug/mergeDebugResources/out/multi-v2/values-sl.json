@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "pl.rikitiki.im-mergeDebugResources-23:/values-sl/values-sl.xml",
+            "outputFile": "pl.rikitiki.im-mergeDebugResources-24:/values-sl/values-sl.xml",
             "map": [
                 {
                     "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/res/values-sl/values-sl.xml",
@@ -13,11 +13,11 @@
                         "endOffsets": "147,249,347,451,554,656,773,874"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,13",
+                        "startLines": "4,5,6,7,8,9,10,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,152,254,352,456,559,661,1073",
+                        "startOffsets": "286,383,485,583,687,790,892,1304",
                         "endColumns": "96,101,97,103,102,101,116,100",
-                        "endOffsets": "147,249,347,451,554,656,773,1169"
+                        "endOffsets": "378,480,578,682,785,887,1004,1400"
                     }
                 },
                 {
@@ -30,11 +30,21 @@
                         "endOffsets": "250,319,381,455"
                     },
                     "to": {
-                        "startLines": "9,10,11,12",
+                        "startLines": "11,12,13,14",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "778,868,937,999",
+                        "startOffsets": "1009,1099,1168,1230",
                         "endColumns": "89,68,61,73",
-                        "endOffsets": "863,932,994,1068"
+                        "endOffsets": "1094,1163,1225,1299"
+                    }
+                },
+                {
+                    "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/c0db9cbfa50dc6e9e0ae6465c429237a/transformed/jetified-credentials-1.5.0/res/values-sl/values-sl.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,164",
+                        "endColumns": "108,121",
+                        "endOffsets": "159,281"
                     }
                 }
             ]

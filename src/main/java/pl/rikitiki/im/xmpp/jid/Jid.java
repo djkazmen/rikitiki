@@ -228,7 +228,16 @@ public final class Jid {
 
 		final Jid jid = (Jid) o;
 
-		return jid.hashCode() == this.hashCode();
+		// Comparing hashCode() here (as this used to) only proves the two
+		// Jids fall in the same 32-bit hash bucket, not that they're the
+		// same JID — a genuine hash collision between two different JIDs
+		// (plausible for large batches of similarly-shaped bare JIDs, e.g.
+		// many numeric localparts under the same domain) makes every
+		// HashMap-backed lookup (Roster's contact map, most notably) match
+		// the wrong entry. Compare the actual parts instead.
+		return localpart.equals(jid.localpart)
+				&& domainpart.equals(jid.domainpart)
+				&& resourcepart.equals(jid.resourcepart);
 	}
 
 	@Override

@@ -292,7 +292,6 @@
     <string name="leave">離開</string>
     <string name="load_more_messages">載入更多消息</string>
     <string name="location">位置</string>
-    <string name="magic_create_text">我們將會引導你完成在 conversations.im¹ 上註冊帳號的過程。\n當獲得了 conversations.im 提供的帳號以後，你可以通過添加使用其他提供商的好友的完整 Jabber ID 來與他們聯絡。</string>
     <string name="mam_prefs">壓縮設置</string>
     <string name="manual_verification_explanation">請仔細核對下面顯示出來的你的連絡人的指紋。\n你可以使用任何可信賴的聯繫方式，比如加密郵件或電話，來交換這些指紋資訊。</string>
     <string name="manually_verify">手動驗證</string>

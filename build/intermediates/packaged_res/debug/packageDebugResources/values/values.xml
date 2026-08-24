@@ -195,6 +195,7 @@
     <bool name="use_subject">true</bool>
     <bool name="use_tor">false</bool>
     <bool name="validate_hostname">false</bool>
+    <bool name="vibrate_on_call">true</bool>
     <bool name="vibrate_on_notification">true</bool>
     <color name="accent">#ff0091ea</color>
     <color name="black12">#1f000000</color>
@@ -246,6 +247,7 @@
 		<item quantity="other">%d messages</item>
 	</plurals>
     <string name="accept">Accept</string>
+    <string name="accept_call">Accept</string>
     <string name="account_already_exists">This account already exists</string>
     <string name="account_details">Account details</string>
     <string name="account_image_description">Account avatar</string>
@@ -280,8 +282,10 @@
     <string name="action_add_account">Add account</string>
     <string name="action_add_account_with_certificate">Add account with certificate</string>
     <string name="action_add_phone_book">Add to address book</string>
+    <string name="action_advanced_contacts">Jabber ID &amp; conferences</string>
     <string name="action_block_contact">Block contact</string>
     <string name="action_block_domain">Block domain</string>
+    <string name="action_call">Call</string>
     <string name="action_clear_history">Clear history</string>
     <string name="action_contact_details">Contact details</string>
     <string name="action_delete_contact">Delete from roster</string>
@@ -294,10 +298,13 @@
     <string name="action_settings">Settings</string>
     <string name="action_unblock_contact">Unblock contact</string>
     <string name="action_unblock_domain">Unblock domain</string>
+    <string name="action_video_call">Video call</string>
     <string name="add">Add</string>
     <string name="add_back">Add back</string>
     <string name="add_contact">Add contact</string>
     <string name="add_phone_book_text">Do you want to add %s to your address book?</string>
+    <string name="add_phone_contact_message">Add %1$s to your Rikitiki contacts? This only works if %2$s already has a Rikitiki account — if they don\'t, nothing happens until they sign up.</string>
+    <string name="add_phone_contact_title">Add to Rikitiki?</string>
     <string name="additional_information">Additional Information</string>
     <string name="admin">Admin</string>
     <string name="advanced_mode">Advanced mode</string>
@@ -324,8 +331,8 @@
     <string name="ban_now">Ban now</string>
     <string name="barcode_does_not_contain_fingerprints_for_this_conversation">Barcode does not contain fingerprints for this conversation.</string>
     <string name="battery_optimizations_enabled">Battery optimizations enabled</string>
-    <string name="battery_optimizations_enabled_dialog">Your device is doing some heavy battery optimizations on Conversations that might lead to delayed notifications or even message loss.\n\nYou will now be asked to disable those.</string>
-    <string name="battery_optimizations_enabled_explained">Your device is doing some heavy battery optimizations on Conversations that might lead to delayed notifications or even message loss.\nIt is recommended to disable those.</string>
+    <string name="battery_optimizations_enabled_dialog">Your device is doing some heavy battery optimizations on Rikitiki that might lead to delayed notifications or even message loss.\n\nYou will now be asked to disable those.</string>
+    <string name="battery_optimizations_enabled_explained">Your device is doing some heavy battery optimizations on Rikitiki that might lead to delayed notifications or even message loss.\nIt is recommended to disable those.</string>
     <string name="blindly_trusted_omemo_keys">Blindly trusted OMEMO keys</string>
     <string name="block">Block</string>
     <string name="block_contact">Block contact</string>
@@ -335,6 +342,10 @@
     <string name="block_jabber_id">Block Jabber ID</string>
     <string name="block_stranger">Block stranger</string>
     <string name="bookmark_already_exists">This bookmark already exists</string>
+    <string name="call_status_calling">Calling…</string>
+    <string name="call_status_connecting">Connecting…</string>
+    <string name="call_status_ended">Call ended</string>
+    <string name="call_status_ringing">Ringing…</string>
     <string name="cancel">Cancel</string>
     <string name="cancel_transmission">Cancel transmission</string>
     <string name="captcha_hint">Enter the text from the image above</string>
@@ -387,7 +398,7 @@
     <string name="contact_asks_for_presence_subscription">Contact asks for presence subscription</string>
     <string name="contact_blocked">Contact blocked</string>
     <string name="contact_blocked_past_tense">Contact blocked.</string>
-    <string name="contact_has_no_pgp_key">Conversations is unable to encrypt your messages because your contact is not announcing his or hers public key.\n\n<small>Please ask your contact to setup OpenPGP.</small></string>
+    <string name="contact_has_no_pgp_key">Rikitiki is unable to encrypt your messages because your contact is not announcing his or hers public key.\n\n<small>Please ask your contact to setup OpenPGP.</small></string>
     <string name="contact_has_read_up_to_this_point">%s has read up to this point</string>
     <string name="contact_has_stopped_typing">%s has stopped typing</string>
     <string name="contact_is_typing">%s is typing…</string>
@@ -399,9 +410,9 @@
     <string name="contact_status_online">online</string>
     <string name="contacts">Contacts</string>
     <string name="contacts_are_typing">%s are typing…</string>
-    <string name="contacts_have_no_pgp_keys">Conversations is unable to encrypt your messages because your contacts are not announcing their public key.\n\n<small>Please ask your contacts to setup OpenPGP.</small></string>
+    <string name="contacts_have_no_pgp_keys">Rikitiki is unable to encrypt your messages because your contacts are not announcing their public key.\n\n<small>Please ask your contacts to setup OpenPGP.</small></string>
     <string name="contacts_have_stopped_typing">%s have stopped typing</string>
-    <string name="conversations_foreground_service">Conversations</string>
+    <string name="conversations_foreground_service">Rikitiki</string>
     <string name="copy_fingerprint">Copy fingerprint</string>
     <string name="copy_omemo_clipboard_description">Copy OMEMO fingerprint to clipboard</string>
     <string name="copy_original_url">Copy original URL</string>
@@ -413,8 +424,8 @@
     <string name="could_not_change_role">Could not change role of %s</string>
     <string name="could_not_modify_conference_options">Could not modify conference options</string>
     <string name="could_not_verify_fingerprint">Could not verify fingerprint</string>
-    <string name="crash_report_message">By sending in stack traces you are helping the ongoing development of Conversations\n<b>Warning:</b> This will use your XMPP account to send the stack trace to the developer.</string>
-    <string name="crash_report_title">Conversations has crashed</string>
+    <string name="crash_report_message">By sending in stack traces you are helping the ongoing development of Rikitiki\n<b>Warning:</b> This will use your XMPP account to send the stack trace to the developer.</string>
+    <string name="crash_report_title">Rikitiki has crashed</string>
     <string name="create">Create</string>
     <string name="create_account">Create Account</string>
     <string name="create_conference">Create conference</string>
@@ -422,7 +433,8 @@
     <string name="creating_conference">Creating conference…</string>
     <string name="current_password">Current password</string>
     <string name="data_saver_enabled">Data saver enabled</string>
-    <string name="data_saver_enabled_explained">Your operating system is restricting Conversations from accessing the Internet when in background. To receive notifications of new messages you should allow Conversations unrestricted access when Data saver is on.\nConversations will still make an effort to save data when possible.</string>
+    <string name="data_saver_enabled_explained">Your operating system is restricting Rikitiki from accessing the Internet when in background. To receive notifications of new messages you should allow Rikitiki unrestricted access when Data saver is on.\nRikitiki will still make an effort to save data when possible.</string>
+    <string name="decline_call">Decline</string>
     <string name="decrypt">Decrypt</string>
     <string name="decryption_failed">Decryption failed. Maybe you don’t have the proper private key.</string>
     <string name="default_resource">Phone</string>
@@ -435,7 +447,7 @@
     <string name="delete_x_file">Delete %s</string>
     <string name="device_does_not_support_battery_op">Your device does not support opting out of battery optimization</string>
     <string name="device_does_not_support_certificates">Your device does not support the selection of client certificates!</string>
-    <string name="device_does_not_support_data_saver">Your device does not support disabling Data saver for Conversations.</string>
+    <string name="device_does_not_support_data_saver">Your device does not support disabling Data saver for Rikitiki.</string>
     <string name="dialog_manage_certs_negativebutton">Cancel</string>
     <string name="dialog_manage_certs_positivebutton">Delete selection</string>
     <string name="dialog_manage_certs_title">Remove certificates</string>
@@ -507,6 +519,7 @@
     <string name="gp_short">Short</string>
     <string name="grant_admin_privileges">Grant admin privileges</string>
     <string name="grant_membership">Grant membership</string>
+    <string name="hangup_call">Hang up</string>
     <string name="hide_inactive_devices">Hide inactive devices</string>
     <string name="hide_offline">Hide offline</string>
     <string name="hostname_example">xmpp.example.com</string>
@@ -516,6 +529,8 @@
     <string name="image">image</string>
     <string name="image_transmission_failed">Image transmission failed</string>
     <string name="in_progress">In progress</string>
+    <string name="incoming_call">Incoming call</string>
+    <string name="incoming_call_ringtone">content://settings/system/ringtone</string>
     <string name="install">Install</string>
     <string name="install_openkeychain">Encrypted message. Please install OpenKeychain to decrypt.</string>
     <string name="invalid_barcode">Invalid 2D barcode</string>
@@ -525,6 +540,7 @@
     <string name="invalid_username">This is not a valid username</string>
     <string name="invite_again">Invite again</string>
     <string name="invite_contact">Invite Contact</string>
+    <string name="invite_sms_body">Hey! I\'m using Rikitiki to chat. Get the app and message me there.</string>
     <string name="jid_does_not_match_certificate">Jabber ID does not match certificate</string>
     <string name="join">Join</string>
     <string name="join_conference">Join Conference</string>
@@ -542,7 +558,6 @@
     <string name="leave">Leave</string>
     <string name="load_more_messages">Load more messages</string>
     <string name="location">Location</string>
-    <string name="magic_create_text">We will guide you through the process of creating an account on msg.rikitiki.pl.¹\nWhen picking msg.rikitiki.pl as a provider you will be able to communicate with users of other providers by giving them your full Jabber ID.</string>
     <string name="mam_prefs">Archiving preferences</string>
     <string name="manual_verification_explanation">Carefully compare the fingerprint shown below with the fingerprint of your contact.\nYou can use any trusted form of communication like an encrypted e-mail or a telephone call to exchange those.</string>
     <string name="manually_verify">Manually verify</string>
@@ -586,15 +601,18 @@
     <string name="no_application_found_to_display_location">No application found to display location</string>
     <string name="no_application_found_to_open_file">No application found to open file</string>
     <string name="no_application_to_share_uri">No application found to share URI</string>
+    <string name="no_camera_permission">Rikitiki needs access to the camera to make video calls</string>
     <string name="no_conference_server_found">No conference server found</string>
     <string name="no_keys_just_confirm">You already trust this contact. By selecting \'done\' you are just confirming that %s is part of this conference.</string>
+    <string name="no_microphone_permission">Rikitiki needs access to the microphone to make calls</string>
+    <string name="no_microphone_permission_voice_message">Rikitiki needs microphone access to record a voice message</string>
     <string name="no_more_history_on_server">No more history on server</string>
     <string name="no_otr_session_found">No valid OTR session has been found!</string>
     <string name="no_permission_to_access_x">No permission to access %s</string>
     <string name="no_pgp_key">No OpenPGP Key found</string>
     <string name="no_pgp_keys">No OpenPGP Keys found</string>
     <string name="no_role">Offline</string>
-    <string name="no_storage_permission">Conversations need access to external storage</string>
+    <string name="no_storage_permission">Rikitiki needs access to external storage</string>
     <string name="non_anonymous">Non-anonymous</string>
     <string name="none">None</string>
     <string name="not_a_valid_port">This is not a valid port number</string>
@@ -617,12 +635,13 @@
     <string name="omemo_fingerprint_x509">v\\OMEMO fingerprint</string>
     <string name="omemo_fingerprint_x509_selected_message">v\\OMEMO fingerprint of message</string>
     <string name="one_hour">1 hour</string>
+    <string name="ongoing_call">Ongoing call</string>
     <string name="online_right_now">online right now</string>
     <string name="open_website">Open website</string>
     <string name="open_x_file">Open %s</string>
     <string name="openkeychain_not_installed">Please install OpenKeychain</string>
     <string name="openkeychain_required">OpenKeychain</string>
-    <string name="openkeychain_required_long">Conversations utilizes a third party app called <b>OpenKeychain</b> to encrypt and decrypt messages and to manage your public keys.\n\nOpenKeychain is licensed under GPLv3 and available on F-Droid and Google Play.\n\n<small>(Please restart Conversations afterwards.)</small></string>
+    <string name="openkeychain_required_long">Rikitiki utilizes a third party app called <b>OpenKeychain</b> to encrypt and decrypt messages and to manage your public keys.\n\nOpenKeychain is licensed under GPLv3 and available on F-Droid and Google Play.\n\n<small>(Please restart Rikitiki afterwards.)</small></string>
     <string name="openpgp_error">OpenKeychain reported an error</string>
     <string name="openpgp_has_been_published">OpenPGP public key has been published.</string>
     <string name="openpgp_key_id">OpenPGP Key ID</string>
@@ -643,15 +662,20 @@
     <string name="pdf_document">PDF document</string>
     <string name="perform_action_with">Perform action with</string>
     <string name="pgp_message">OpenPGP encrypted message</string>
+    <string name="phone_contact_invite_sms">Not on Rikitiki — tap to invite by SMS</string>
+    <string name="phone_contact_number_not_valid">This number can\'t be added as a Rikitiki contact</string>
+    <string name="phone_contact_on_rikitiki">On Rikitiki — tap to chat</string>
+    <string name="phone_contacts_title">Contacts on Rikitiki</string>
     <string name="phone_number_hint">Phone number</string>
     <string name="phone_verification_text">To create an account on msg.rikitiki.pl we need to verify your phone number by SMS.</string>
     <string name="pick_your_username">Pick your username</string>
     <string name="picture_compression">auto</string>
+    <string name="play_pause_audio">Play or pause audio message</string>
     <string name="please_wait_for_keys_to_be_fetched">Please wait for keys to be fetched</string>
     <string name="preemptively_grant">Preemptively grant subscription request</string>
     <string name="pref_about_conversations_summary">Build and licensing information</string>
     <string name="pref_about_message" translatable="false">
-			Conversations • the very last word in instant messaging.
+			Rikitiki • the very last word in instant messaging.
 			\n\nCopyright © 2014-2017 Daniel Gultsch
 			\n\nThis program is free software: you can redistribute it and/or modify
 			it under the terms of the GNU General Public License as published by
@@ -671,16 +695,21 @@
 			\n\nhttps://github.com/rtreffer/minidns\n(WTFPL)
 			\n\nhttps://github.com/open-keychain/openkeychain-api-lib\n(Apache License, Version 2.0)
 			\n\nhttps://github.com/jitsi/otr4j\n(LGPL-3.0)
-			\n\nhttps://developer.android.com/tools/support-library\n(Apache License, Version 2.0)
+			\n\nhttps://developer.android.com/jetpack/androidx\n(Apache License, Version 2.0)
 			\n\nhttps://github.com/zxing/zxing\n(Apache License, Version 2.0)
 			\n\nhttps://github.com/google/material-design-icons\n(CC BY 4.0)
 			\n\nhttps://github.com/timroes/EnhancedListView\n(Apache License, Version 2.0)
 			\n\nhttps://github.com/leolin310148/ShortcutBadger\n(Apache License, Version 2.0)
 			\n\nhttps://github.com/kyleduo/SwitchButton\n(Apache License, Version 2.0)
-			\n\nhttps://github.com/WhisperSystems/libaxolotl-java\n(GPLv3)
+			\n\nhttps://github.com/signalapp/libsignal-protocol-java\n(GPLv3)
 			\n\nhttps://github.com/vinc3m1/RoundedImageView\n(Apache License, Version 2.0)
 			\n\nhttps://github.com/jdamcd/android-crop\n(Apache License, Version 2.0)
 		    \n\nhttps://github.com/vdurmont/emoji-java\n(The MIT License)
+			\n\nhttps://github.com/wefika/FlowLayout\n(Apache License, Version 2.0)
+			\n\nhttps://github.com/ypresto/android-transcoder\n(Apache License, Version 2.0)
+			\n\nhttps://github.com/GetStream/webrtc-android\n(Apache License, Version 2.0)
+			\n\nhttps://github.com/google/libphonenumber\n(Apache License, Version 2.0)
+			\n\nhttps://developer.android.com/jetpack/androidx/releases/credentials\n(Apache License, Version 2.0)
 	</string>
     <string name="pref_accept_files">Accept files</string>
     <string name="pref_accept_files_summary">Automatically accept files smaller than…</string>
@@ -697,7 +726,10 @@
     <string name="pref_blind_trust_before_verification">Blind Trust Before Verification</string>
     <string name="pref_blind_trust_before_verification_summary">Automatically trust all new devices of contacts that haven’t been verified before, and prompt for manual confirmation each time a verified contact adds a new device.</string>
     <string name="pref_broadcast_last_activity">Broadcast Last User Interaction</string>
-    <string name="pref_broadcast_last_activity_summary">Let all your contacts know when you use Conversations</string>
+    <string name="pref_broadcast_last_activity_summary">Let all your contacts know when you use Rikitiki</string>
+    <string name="pref_call_ringtone">Ringtone</string>
+    <string name="pref_call_ringtone_summary">Ring on incoming calls</string>
+    <string name="pref_call_settings">Calls</string>
     <string name="pref_chat_states">Typing notifications</string>
     <string name="pref_chat_states_summary">Let your contacts know when you are writing messages to them</string>
     <string name="pref_clean_cache">Clean cache</string>
@@ -741,9 +773,9 @@
     <string name="pref_manually_change_presence">Manually change presence</string>
     <string name="pref_manually_change_presence_summary">Touch your avatar to change your presence</string>
     <string name="pref_never_send_crash">Never send crash reports</string>
-    <string name="pref_never_send_crash_summary">By sending in stack traces you are helping the ongoing development of Conversations</string>
+    <string name="pref_never_send_crash_summary">By sending in stack traces you are helping the ongoing development of Rikitiki</string>
     <string name="pref_notification_grace_period">Grace Period</string>
-    <string name="pref_notification_grace_period_summary">The length of time Conversations keeps quiet after seeing activity on another device</string>
+    <string name="pref_notification_grace_period_summary">The length of time Rikitiki keeps quiet after seeing activity on another device</string>
     <string name="pref_notification_settings">Notification</string>
     <string name="pref_notifications">Notifications</string>
     <string name="pref_notifications_from_strangers">Notifications from strangers</string>
@@ -789,6 +821,8 @@
     <string name="pref_validate_hostname">Validate hostname with DNSSEC</string>
     <string name="pref_validate_hostname_summary">Server certificates that contain the validated hostname are considered verified</string>
     <string name="pref_vibrate">Vibrate</string>
+    <string name="pref_vibrate_on_call">Vibrate</string>
+    <string name="pref_vibrate_on_call_summary">Vibrate on incoming calls</string>
     <string name="pref_vibrate_summary">Vibrate when a new message arrives</string>
     <string name="pref_xmpp_resource">XMPP resource</string>
     <string name="pref_xmpp_resource_summary">The name this client identifies itself with</string>
@@ -818,6 +852,7 @@
     <string name="receiving_x_file">Receiving %1$s (%2$d%% completed)</string>
     <string name="recently_used">Most recently used</string>
     <string name="reception_failed">Reception failed</string>
+    <string name="record_voice_message">Recording voice message…</string>
     <string name="regenerate_omemo_key">Regenerate OMEMO key</string>
     <string name="register_account">Register new account on server</string>
     <string name="registration_password_too_weak">Registration failed: Password too weak</string>
@@ -920,10 +955,12 @@
     <string name="smp_requested">Contact requested SMP verification</string>
     <string name="start_conversation">Start Chat</string>
     <string name="status_message">Status message</string>
+    <string name="stop_and_send">Stop and send</string>
     <string name="subscriptions">Subscriptions</string>
     <string name="sure_delete_fingerprint">Are you sure you would like to delete this fingerprint?</string>
+    <string name="switch_camera">Switch camera</string>
     <string name="sync_with_contacts">Synchronize with contacts</string>
-    <string name="sync_with_contacts_long">Conversations wants to match your XMPP roster with your contacts to show their full names and avatars.\n\nConversations will only read your contacts and match them locally without uploading them to your server.\n\nYou will now be asked to grant permission to access your contacts.</string>
+    <string name="sync_with_contacts_long">Rikitiki wants to match your XMPP roster with your contacts to show their full names and avatars.\n\nRikitiki will only read your contacts and match them locally without uploading them to your server.\n\nYou will now be asked to grant permission to access your contacts.</string>
     <string name="theme">light</string>
     <string name="thirty_minutes">30 minutes</string>
     <string name="this_account_is_disabled">You have disabled this account</string>
@@ -936,7 +973,7 @@
     <string name="timeout_30_days">30 days</string>
     <string name="timeout_6_months">6 months</string>
     <string name="timeout_7_days">7 days</string>
-    <string name="title_activity_about">About Conversations</string>
+    <string name="title_activity_about">About Rikitiki</string>
     <string name="title_activity_block_list">Block list</string>
     <string name="title_activity_choose_contact">Choose contact</string>
     <string name="title_activity_conference_details">Conference Details</string>
@@ -946,19 +983,22 @@
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_sharewith">Share with Conversation</string>
     <string name="title_activity_start_conversation">Start Chat</string>
+    <string name="title_chats">Chats</string>
     <string name="title_pref_enable_quiet_hours">Enable quiet hours</string>
     <string name="title_pref_quiet_hours">Quiet Hours</string>
     <string name="title_pref_quiet_hours_end_time">End time</string>
     <string name="title_pref_quiet_hours_start_time">Start time</string>
+    <string name="title_rooms">Rooms</string>
     <string name="title_undo_swipe_out_conversation">Conversation closed</string>
     <string name="title_undo_swipe_out_muc">Left conference</string>
     <string name="toast_message_omemo_fingerprint">OMEMO fingerprint copied to clipboard!</string>
     <string name="toast_message_otr_fingerprint">OTR fingerprint copied to clipboard!</string>
     <string name="toast_no_trusted_certs">No manually approved certificates</string>
     <string name="today">Today</string>
+    <string name="toggle_speaker">Toggle speaker</string>
     <string name="touch_to_choose_picture">Touch avatar to select picture from gallery</string>
     <string name="touch_to_fix">Touch here to manage your accounts</string>
-    <string name="touch_to_open_conversations">Touch to open Conversations</string>
+    <string name="touch_to_open_conversations">Touch to open Rikitiki</string>
     <string name="transcoding_video_progress">Compressing video (%s%% completed)</string>
     <string name="trust_omemo_fingerprints">Trust OMEMO Fingerprints</string>
     <string name="try_again">Try again</string>
@@ -1002,6 +1042,8 @@
     <string name="video">video</string>
     <string name="view_contact_details">View contact details</string>
     <string name="visitor">Visitor</string>
+    <string name="voice_message_playback_failed">Could not play voice message</string>
+    <string name="voice_message_recording_failed">Could not start recording</string>
     <string name="waiting">waiting…</string>
     <string name="welcome_header" translatable="false">Join the Conversation</string>
     <string name="welcome_text">XMPP is a provider independent protocol. You can use this client with what ever XMPP server you choose.\nHowever for your convenience we made it easy to create an account on msg.rikitiki.pl¹; a provider specially suited for the use with Rikitiki.</string>

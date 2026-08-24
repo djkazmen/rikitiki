@@ -1,5 +1,6 @@
 package pl.rikitiki.im.ui;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.AlertDialog;
@@ -16,6 +17,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import androidx.slidingpanelayout.widget.SlidingPaneLayout;
@@ -29,14 +31,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Surface;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.PopupMenu.OnMenuItemClickListener;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -90,6 +95,11 @@ public class ConversationActivity extends XmppActivity
 	public static final int REQUEST_TRUST_KEYS_TEXT = 0x0208;
 	public static final int REQUEST_TRUST_KEYS_MENU = 0x0209;
 	public static final int REQUEST_START_DOWNLOAD = 0x0210;
+	public static final int REQUEST_CALL = 0x0211;
+	public static final int REQUEST_NOTIFICATION_PERMISSION = 0x0212;
+	public static final int REQUEST_RECORD_VOICE_MESSAGE = 0x0213;
+	public static final int REQUEST_CALL_VIDEO = 0x0214;
+	public static final int REQUEST_CREATE_CONFERENCE = 0x0215;
 	public static final int ATTACHMENT_CHOICE_CHOOSE_IMAGE = 0x0301;
 	public static final int ATTACHMENT_CHOICE_TAKE_PHOTO = 0x0302;
 	public static final int ATTACHMENT_CHOICE_CHOOSE_FILE = 0x0303;
@@ -109,8 +119,15 @@ public class ConversationActivity extends XmppActivity
 	final private List<Uri> mPendingImageUris = new ArrayList<>();
 	final private List<Uri> mPendingFileUris = new ArrayList<>();
 	private Uri mPendingGeoUri = null;
+	private pl.rikitiki.im.utils.VoiceRecorder mVoiceRecorder = null;
+	private java.io.File mVoiceRecordingFile = null;
+	private android.app.AlertDialog mVoiceRecordingDialog = null;
+	private final Handler mVoiceRecordingHandler = new Handler();
+	private long mVoiceRecordingStartedAt = 0;
+	private boolean mVoiceRecordingCancelled = false;
 	private boolean forbidProcessingPendings = false;
 	private Message mPendingDownloadableMessage = null;
+	private boolean mPendingCallIsVideo = false;
 
 	private boolean conversationWasSelectedByKeyboard = false;
 
@@ -123,6 +140,137 @@ public class ConversationActivity extends XmppActivity
 	private Conversation mSelectedConversation = null;
 	private EnhancedListView listView;
 	private ConversationFragment mConversationFragment;
+
+	// Which of the "Chats"/"Rooms" tabs is active — conversationList is
+	// filtered down to this mode every time it's rebuilt
+	// (updateConversationList()), so everything already indexing into
+	// conversationList (click handling, swipe-to-dismiss, keyboard
+	// navigation) works unchanged, just against a narrower list.
+	//
+	// Deliberately a plain custom view row (two TextViews, see
+	// fragment_conversations_overview.xml's "conversation_tabs" row), not
+	// android.app.ActionBar.NAVIGATION_MODE_TABS. That was tried first (it's
+	// already used elsewhere in this codebase, in StartConversationActivity)
+	// but its content-frame height accounting for the extra tab row turned
+	// out to be inconsistent across devices: it required a manually-measured
+	// compensating padding fix to avoid the tab row overlapping the list on
+	// the emulator, but that same padding then double-compensated on a real
+	// Samsung phone, which apparently already reserves the right amount of
+	// space on its own. A plain view in our own layout has no such
+	// OEM-dependent ActionBar sizing behavior to fight — it just occupies
+	// normal, predictable space above the list, on every device.
+	private int mConversationsTabMode = Conversation.MODE_SINGLE;
+	private TextView mChatsTab;
+	private TextView mRoomsTab;
+
+	private void selectConversationsTab(final int mode) {
+		if (mode == mConversationsTabMode) {
+			return;
+		}
+		mConversationsTabMode = mode;
+		if (mChatsTab != null && mRoomsTab != null) {
+			mChatsTab.setSelected(mode == Conversation.MODE_SINGLE);
+			mRoomsTab.setSelected(mode == Conversation.MODE_MULTI);
+		}
+		if (xmppConnectionService != null) {
+			updateConversationList();
+			showConversationsOverview();
+		}
+	}
+
+	private Toast mCreateConferenceToast;
+	private final UiCallback<Conversation> mAdhocConferenceCallback = new UiCallback<Conversation>() {
+		@Override
+		public void success(final Conversation conversation) {
+			runOnUiThread(new Runnable() {
+				@Override
+				public void run() {
+					if (mCreateConferenceToast != null) {
+						mCreateConferenceToast.cancel();
+					}
+					setSelectedConversation(conversation);
+					mConversationFragment.reInit(conversation);
+					hideConversationsOverview();
+					openConversation();
+				}
+			});
+		}
+
+		@Override
+		public void error(final int errorCode, Conversation object) {
+			runOnUiThread(new Runnable() {
+				@Override
+				public void run() {
+					if (mCreateConferenceToast != null) {
+						mCreateConferenceToast.cancel();
+					}
+					mCreateConferenceToast = Toast.makeText(ConversationActivity.this, errorCode, Toast.LENGTH_LONG);
+					mCreateConferenceToast.show();
+				}
+			});
+		}
+
+		@Override
+		public void userInputRequried(PendingIntent pi, Conversation object) {
+		}
+	};
+
+	// Reuses the same "pick an account, name it, choose participants" flow
+	// already built and working in StartConversationActivity — invoked from
+	// the "+" button here when the Rooms tab is active (see
+	// onOptionsItemSelected()'s action_add handling), so creating a room and
+	// inviting people works from the tab it's actually about, instead of
+	// only being reachable via the "Jabber ID & conferences" escape hatch.
+	private void showCreateConferenceDialog() {
+		final List<String> activatedAccounts = new ArrayList<>();
+		for (final Account account : xmppConnectionService.getAccounts()) {
+			if (account.getStatus() != Account.State.DISABLED) {
+				if (Config.DOMAIN_LOCK != null) {
+					activatedAccounts.add(account.getJid().getLocalpart());
+				} else {
+					activatedAccounts.add(account.getJid().toBareJid().toString());
+				}
+			}
+		}
+		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle(R.string.create_conference);
+		final View dialogView = getLayoutInflater().inflate(R.layout.create_conference_dialog, null);
+		final Spinner spinner = (Spinner) dialogView.findViewById(R.id.account);
+		final EditText subject = (EditText) dialogView.findViewById(R.id.subject);
+		StartConversationActivity.populateAccountSpinner(this, activatedAccounts, spinner);
+		builder.setView(dialogView);
+		builder.setPositiveButton(R.string.choose_participants, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				if (!xmppConnectionServiceBound || !spinner.isEnabled()) {
+					return;
+				}
+				final Jid accountJid;
+				try {
+					if (Config.DOMAIN_LOCK != null) {
+						accountJid = Jid.fromParts((String) spinner.getSelectedItem(), Config.DOMAIN_LOCK, null);
+					} else {
+						accountJid = Jid.fromString((String) spinner.getSelectedItem());
+					}
+				} catch (final InvalidJidException e) {
+					return;
+				}
+				final Account account = xmppConnectionService.findAccountByJid(accountJid);
+				if (account == null) {
+					return;
+				}
+				final Intent intent = new Intent(getApplicationContext(), ChooseContactActivity.class);
+				intent.putExtra("multiple", true);
+				intent.putExtra("show_enter_jid", true);
+				intent.putExtra("subject", subject.getText().toString());
+				intent.putExtra(EXTRA_ACCOUNT, account.getJid().toBareJid().toString());
+				intent.putExtra(ChooseContactActivity.EXTRA_TITLE_RES_ID, R.string.choose_participants);
+				startActivityForResult(intent, REQUEST_CREATE_CONFERENCE);
+			}
+		});
+		builder.setNegativeButton(R.string.cancel, null);
+		builder.create().show();
+	}
 
 	private ArrayAdapter<Conversation> listAdapter;
 
@@ -183,6 +331,7 @@ public class ConversationActivity extends XmppActivity
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestNotificationPermissionIfNeeded(REQUEST_NOTIFICATION_PERMISSION);
 		if (savedInstanceState != null) {
 			mOpenConversation = savedInstanceState.getString(STATE_OPEN_CONVERSATION, null);
 			mPanelOpen = savedInstanceState.getBoolean(STATE_PANEL_OPEN, true);
@@ -204,6 +353,25 @@ public class ConversationActivity extends XmppActivity
 
 		setContentView(R.layout.fragment_conversations_overview);
 
+		mChatsTab = (TextView) findViewById(R.id.tab_chats);
+		mRoomsTab = (TextView) findViewById(R.id.tab_rooms);
+		if (mChatsTab != null && mRoomsTab != null) {
+			mChatsTab.setSelected(mConversationsTabMode == Conversation.MODE_SINGLE);
+			mRoomsTab.setSelected(mConversationsTabMode == Conversation.MODE_MULTI);
+			mChatsTab.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(final View v) {
+					selectConversationsTab(Conversation.MODE_SINGLE);
+				}
+			});
+			mRoomsTab.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(final View v) {
+					selectConversationsTab(Conversation.MODE_MULTI);
+				}
+			});
+		}
+
 		this.mConversationFragment = new ConversationFragment();
 		FragmentTransaction transaction = getFragmentManager().beginTransaction();
 		transaction.replace(R.id.selected_conversation, this.mConversationFragment, "conversation");
@@ -218,11 +386,6 @@ public class ConversationActivity extends XmppActivity
 		listView.addFooterView(contactsWithoutConversationContainer, null, false);
 		this.listAdapter = new ConversationAdapter(this, conversationList);
 		listView.setAdapter(this.listAdapter);
-
-		final ActionBar actionBar = getActionBar();
-		if (actionBar != null) {
-			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
-		}
 
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -311,6 +474,43 @@ public class ConversationActivity extends XmppActivity
 		mContentView = findViewById(R.id.content_view_spl);
 		if (mContentView == null) {
 			mContentView = findViewById(R.id.content_view_ll);
+		}
+		final ActionBar actionBar = getActionBar();
+		final View conversationListPane = findViewById(R.id.conversation_list_pane);
+		// Only Android 15+ (API 35, targetSdk 35+'s forced edge-to-edge
+		// threshold — see the fitsSystemWindows comment in
+		// XmppActivity.onCreate()) fails to reserve the ActionBar's own
+		// space automatically for this SlidingPaneLayout-rooted screen. On
+		// older OS versions the classic content-frame reservation already
+		// works correctly here (exactly as it always did, long before this
+		// tab row existed) — confirmed live: on a real device running an
+		// older Android version, applying this compensating padding on top
+		// of already-correct native positioning produced a visible white
+		// gap between the ActionBar and the tab row, the opposite problem
+		// from the one this padding fixes on newer OS versions. Gating by
+		// SDK_INT avoids fighting the framework on devices where it's
+		// already doing the right thing.
+		if (actionBar != null && conversationListPane != null && Build.VERSION.SDK_INT >= 35) {
+			// Deliberately never removes this listener (unlike a typical
+			// one-shot "wait for the first non-zero measurement" use of
+			// OnGlobalLayoutListener): re-checking on every layout pass and
+			// only touching padding when the measured height actually
+			// changed keeps this correct regardless of when the ActionBar
+			// settles, without looping (a no-op setPadding call doesn't
+			// trigger another layout pass).
+			getWindow().getDecorView().getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+				@Override
+				public void onGlobalLayout() {
+					final int height = actionBar.getHeight();
+					if (height > 0 && conversationListPane.getPaddingTop() != height) {
+						conversationListPane.setPadding(
+								conversationListPane.getPaddingLeft(),
+								height,
+								conversationListPane.getPaddingRight(),
+								conversationListPane.getPaddingBottom());
+					}
+				}
+			});
 		}
 		if (mContentView instanceof SlidingPaneLayout) {
 			SlidingPaneLayout mSlidingPaneLayout = (SlidingPaneLayout) mContentView;
@@ -419,6 +619,8 @@ public class ConversationActivity extends XmppActivity
 		final MenuItem menuMucDetails = menu.findItem(R.id.action_muc_details);
 		final MenuItem menuContactDetails = menu.findItem(R.id.action_contact_details);
 		final MenuItem menuAttach = menu.findItem(R.id.action_attach_file);
+		final MenuItem menuCall = menu.findItem(R.id.action_call);
+		final MenuItem menuVideoCall = menu.findItem(R.id.action_video_call);
 		final MenuItem menuClearHistory = menu.findItem(R.id.action_clear_history);
 		final MenuItem menuAdd = menu.findItem(R.id.action_add);
 		final MenuItem menuInviteContact = menu.findItem(R.id.action_invite);
@@ -435,9 +637,15 @@ public class ConversationActivity extends XmppActivity
 			menuClearHistory.setVisible(false);
 			menuMute.setVisible(false);
 			menuUnmute.setVisible(false);
+			menuCall.setVisible(false);
+			menuVideoCall.setVisible(false);
 		} else {
 			menuAdd.setVisible(!isConversationsOverviewHideable());
 			if (this.getSelectedConversation() != null) {
+				final boolean canCall = this.getSelectedConversation().getMode() == Conversation.MODE_SINGLE
+						&& !this.getSelectedConversation().withSelf();
+				menuCall.setVisible(canCall);
+				menuVideoCall.setVisible(canCall);
 				if (this.getSelectedConversation().getNextEncryption() != Message.ENCRYPTION_NONE) {
 					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 						menuSecure.setIcon(R.drawable.ic_lock_white_24dp);
@@ -512,6 +720,10 @@ public class ConversationActivity extends XmppActivity
 
 			@Override
 			public void onPresenceSelected() {
+				if (attachmentChoice == ATTACHMENT_CHOICE_RECORD_VOICE) {
+					startVoiceMessageRecording(conversation);
+					return;
+				}
 				Intent intent = new Intent();
 				boolean chooser = false;
 				String fallbackPackageId = null;
@@ -538,10 +750,6 @@ public class ConversationActivity extends XmppActivity
 						intent.setType("*/*");
 						intent.addCategory(Intent.CATEGORY_OPENABLE);
 						intent.setAction(Intent.ACTION_GET_CONTENT);
-						break;
-					case ATTACHMENT_CHOICE_RECORD_VOICE:
-						intent.setAction(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
-						fallbackPackageId = "pl.rikitiki.im.voicerecorder";
 						break;
 					case ATTACHMENT_CHOICE_LOCATION:
 						intent.setAction("pl.rikitiki.im.location.request");
@@ -664,18 +872,54 @@ public class ConversationActivity extends XmppActivity
 
 	@Override
 	public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+		if (requestCode == REQUEST_NOTIFICATION_PERMISSION) {
+			return;
+		}
 		if (grantResults.length > 0)
 			if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 				if (requestCode == REQUEST_START_DOWNLOAD) {
 					if (this.mPendingDownloadableMessage != null) {
 						startDownloadable(this.mPendingDownloadableMessage);
 					}
+				} else if (requestCode == REQUEST_CALL) {
+					placeCall(getSelectedConversation(), false);
+				} else if (requestCode == REQUEST_CALL_VIDEO) {
+					placeCall(getSelectedConversation(), this.mPendingCallIsVideo);
+				} else if (requestCode == REQUEST_RECORD_VOICE_MESSAGE) {
+					startVoiceMessageRecording(getSelectedConversation());
 				} else {
 					attachFile(requestCode);
 				}
+			} else if (requestCode == REQUEST_CALL) {
+				Toast.makeText(this, R.string.no_microphone_permission, Toast.LENGTH_SHORT).show();
+			} else if (requestCode == REQUEST_CALL_VIDEO) {
+				final boolean deniedCamera = permissions.length > 0 && Manifest.permission.CAMERA.equals(permissions[0]);
+				Toast.makeText(this, deniedCamera ? R.string.no_camera_permission : R.string.no_microphone_permission, Toast.LENGTH_SHORT).show();
+			} else if (requestCode == REQUEST_RECORD_VOICE_MESSAGE) {
+				Toast.makeText(this, R.string.no_microphone_permission_voice_message, Toast.LENGTH_SHORT).show();
 			} else {
 				Toast.makeText(this, R.string.no_storage_permission, Toast.LENGTH_SHORT).show();
 			}
+	}
+
+	public void placeCall(final Conversation conversation) {
+		placeCall(conversation, false);
+	}
+
+	public void placeCall(final Conversation conversation, final boolean isVideo) {
+		if (conversation == null) {
+			return;
+		}
+		this.mPendingCallIsVideo = isVideo;
+		if (!hasRecordAudioPermission(isVideo ? REQUEST_CALL_VIDEO : REQUEST_CALL)) {
+			return;
+		}
+		if (isVideo && !hasCameraPermission(REQUEST_CALL_VIDEO)) {
+			return;
+		}
+		xmppConnectionService.getJingleConnectionManager()
+				.createOutgoingRtpConnection(conversation.getAccount(), conversation.getJid(), isVideo);
+		startActivity(new Intent(this, RtpSessionActivity.class));
 	}
 
 	public void startDownloadable(Message message) {
@@ -699,12 +943,20 @@ public class ConversationActivity extends XmppActivity
 			showConversationsOverview();
 			return true;
 		} else if (item.getItemId() == R.id.action_add) {
-			startActivity(new Intent(this, StartConversationActivity.class));
+			if (mConversationsTabMode == Conversation.MODE_MULTI) {
+				showCreateConferenceDialog();
+			} else {
+				startActivity(new Intent(this, PhoneContactsActivity.class));
+			}
 			return true;
 		} else if (getSelectedConversation() != null) {
 			final int id = item.getItemId();
 			if (id == R.id.action_attach_file) {
 				attachFileDialog();
+			} else if (id == R.id.action_call) {
+				placeCall(getSelectedConversation());
+			} else if (id == R.id.action_video_call) {
+				placeCall(getSelectedConversation(), true);
 			} else if (id == R.id.action_archive) {
 				this.endConversation(getSelectedConversation());
 			} else if (id == R.id.action_contact_details) {
@@ -752,7 +1004,7 @@ public class ConversationActivity extends XmppActivity
 			} else {
 				setSelectedConversation(null);
 				if (mRedirected.compareAndSet(false, true)) {
-					Intent intent = new Intent(this, StartConversationActivity.class);
+					Intent intent = new Intent(this, PhoneContactsActivity.class);
 					intent.putExtra("init", true);
 					startActivity(intent);
 					finish();
@@ -1008,7 +1260,7 @@ public class ConversationActivity extends XmppActivity
 			toggleConversationsOverview();
 			return true;
 		} else if (modifier && key == KeyEvent.KEYCODE_SPACE) {
-			startActivity(new Intent(this, StartConversationActivity.class));
+			startActivity(new Intent(this, PhoneContactsActivity.class));
 			return true;
 		} else if (modifier && key == downKey) {
 			if (isConversationsOverviewHideable() && !isConversationsOverviewVisable()) {
@@ -1175,7 +1427,7 @@ public class ConversationActivity extends XmppActivity
 	private void redirectToStartConversationActivity() {
 		Account pendingAccount = xmppConnectionService.getPendingAccount();
 		if (pendingAccount == null) {
-			Intent startConversationActivity = new Intent(this, StartConversationActivity.class);
+			Intent startConversationActivity = new Intent(this, PhoneContactsActivity.class);
 			startConversationActivity.putExtra("init", true);
 			startActivity(startConversationActivity);
 		} else {
@@ -1212,7 +1464,11 @@ public class ConversationActivity extends XmppActivity
 				}
 				finish();
 			}
-		} else if (conversationList.size() <= 0 && contactsWithoutConversation.isEmpty()) {
+		} else if (conversationList.size() <= 0 && contactsWithoutConversation.isEmpty()
+				&& xmppConnectionService.getConversations().isEmpty()) {
+			// The current tab (Chats/Rooms) being empty isn't enough on its
+			// own — only redirect to "start a conversation" when there are
+			// truly none at all, on either tab.
 			if (mRedirected.compareAndSet(false, true)) {
 				redirectToStartConversationActivity();
 			}
@@ -1469,6 +1725,37 @@ public class ConversationActivity extends XmppActivity
 					this.mPostponedActivityResult = new Pair<>(requestCode, data);
 				}
 
+			} else if (requestCode == REQUEST_CREATE_CONFERENCE) {
+				if (xmppConnectionServiceBound) {
+					final Account account = extractAccount(data);
+					final String subject = data.getStringExtra("subject");
+					final List<Jid> jids = new ArrayList<>();
+					if (data.getBooleanExtra("multiple", false)) {
+						final String[] toAdd = data.getStringArrayExtra("contacts");
+						for (final String item : toAdd) {
+							try {
+								jids.add(Jid.fromString(item));
+							} catch (final InvalidJidException e) {
+								//ignored
+							}
+						}
+					} else {
+						try {
+							jids.add(Jid.fromString(data.getStringExtra("contact")));
+						} catch (final Exception e) {
+							//ignored
+						}
+					}
+					if (account != null && jids.size() > 0) {
+						if (xmppConnectionService.createAdhocConference(account, subject, jids, mAdhocConferenceCallback)) {
+							mCreateConferenceToast = Toast.makeText(this, R.string.creating_conference, Toast.LENGTH_LONG);
+							mCreateConferenceToast.show();
+						}
+					}
+					this.mPostponedActivityResult = null;
+				} else {
+					this.mPostponedActivityResult = new Pair<>(requestCode, data);
+				}
 			}
 		} else {
 			mPendingImageUris.clear();
@@ -1556,6 +1843,114 @@ public class ConversationActivity extends XmppActivity
 
 			}
 		});
+	}
+
+	public void startVoiceMessageRecording(final Conversation conversation) {
+		if (!hasRecordAudioPermission(REQUEST_RECORD_VOICE_MESSAGE)) {
+			return;
+		}
+		final java.io.File dir = new java.io.File(getFilesDir(), "Files");
+		dir.mkdirs();
+		mVoiceRecordingFile = new java.io.File(dir, "RIKITIKI_VOICE_" + System.currentTimeMillis() + ".m4a");
+		mVoiceRecordingCancelled = false;
+		mVoiceRecorder = new pl.rikitiki.im.utils.VoiceRecorder();
+		try {
+			mVoiceRecorder.start(mVoiceRecordingFile, new pl.rikitiki.im.utils.VoiceRecorder.Callback() {
+				@Override
+				public void onStopped() {
+					onVoiceRecordingStopped(conversation, null);
+				}
+
+				@Override
+				public void onError(final Exception e) {
+					onVoiceRecordingStopped(conversation, e);
+				}
+			});
+		} catch (final Exception e) {
+			Log.d(Config.LOGTAG, "failed to start voice message recording", e);
+			Toast.makeText(this, R.string.voice_message_recording_failed, Toast.LENGTH_SHORT).show();
+			mVoiceRecorder = null;
+			return;
+		}
+		mVoiceRecordingStartedAt = SystemClock.elapsedRealtime();
+		final View view = getLayoutInflater().inflate(R.layout.dialog_record_voice, null);
+		final TextView timer = (TextView) view.findViewById(R.id.record_voice_timer);
+		mVoiceRecordingDialog = new AlertDialog.Builder(this)
+				.setTitle(R.string.record_voice_message)
+				.setView(view)
+				.setCancelable(false)
+				.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(final DialogInterface dialog, final int which) {
+						cancelVoiceMessageRecording();
+					}
+				})
+				.setPositiveButton(R.string.stop_and_send, new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(final DialogInterface dialog, final int which) {
+						finishVoiceMessageRecording(conversation);
+					}
+				})
+				.show();
+		final Runnable ticker = new Runnable() {
+			@Override
+			public void run() {
+				if (mVoiceRecorder == null) {
+					return;
+				}
+				final long seconds = (SystemClock.elapsedRealtime() - mVoiceRecordingStartedAt) / 1000;
+				timer.setText(String.format(java.util.Locale.US, "%02d:%02d", seconds / 60, seconds % 60));
+				mVoiceRecordingHandler.postDelayed(this, 1000);
+			}
+		};
+		mVoiceRecordingHandler.post(ticker);
+	}
+
+	private void finishVoiceMessageRecording(final Conversation conversation) {
+		if (mVoiceRecorder == null) {
+			return;
+		}
+		mVoiceRecorder.stop();
+	}
+
+	private void cancelVoiceMessageRecording() {
+		if (mVoiceRecorder == null) {
+			return;
+		}
+		mVoiceRecordingCancelled = true;
+		mVoiceRecorder.cancel();
+	}
+
+	private void onVoiceRecordingStopped(final Conversation conversation, final Exception error) {
+		final java.io.File file = mVoiceRecordingFile;
+		final boolean cancelled = mVoiceRecordingCancelled;
+		cleanupVoiceRecordingState();
+		if (cancelled) {
+			if (file != null) {
+				file.delete();
+			}
+			return;
+		}
+		if (error != null) {
+			Log.d(Config.LOGTAG, "voice message recording failed to finalize", error);
+			Toast.makeText(this, R.string.voice_message_recording_failed, Toast.LENGTH_SHORT).show();
+			if (file != null) {
+				file.delete();
+			}
+			return;
+		}
+		final Uri uri = androidx.core.content.FileProvider.getUriForFile(this, getPackageName() + ".files", file);
+		attachFileToConversation(conversation, uri);
+	}
+
+	private void cleanupVoiceRecordingState() {
+		mVoiceRecorder = null;
+		mVoiceRecordingFile = null;
+		mVoiceRecordingHandler.removeCallbacksAndMessages(null);
+		if (mVoiceRecordingDialog != null) {
+			mVoiceRecordingDialog.dismiss();
+			mVoiceRecordingDialog = null;
+		}
 	}
 
 	private void attachFileToConversation(Conversation conversation, Uri uri) {
@@ -1658,6 +2053,17 @@ public class ConversationActivity extends XmppActivity
 
 	public void updateConversationList() {
 		xmppConnectionService.populateWithOrderedConversations(conversationList);
+		// Uses the full, unfiltered list — the contacts-without-a-conversation
+		// footer is about 1:1 contacts specifically, and a roster Contact's JID
+		// can only ever match a MODE_SINGLE conversation, so this is correct
+		// regardless of which tab is about to filter conversationList below.
+		updateContactsWithoutConversation();
+		final Iterator<Conversation> tabFilter = conversationList.iterator();
+		while (tabFilter.hasNext()) {
+			if (tabFilter.next().getMode() != mConversationsTabMode) {
+				tabFilter.remove();
+			}
+		}
 		if (!conversationList.contains(mSelectedConversation)) {
 			mSelectedConversation = null;
 		}
@@ -1669,7 +2075,6 @@ public class ConversationActivity extends XmppActivity
 			}
 		}
 		listAdapter.notifyDataSetChanged();
-		updateContactsWithoutConversation();
 	}
 
 	private void updateContactsWithoutConversation() {
@@ -1813,6 +2218,11 @@ public class ConversationActivity extends XmppActivity
 			}
 		} else if (!contactsWithoutConversation.isEmpty()) {
 			showConversationsOverview();
+		} else if (!xmppConnectionService.getConversations().isEmpty()) {
+			// This tab (Chats/Rooms) is empty, but conversations exist on the
+			// other one — just show this tab's empty overview instead of
+			// redirecting away to "start a conversation".
+			showConversationsOverview();
 		} else {
 			if (!isStopping() && mRedirected.compareAndSet(false, true)) {
 				redirectToStartConversationActivity();
@@ -1862,4 +2272,8 @@ public class ConversationActivity extends XmppActivity
 	public boolean highlightSelectedConversations() {
 		return !isConversationsOverviewHideable() || this.conversationWasSelectedByKeyboard;
 	}
+
+
+
+
 }

@@ -276,6 +276,13 @@ public class IqGenerator extends AbstractGenerator {
 		return iq;
 	}
 
+	public IqPacket requestExternalServices(final Account account) {
+		final IqPacket iq = new IqPacket(IqPacket.TYPE.GET);
+		iq.setTo(account.getServer());
+		iq.addChild("services", Namespace.EXTERNAL_SERVICE_DISCOVERY);
+		return iq;
+	}
+
 	public IqPacket generateSetBlockRequest(final Jid jid, boolean reportSpam) {
 		final IqPacket iq = new IqPacket(IqPacket.TYPE.SET);
 		final Element block = iq.addChild("block", Namespace.BLOCKING);

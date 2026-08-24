@@ -296,7 +296,6 @@
     <string name="leave">Напускане</string>
     <string name="load_more_messages">Зареждане на още съобщения</string>
     <string name="location">Местоположение</string>
-    <string name="magic_create_text">Ще преминем заедно с Вас през процеса за създаване на профил в conversations.im.¹\nАко изберете да използвате conversations.im, ще можете да общувате с потребители, използващи други сървъри, като им дадете своя пълен Jabber идентификатор.</string>
     <string name="mam_prefs">Настройки за архивирането</string>
     <string name="manual_verification_explanation">Внимателно сравнете отпечатъка по-долу с този на Вашия контакт.\nМожете да използвате всякакъв начин на сигурна комуникация, като шифрована е-поща или телефонен разговор, за да размените отпечатъците.</string>
     <string name="manually_verify">Ръчна проверка</string>

@@ -601,7 +601,6 @@
   <string name="no_application_to_share_uri">Nem találtunk URI-t használó alkalmazást</string>
   <string name="share_uri_with">Megosztás URI-ként</string>
   <string name="welcome_text">Az XMPP egy szolgáltató független protokoll. Ezt az ügyfél programot bármelyik XMPP szerverhez használhatja.\nDe a könnyebbség kedvéért létrehozhat egy fiókot a conversations.im¹ szolgáltatón is; ami kifejezetten a Conversations programmal való használatra lett tervezve.</string>
-  <string name="magic_create_text">Végigvezetjük a fiók létrehozás folyamatán a conversations.im-en.¹ \ nHa a conversations.im-et választja szolgáltatójának, akkor képes lesz kommunikálni a más szolgáltatóknál lévő felhasználókkal, ha megadja nekik a teljes Jabber ID-jét.</string>
   <string name="your_full_jid_will_be">A teljes Jabber ID-d ez lesz: %s</string>
   <string name="create_account">Fiók létrehozása</string>
   <string name="use_own_provider">Saját szolgáltató használata</string>

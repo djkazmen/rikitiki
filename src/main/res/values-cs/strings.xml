@@ -585,7 +585,6 @@
   <string name="no_application_to_share_uri">Nebyla nalezena aplikace pro sdílení URI</string>
   <string name="share_uri_with">Sdílet URI s...</string>
   <string name="welcome_text">XMPP je protokol nezávislý na poskytovateli. Tohoto klienta můžete použít s jakýmkoliv XMPP serverem dle svého výběru.\nPro lepší uživatelskou přívětivost jsme připravili možnost vytvořit účet u conversations.im¹; poskytovatele speciálné připraveného pro použití s aplikací Conversations.</string>
-  <string name="magic_create_text">Provedeme vás procesem založení uživatelského účtu u conversations.im.¹\nVybráním conversations.im za svého poskytovatele budete moci komunikovat s uživateli u jiných poskytovatelů, poté co jim sdělíte své Jabber ID.</string>
   <string name="your_full_jid_will_be">Vaše celé Jabber ID bude: %s</string>
   <string name="create_account">Vytvořit účet</string>
   <string name="use_own_provider">Použít vlastního provozovatele</string>

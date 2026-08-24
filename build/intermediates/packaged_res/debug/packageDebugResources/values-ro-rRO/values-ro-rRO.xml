@@ -300,7 +300,6 @@ Emitent</string>
     <string name="leave">Paraseste</string>
     <string name="load_more_messages">Incarca mai multe mesaje</string>
     <string name="location">Locatie</string>
-    <string name="magic_create_text">Va vom ghida prin procesul de creare al unui cont pe conversations.im.¹\nCand alegeti conversations.im ca furnizor veti putea comunica cu utilizatorii altor furnizori oferindu-le ID-ul dumneavoastra Jabber.</string>
     <string name="mam_prefs">Preferinte arhivare</string>
     <string name="manual_verification_explanation">Compara cu grija amprenta afisata mai jos cu amprenta contactului.\nPoti folosi orice forma de comunicare de incredere precum un e-mail criptat sau o convorbire telefonica pentru a face schimb de amprente.</string>
     <string name="manually_verify">Verifica manual</string>

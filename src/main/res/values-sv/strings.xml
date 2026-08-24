@@ -596,7 +596,6 @@
   <string name="no_application_to_share_uri">Ingen applikation kunde hittas för att dela URI</string>
   <string name="share_uri_with">Dela URI med...</string>
   <string name="welcome_text">XMPP är ett leverantörsoberoende protokoll. Du kan använda denna klient med vilken XMPP server du vill.\nFör din bekvämlighet har vi gjort det enkelt att skapa ett konto hos conversations.im¹; en leverantör speciellt anpassad för att användas med Conversations.</string>
-  <string name="magic_create_text">Du kommer nu att få hjälp med att skapa ett konto på conversations.im.¹\nNär conversations.im väljs som leverantör kommer du kunna kommunicera med användare hos andra leverantörer genom att ge dem ditt Jabber ID.</string>
   <string name="your_full_jid_will_be">Ditt jabber ID blir: %s</string>
   <string name="create_account">Skapa konto</string>
   <string name="use_own_provider">Använd min egen leverantör</string>

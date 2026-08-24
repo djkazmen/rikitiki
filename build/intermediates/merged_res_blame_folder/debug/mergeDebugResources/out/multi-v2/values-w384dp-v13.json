@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "pl.rikitiki.im-mergeDebugResources-23:/values-w384dp-v13/values-w384dp-v13.xml",
+            "outputFile": "pl.rikitiki.im-mergeDebugResources-24:/values-w384dp-v13/values-w384dp-v13.xml",
             "map": [
                 {
                     "source": "/home/kazmen/Documents/projects/claude/rikitiki/src/main/res/values-w384dp/dimens.xml",

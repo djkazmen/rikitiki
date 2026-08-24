@@ -6,6 +6,7 @@ import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -64,6 +65,23 @@ public class SettingsFragment extends PreferenceFragment {
 			mCategory.removePreference(mPref2);
 		}
 
+	}
+
+	@Override
+	public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
+		final View view = super.onCreateView(inflater, container, savedInstanceState);
+		// SettingsActivity never calls XmppActivity.setContentView(int) — it
+		// attaches this fragment straight to android.R.id.content instead —
+		// so the app-wide edge-to-edge fix there (which pads the activity's
+		// own inflated root view) never runs for this screen at all. Same
+		// fix, applied directly to PreferenceFragment's own root once it's
+		// created, so the first preference isn't hidden under the status
+		// bar/ActionBar on Android 15+ (targetSdk 35+ draws behind system
+		// bars by default).
+		if (view != null) {
+			view.setFitsSystemWindows(true);
+		}
+		return view;
 	}
 
 	@Override

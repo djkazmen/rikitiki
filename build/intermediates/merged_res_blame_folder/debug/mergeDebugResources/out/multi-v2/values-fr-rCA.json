@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "pl.rikitiki.im-mergeDebugResources-23:/values-fr-rCA/values-fr-rCA.xml",
+            "outputFile": "pl.rikitiki.im-mergeDebugResources-24:/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
                     "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/res/values-fr-rCA/values-fr-rCA.xml",
@@ -11,6 +11,23 @@
                         "startOffsets": "55,153,255,354,456,560,664,778",
                         "endColumns": "97,101,98,101,103,103,113,100",
                         "endOffsets": "148,250,349,451,555,659,773,874"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "290,388,490,589,691,795,899,1013",
+                        "endColumns": "97,101,98,101,103,103,113,100",
+                        "endOffsets": "383,485,584,686,790,894,1008,1109"
+                    }
+                },
+                {
+                    "source": "/home/kazmen/.gradle/caches/9.4.1/transforms/c0db9cbfa50dc6e9e0ae6465c429237a/transformed/jetified-credentials-1.5.0/res/values-fr-rCA/values-fr-rCA.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,171",
+                        "endColumns": "115,118",
+                        "endOffsets": "166,285"
                     }
                 }
             ]

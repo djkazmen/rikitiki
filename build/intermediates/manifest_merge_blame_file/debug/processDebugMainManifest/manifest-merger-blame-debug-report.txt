@@ -1,11 +1,11 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="pl.rikitiki.im"
-4    android:versionCode="229"
-5    android:versionName="1.20.0-beta" >
+4    android:versionCode="232"
+5    android:versionName="1.23" >
 6
 7    <uses-sdk
-7-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:17:5-71
+7-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:31:5-71
 8        android:minSdkVersion="21"
 8-->INJECTED
 9        android:targetSdkVersion="36" />
@@ -45,540 +45,594 @@
 21-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:15:5-95
 21-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:15:22-92
 22
-23    <permission
-23-->[androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
-24        android:name="pl.rikitiki.im.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-24-->[androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
-25        android:protectionLevel="signature" />
-25-->[androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
-26
-27    <uses-permission android:name="pl.rikitiki.im.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- for android -->
-27-->[androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
-27-->[androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
-28    <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/> -->
-29    <!-- <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/> -->
-30    <!-- <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> -->
-31    <!-- <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> -->
-32    <!-- for Samsung -->
-33    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
-33-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:19:5-86
-33-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:19:22-83
-34    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- for htc -->
-34-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:20:5-87
-34-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:20:22-84
-35    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
-35-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:23:5-81
-35-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:23:22-78
-36    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- for sony -->
-36-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:24:5-83
-36-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:24:22-80
-37    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
-37-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:27:5-88
-37-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:27:22-85
-38    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- for apex -->
-38-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:28:5-92
-38-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:28:22-89
-39    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- for solid -->
-39-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:31:5-84
-39-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:31:22-81
-40    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- for huawei -->
-40-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:34:5-83
-40-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:34:22-80
-41    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
-41-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:37:5-91
-41-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:37:22-88
-42    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
-42-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:38:5-92
-42-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:38:22-89
-43    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" /> <!-- for ZUK -->
-43-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:39:5-93
-43-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:39:22-90
-44    <uses-permission android:name="android.permission.READ_APP_BADGE" /> <!-- for OPPO -->
-44-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:42:5-73
-44-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:42:22-70
-45    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
-45-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:45:5-82
-45-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:45:22-79
-46    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" /> <!-- for EvMe -->
-46-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:46:5-83
-46-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:46:22-80
-47    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
-47-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:49:5-88
-47-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:49:22-85
-48    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
-48-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:50:5-89
-48-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:50:22-86
-49
-50    <application
-50-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:20:5-223:19
-51        android:allowBackup="true"
-51-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:22:9-35
-52        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-52-->[androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
-53        android:debuggable="true"
-54        android:extractNativeLibs="true"
-54-->INJECTED
-55        android:icon="@drawable/ic_launcher"
-55-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:23:9-45
-56        android:label="@string/app_name"
-56-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:24:9-41
-57        android:networkSecurityConfig="@xml/network_security_configuration"
-57-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:21:9-76
-58        android:testOnly="true"
-59        android:theme="@style/ConversationsTheme" >
-59-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:25:9-50
-60        <meta-data
-60-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:28:9-29:59
-61            android:name="com.google.android.gms.car.application"
-61-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:28:20-73
-62            android:resource="@xml/automotive_app_desc" />
-62-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:29:13-56
-63
-64        <service android:name="pl.rikitiki.im.services.XmppConnectionService" />
-64-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:31:9-67
-64-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:31:18-64
-65
-66        <receiver
-66-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:33:9-42:20
-67            android:name="pl.rikitiki.im.services.EventReceiver"
-67-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:34:13-51
-68            android:exported="false" >
-68-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:35:13-37
-69            <intent-filter>
-69-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:36:13-41:29
-70                <action android:name="android.intent.action.BOOT_COMPLETED" />
-70-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:37:17-79
-70-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:37:25-76
-71                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-71-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:38:17-79
-71-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:38:25-76
-72                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
-72-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:39:17-80
-72-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:39:25-77
-73                <action android:name="android.media.RINGER_MODE_CHANGED" />
-73-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:40:17-76
-73-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:40:25-73
-74            </intent-filter>
-75        </receiver>
-76
-77        <activity
-77-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:44:9-57:20
-78            android:name="pl.rikitiki.im.ui.ConversationActivity"
-78-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:45:13-52
-79            android:exported="true"
-79-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:51:13-36
-80            android:label="@string/app_name"
-80-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:46:13-45
-81            android:launchMode="singleTask"
-81-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:47:13-44
-82            android:minHeight="300dp"
-82-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:49:13-38
-83            android:minWidth="300dp"
-83-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:48:13-37
-84            android:windowSoftInputMode="stateHidden" >
-84-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:50:13-54
-85            <intent-filter>
-85-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:52:13-56:29
-86                <action android:name="android.intent.action.MAIN" />
-86-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:53:17-69
-86-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:53:25-66
-87
-88                <category android:name="android.intent.category.LAUNCHER" />
-88-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:55:17-77
-88-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:55:27-74
-89            </intent-filter>
-90        </activity>
-91        <activity
-91-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:58:9-98:20
-92            android:name="pl.rikitiki.im.ui.StartConversationActivity"
-92-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:59:13-57
-93            android:exported="true"
-93-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:62:13-36
-94            android:label="@string/title_activity_start_conversation"
-94-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:60:13-70
-95            android:launchMode="singleTask" >
-95-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:61:13-44
-96            <intent-filter>
-96-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:63:13-70:29
-97                <action android:name="android.intent.action.SENDTO" />
-97-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:64:17-71
-97-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:64:25-68
-98
-99                <category android:name="android.intent.category.DEFAULT" />
-99-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:17-76
-99-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:27-73
-100
-101                <data android:scheme="imto" />
-101-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:17-47
-101-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:23-44
-102                <data android:host="jabber" />
-102-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:17-47
-102-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:69:23-44
-103            </intent-filter>
+23    <!-- Voice/video calling (Jingle RTP over WebRTC) -->
+24    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+24-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:18:5-71
+24-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:18:22-68
+25    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+25-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:19:5-80
+25-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:19:22-77
+26    <uses-permission android:name="android.permission.CAMERA" />
+26-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:20:5-65
+26-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:20:22-62
+27    <!-- Bluetooth audio-route selection during calls (SCO start/stop, device names) -->
+28    <uses-permission
+28-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:22:5-95
+29        android:name="android.permission.BLUETOOTH"
+29-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:22:22-65
+30        android:maxSdkVersion="30" />
+30-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:22:66-92
+31    <uses-permission
+31-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:23:5-101
+32        android:name="android.permission.BLUETOOTH_ADMIN"
+32-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:23:22-71
+33        android:maxSdkVersion="30" />
+33-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:23:72-98
+34    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+34-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:24:5-76
+34-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:24:22-73
+35    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+35-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:25:5-77
+35-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:25:22-74
+36    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+36-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:26:5-88
+36-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:26:22-85
+37    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+37-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:27:5-84
+37-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:27:22-81
+38    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+38-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:28:5-81
+38-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:28:22-78
+39    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+39-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:29:5-77
+39-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:29:22-74
+40
+41    <permission
+41-->[androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
+42        android:name="pl.rikitiki.im.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+42-->[androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
+43        android:protectionLevel="signature" />
+43-->[androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+44
+45    <uses-permission android:name="pl.rikitiki.im.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- for android -->
+45-->[androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
+45-->[androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+46    <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/> -->
+47    <!-- <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/> -->
+48    <!-- <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> -->
+49    <!-- <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> -->
+50    <!-- for Samsung -->
+51    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+51-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:19:5-86
+51-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:19:22-83
+52    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- for htc -->
+52-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:20:5-87
+52-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:20:22-84
+53    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+53-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:23:5-81
+53-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:23:22-78
+54    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- for sony -->
+54-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:24:5-83
+54-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:24:22-80
+55    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+55-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:27:5-88
+55-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:27:22-85
+56    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- for apex -->
+56-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:28:5-92
+56-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:28:22-89
+57    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- for solid -->
+57-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:31:5-84
+57-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:31:22-81
+58    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- for huawei -->
+58-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:34:5-83
+58-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:34:22-80
+59    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+59-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:37:5-91
+59-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:37:22-88
+60    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+60-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:38:5-92
+60-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:38:22-89
+61    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" /> <!-- for ZUK -->
+61-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:39:5-93
+61-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:39:22-90
+62    <uses-permission android:name="android.permission.READ_APP_BADGE" /> <!-- for OPPO -->
+62-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:42:5-73
+62-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:42:22-70
+63    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+63-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:45:5-82
+63-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:45:22-79
+64    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" /> <!-- for EvMe -->
+64-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:46:5-83
+64-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:46:22-80
+65    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+65-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:49:5-88
+65-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:49:22-85
+66    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
+66-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:50:5-89
+66-->[me.leolin:ShortcutBadger:1.1.17] /home/kazmen/.gradle/caches/9.4.1/transforms/fd25f3c979201886eebb261f00b5e802/transformed/jetified-ShortcutBadger-1.1.17/AndroidManifest.xml:50:22-86
+67
+68    <application
+68-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:34:5-244:19
+69        android:allowBackup="true"
+69-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:36:9-35
+70        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+70-->[androidx.core:core:1.15.0] /home/kazmen/.gradle/caches/9.4.1/transforms/827fe183c8603187b33d50d7c53ded34/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
+71        android:debuggable="true"
+72        android:extractNativeLibs="false"
+72-->INJECTED
+73        android:icon="@drawable/ic_launcher"
+73-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:37:9-45
+74        android:label="@string/app_name"
+74-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:38:9-41
+75        android:networkSecurityConfig="@xml/network_security_configuration"
+75-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:35:9-76
+76        android:theme="@style/ConversationsTheme" >
+76-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:39:9-50
+77        <meta-data
+77-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:42:9-43:59
+78            android:name="com.google.android.gms.car.application"
+78-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:42:20-73
+79            android:resource="@xml/automotive_app_desc" />
+79-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:43:13-56
+80
+81        <service
+81-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:45:9-47:65
+82            android:name="pl.rikitiki.im.services.XmppConnectionService"
+82-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:46:13-59
+83            android:foregroundServiceType="microphone|camera" />
+83-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:47:13-62
+84
+85        <receiver
+85-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:49:9-58:20
+86            android:name="pl.rikitiki.im.services.EventReceiver"
+86-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:50:13-51
+87            android:exported="false" >
+87-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:51:13-37
+88            <intent-filter>
+88-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:52:13-57:29
+89                <action android:name="android.intent.action.BOOT_COMPLETED" />
+89-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:53:17-79
+89-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:53:25-76
+90                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+90-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:54:17-79
+90-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:54:25-76
+91                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+91-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:55:17-80
+91-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:55:25-77
+92                <action android:name="android.media.RINGER_MODE_CHANGED" />
+92-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:56:17-76
+92-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:56:25-73
+93            </intent-filter>
+94        </receiver>
+95
+96        <activity
+96-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:60:9-73:20
+97            android:name="pl.rikitiki.im.ui.ConversationActivity"
+97-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:61:13-52
+98            android:exported="true"
+98-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:67:13-36
+99            android:label="@string/app_name"
+99-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:62:13-45
+100            android:launchMode="singleTask"
+100-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:63:13-44
+101            android:minHeight="300dp"
+101-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:65:13-38
+102            android:minWidth="300dp"
+102-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:64:13-37
+103            android:windowSoftInputMode="stateHidden" >
+103-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:13-54
 104            <intent-filter>
-104-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:71:13-78:29
-105                <action android:name="android.intent.action.VIEW" />
-105-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:72:17-69
-105-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:72:25-66
+104-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:13-72:29
+105                <action android:name="android.intent.action.MAIN" />
+105-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:69:17-69
+105-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:69:25-66
 106
-107                <category android:name="android.intent.category.DEFAULT" />
-107-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:17-76
-107-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:27-73
-108                <category android:name="android.intent.category.BROWSABLE" />
-108-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:75:17-78
-108-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:75:27-75
-109
-110                <data android:scheme="xmpp" />
-110-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:17-47
-110-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:23-44
-111            </intent-filter>
-112            <intent-filter>
-112-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:79:13-85:29
-113                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
-113-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:80:17-77
-113-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:80:25-74
-114
-115                <category android:name="android.intent.category.DEFAULT" />
-115-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:17-76
-115-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:27-73
-116
-117                <data android:scheme="xmpp" />
-117-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:17-47
-117-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:23-44
-118            </intent-filter>
-119            <intent-filter android:autoVerify="true" >
-119-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:86:13-96:29
-119-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:86:28-53
-120                <action android:name="android.intent.action.VIEW" />
-120-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:72:17-69
-120-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:72:25-66
-121
-122                <category android:name="android.intent.category.DEFAULT" />
-122-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:17-76
-122-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:27-73
-123                <category android:name="android.intent.category.BROWSABLE" />
-123-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:75:17-78
-123-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:75:27-75
-124
-125                <data android:scheme="https" />
-125-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:17-47
-125-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:23-44
-126                <data android:host="conversations.im" />
-126-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:17-47
-126-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:69:23-44
-127                <data android:pathPrefix="/i/" />
-127-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:17-47
-127-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:94:23-47
-128                <data android:pathPrefix="/j/" />
-128-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:17-47
-128-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:94:23-47
-129            </intent-filter>
-130        </activity>
-131        <activity
-131-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:99:9-102:46
-132            android:name="pl.rikitiki.im.ui.WelcomeActivity"
-132-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:100:13-47
-133            android:label="@string/app_name"
-133-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:101:13-45
-134            android:launchMode="singleTask" />
-134-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:102:13-44
-135        <activity
-135-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:103:9-106:46
-136            android:name="pl.rikitiki.im.ui.MagicCreateActivity"
-136-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:104:13-51
-137            android:label="@string/create_account"
-137-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:105:13-51
-138            android:launchMode="singleTask" />
-138-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:106:13-44
-139        <activity
-139-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:107:9-110:46
-140            android:name="pl.rikitiki.im.ui.PhoneVerificationActivity"
-140-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:108:13-57
-141            android:label="@string/title_activity_phone_verification"
-141-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:109:13-70
-142            android:launchMode="singleTask" />
-142-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:110:13-44
-143        <activity
-143-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:111:9-116:70
-144            android:name="pl.rikitiki.im.ui.SetPresenceActivity"
-144-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:112:13-51
-145            android:configChanges="orientation|screenSize"
-145-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:113:13-59
-146            android:label="@string/change_presence"
-146-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:114:13-52
-147            android:launchMode="singleTask"
-147-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:115:13-44
-148            android:windowSoftInputMode="stateHidden|adjustResize" />
-148-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:116:13-67
-149        <activity
-149-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:117:9-119:63
-150            android:name="pl.rikitiki.im.ui.SettingsActivity"
-150-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:118:13-48
-151            android:label="@string/title_activity_settings" />
-151-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:119:13-60
-152        <activity
-152-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:120:9-122:69
-153            android:name="pl.rikitiki.im.ui.ChooseContactActivity"
-153-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:121:13-53
-154            android:label="@string/title_activity_choose_contact" />
-154-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:122:13-66
-155        <activity
-155-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:123:9-125:65
-156            android:name="pl.rikitiki.im.ui.BlocklistActivity"
-156-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:124:13-49
-157            android:label="@string/title_activity_block_list" />
-157-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:125:13-62
+107                <category android:name="android.intent.category.LAUNCHER" />
+107-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:71:17-77
+107-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:71:27-74
+108            </intent-filter>
+109        </activity>
+110        <activity
+110-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:74:9-114:20
+111            android:name="pl.rikitiki.im.ui.StartConversationActivity"
+111-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:75:13-57
+112            android:exported="true"
+112-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:78:13-36
+113            android:label="@string/title_activity_start_conversation"
+113-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:76:13-70
+114            android:launchMode="singleTask" >
+114-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:77:13-44
+115            <intent-filter>
+115-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:79:13-86:29
+116                <action android:name="android.intent.action.SENDTO" />
+116-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:80:17-71
+116-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:80:25-68
+117
+118                <category android:name="android.intent.category.DEFAULT" />
+118-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:17-76
+118-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:27-73
+119
+120                <data android:scheme="imto" />
+120-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:17-47
+120-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:23-44
+121                <data android:host="jabber" />
+121-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:17-47
+121-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:85:23-44
+122            </intent-filter>
+123            <intent-filter>
+123-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:87:13-94:29
+124                <action android:name="android.intent.action.VIEW" />
+124-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:88:17-69
+124-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:88:25-66
+125
+126                <category android:name="android.intent.category.DEFAULT" />
+126-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:17-76
+126-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:27-73
+127                <category android:name="android.intent.category.BROWSABLE" />
+127-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:91:17-78
+127-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:91:27-75
+128
+129                <data android:scheme="xmpp" />
+129-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:17-47
+129-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:23-44
+130            </intent-filter>
+131            <intent-filter>
+131-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:95:13-101:29
+132                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+132-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:96:17-77
+132-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:96:25-74
+133
+134                <category android:name="android.intent.category.DEFAULT" />
+134-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:17-76
+134-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:27-73
+135
+136                <data android:scheme="xmpp" />
+136-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:17-47
+136-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:23-44
+137            </intent-filter>
+138            <intent-filter android:autoVerify="true" >
+138-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:102:13-112:29
+138-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:102:28-53
+139                <action android:name="android.intent.action.VIEW" />
+139-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:88:17-69
+139-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:88:25-66
+140
+141                <category android:name="android.intent.category.DEFAULT" />
+141-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:17-76
+141-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:27-73
+142                <category android:name="android.intent.category.BROWSABLE" />
+142-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:91:17-78
+142-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:91:27-75
+143
+144                <data android:scheme="https" />
+144-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:17-47
+144-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:23-44
+145                <data android:host="conversations.im" />
+145-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:17-47
+145-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:85:23-44
+146                <data android:pathPrefix="/i/" />
+146-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:17-47
+146-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:110:23-47
+147                <data android:pathPrefix="/j/" />
+147-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:17-47
+147-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:110:23-47
+148            </intent-filter>
+149        </activity>
+150        <activity
+150-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:115:9-118:46
+151            android:name="pl.rikitiki.im.ui.WelcomeActivity"
+151-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:116:13-47
+152            android:label="@string/app_name"
+152-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:117:13-45
+153            android:launchMode="singleTask" />
+153-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:118:13-44
+154        <activity
+154-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:119:9-122:46
+155            android:name="pl.rikitiki.im.ui.PhoneVerificationActivity"
+155-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:120:13-57
+156            android:label="@string/title_activity_phone_verification"
+156-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:121:13-70
+157            android:launchMode="singleTask" />
+157-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:122:13-44
 158        <activity
-158-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:126:9-128:65
-159            android:name="pl.rikitiki.im.ui.ChangePasswordActivity"
-159-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:127:13-54
-160            android:label="@string/change_password_on_server" />
-160-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:128:13-62
+158-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:123:9-125:60
+159            android:name="pl.rikitiki.im.ui.PhoneContactsActivity"
+159-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:124:13-53
+160            android:label="@string/phone_contacts_title" />
+160-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:125:13-57
 161        <activity
-161-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:129:9-132:47
-162            android:name="pl.rikitiki.im.ui.ManageAccountActivity"
-162-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:130:13-53
-163            android:label="@string/title_activity_manage_accounts"
-163-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:131:13-67
-164            android:launchMode="singleTask" />
-164-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:132:13-44
-165        <activity
-165-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:133:9-136:70
-166            android:name="pl.rikitiki.im.ui.EditAccountActivity"
-166-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:134:13-51
-167            android:launchMode="singleTask"
-167-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:135:13-44
-168            android:windowSoftInputMode="stateHidden|adjustResize" />
-168-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:136:13-67
-169        <activity
-169-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:137:9-140:57
-170            android:name="pl.rikitiki.im.ui.ConferenceDetailsActivity"
-170-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:138:13-57
-171            android:label="@string/title_activity_conference_details"
-171-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:139:13-70
-172            android:windowSoftInputMode="stateHidden" />
-172-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:140:13-54
+161-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:126:9-131:70
+162            android:name="pl.rikitiki.im.ui.SetPresenceActivity"
+162-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:127:13-51
+163            android:configChanges="orientation|screenSize"
+163-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:128:13-59
+164            android:label="@string/change_presence"
+164-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:129:13-52
+165            android:launchMode="singleTask"
+165-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:130:13-44
+166            android:windowSoftInputMode="stateHidden|adjustResize" />
+166-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:131:13-67
+167        <activity
+167-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:132:9-134:63
+168            android:name="pl.rikitiki.im.ui.SettingsActivity"
+168-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:133:13-48
+169            android:label="@string/title_activity_settings" />
+169-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:134:13-60
+170        <activity
+170-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:135:9-137:69
+171            android:name="pl.rikitiki.im.ui.ChooseContactActivity"
+171-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:136:13-53
+172            android:label="@string/title_activity_choose_contact" />
+172-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:137:13-66
 173        <activity
-173-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:141:9-144:57
-174            android:name="pl.rikitiki.im.ui.ContactDetailsActivity"
-174-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:142:13-54
-175            android:label="@string/title_activity_contact_details"
-175-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:143:13-67
-176            android:windowSoftInputMode="stateHidden" />
-176-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:144:13-54
-177        <activity
-177-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:145:9-148:57
-178            android:name="pl.rikitiki.im.ui.PublishProfilePictureActivity"
-178-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:146:13-61
-179            android:label="@string/mgmt_account_publish_avatar"
-179-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:147:13-64
-180            android:windowSoftInputMode="stateHidden" />
-180-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:148:13-54
-181        <activity
-181-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:149:9-152:57
-182            android:name="pl.rikitiki.im.ui.VerifyOTRActivity"
-182-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:150:13-49
-183            android:label="@string/verify_otr"
-183-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:151:13-47
-184            android:windowSoftInputMode="stateHidden" />
-184-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:152:13-54
-185        <activity
-185-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:153:9-182:20
-186            android:name="pl.rikitiki.im.ui.ShareWithActivity"
-186-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:154:13-49
-187            android:exported="true"
-187-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:156:13-36
-188            android:label="@string/app_name" >
-188-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:155:13-45
-189            <intent-filter>
-189-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:157:13-163:29
-190                <action android:name="android.intent.action.SEND" />
-190-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:158:17-69
-190-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:158:25-66
-191
-192                <category android:name="android.intent.category.DEFAULT" />
-192-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:17-76
-192-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:27-73
-193
-194                <data android:mimeType="text/plain" />
-194-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:17-47
-194-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:162:23-52
-195            </intent-filter>
-196            <intent-filter>
-196-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:164:13-170:29
-197                <action android:name="android.intent.action.SEND" />
-197-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:158:17-69
-197-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:158:25-66
-198
-199                <category android:name="android.intent.category.DEFAULT" />
-199-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:17-76
-199-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:27-73
-200
-201                <data android:mimeType="*/*" />
-201-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:17-47
-201-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:162:23-52
-202            </intent-filter>
-203            <intent-filter>
-203-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:171:13-177:29
-204                <action android:name="android.intent.action.SEND_MULTIPLE" />
-204-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:172:17-78
-204-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:172:25-75
-205
-206                <category android:name="android.intent.category.DEFAULT" />
-206-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:17-76
-206-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:66:27-73
-207
-208                <data android:mimeType="image/*" />
-208-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:68:17-47
-208-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:162:23-52
-209            </intent-filter>
-210
-211            <meta-data
-211-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:179:13-181:73
-212                android:name="android.service.chooser.chooser_target_service"
-212-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:180:17-78
-213                android:value=".services.ContactChooserTargetService" />
-213-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:181:17-70
-214        </activity>
-215        <activity
-215-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:183:9-186:63
-216            android:name="pl.rikitiki.im.ui.TrustKeysActivity"
-216-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:184:13-49
-217            android:label="@string/trust_omemo_fingerprints"
-217-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:185:13-61
-218            android:windowSoftInputMode="stateAlwaysHidden" />
-218-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:186:13-60
-219        <activity
-219-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:187:9-190:45
-220            android:name="de.duenndns.ssl.MemorizingActivity"
-220-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:188:13-62
-221            android:theme="@style/ConversationsTheme" />
-221-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:189:13-54
-222        <activity
-222-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:191:9-194:65
-223            android:name="pl.rikitiki.im.ui.AboutActivity"
-223-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:192:13-45
-224            android:label="@string/title_activity_about"
-224-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:193:13-57
-225            android:parentActivityName="pl.rikitiki.im.ui.SettingsActivity" />
-225-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:194:13-62
-226        <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
-226-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:195:9-82
-226-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:195:19-79
-227
-228        <service android:name="pl.rikitiki.im.services.ExportLogsService" />
-228-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:197:9-63
-228-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:197:18-60
-229        <service
-229-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:198:9-205:19
-230            android:name="pl.rikitiki.im.services.ContactChooserTargetService"
-230-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:199:13-65
-231            android:exported="true"
-231-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:200:13-36
-232            android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE" >
-232-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:201:13-80
-233            <intent-filter>
-233-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:202:13-204:29
-234                <action android:name="android.service.chooser.ChooserTargetService" />
-234-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:203:17-87
-234-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:203:25-84
-235            </intent-filter>
-236        </service>
-237
-238        <provider
-238-->INJECTED
-239            android:name="androidx.core.content.FileProvider"
-239-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:208:13-62
-240            android:authorities="pl.rikitiki.im.files"
-240-->INJECTED
-241            android:exported="false"
-241-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:210:13-37
-242            android:grantUriPermissions="true" >
-242-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:211:13-47
-243            <meta-data
-243-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:212:13-214:54
-244                android:name="androidx.core.content.FileProvider.FILE_PROVIDER_PATHS"
-244-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:213:17-86
-245                android:resource="@xml/file_paths" />
-245-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:214:17-51
-246        </provider>
-247        <provider
-247-->INJECTED
-248            android:name="pl.rikitiki.im.services.BarcodeProvider"
-248-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:218:13-53
-249            android:authorities="pl.rikitiki.im.barcodes"
-249-->INJECTED
-250            android:exported="false"
-250-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:219:13-37
-251            android:grantUriPermissions="true" />
-251-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:220:13-47
-252
-253        <uses-library
-253-->[androidx.window:window:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/cb04fd3ec863acffe3455609b091a714/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
-254            android:name="androidx.window.extensions"
-254-->[androidx.window:window:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/cb04fd3ec863acffe3455609b091a714/transformed/jetified-window-1.0.0/AndroidManifest.xml:26:13-54
-255            android:required="false" />
-255-->[androidx.window:window:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/cb04fd3ec863acffe3455609b091a714/transformed/jetified-window-1.0.0/AndroidManifest.xml:27:13-37
-256        <uses-library
-256-->[androidx.window:window:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/cb04fd3ec863acffe3455609b091a714/transformed/jetified-window-1.0.0/AndroidManifest.xml:28:9-30:40
-257            android:name="androidx.window.sidecar"
-257-->[androidx.window:window:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/cb04fd3ec863acffe3455609b091a714/transformed/jetified-window-1.0.0/AndroidManifest.xml:29:13-51
-258            android:required="false" />
-258-->[androidx.window:window:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/cb04fd3ec863acffe3455609b091a714/transformed/jetified-window-1.0.0/AndroidManifest.xml:30:13-37
-259
-260        <provider
-260-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
-261            android:name="androidx.startup.InitializationProvider"
-261-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:25:13-67
-262            android:authorities="pl.rikitiki.im.androidx-startup"
-262-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:26:13-68
-263            android:exported="false" >
-263-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:27:13-37
-264            <meta-data
-264-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
-265                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-265-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
-266                android:value="androidx.startup" />
-266-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
-267        </provider>
-268
-269        <receiver
-269-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
-270            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-270-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
-271            android:directBootAware="false"
-271-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
-272            android:enabled="true"
-272-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
-273            android:exported="true"
-273-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
-274            android:permission="android.permission.DUMP" >
-274-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
-275            <intent-filter>
-275-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
-276                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-276-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
-276-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
-277            </intent-filter>
-278            <intent-filter>
-278-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
-279                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-279-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
-279-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
-280            </intent-filter>
-281            <intent-filter>
-281-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
-282                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-282-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
-282-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
-283            </intent-filter>
-284            <intent-filter>
-284-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
-285                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-285-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
-285-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
-286            </intent-filter>
-287        </receiver>
-288    </application>
-289
-290</manifest>
+173-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:138:9-140:65
+174            android:name="pl.rikitiki.im.ui.BlocklistActivity"
+174-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:139:13-49
+175            android:label="@string/title_activity_block_list" />
+175-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:140:13-62
+176        <activity
+176-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:141:9-143:65
+177            android:name="pl.rikitiki.im.ui.ChangePasswordActivity"
+177-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:142:13-54
+178            android:label="@string/change_password_on_server" />
+178-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:143:13-62
+179        <activity
+179-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:144:9-147:47
+180            android:name="pl.rikitiki.im.ui.ManageAccountActivity"
+180-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:145:13-53
+181            android:label="@string/title_activity_manage_accounts"
+181-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:146:13-67
+182            android:launchMode="singleTask" />
+182-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:147:13-44
+183        <activity
+183-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:148:9-151:70
+184            android:name="pl.rikitiki.im.ui.EditAccountActivity"
+184-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:149:13-51
+185            android:launchMode="singleTask"
+185-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:150:13-44
+186            android:windowSoftInputMode="stateHidden|adjustResize" />
+186-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:151:13-67
+187        <activity
+187-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:152:9-155:57
+188            android:name="pl.rikitiki.im.ui.ConferenceDetailsActivity"
+188-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:153:13-57
+189            android:label="@string/title_activity_conference_details"
+189-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:154:13-70
+190            android:windowSoftInputMode="stateHidden" />
+190-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:155:13-54
+191        <activity
+191-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:156:9-161:43
+192            android:name="pl.rikitiki.im.ui.RtpSessionActivity"
+192-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:157:13-50
+193            android:excludeFromRecents="true"
+193-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:159:13-46
+194            android:launchMode="singleTask"
+194-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:158:13-44
+195            android:showWhenLocked="true"
+195-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:160:13-42
+196            android:turnScreenOn="true" />
+196-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:161:13-40
+197        <activity
+197-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:162:9-165:57
+198            android:name="pl.rikitiki.im.ui.ContactDetailsActivity"
+198-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:163:13-54
+199            android:label="@string/title_activity_contact_details"
+199-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:164:13-67
+200            android:windowSoftInputMode="stateHidden" />
+200-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:165:13-54
+201        <activity
+201-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:166:9-169:57
+202            android:name="pl.rikitiki.im.ui.PublishProfilePictureActivity"
+202-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:167:13-61
+203            android:label="@string/mgmt_account_publish_avatar"
+203-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:168:13-64
+204            android:windowSoftInputMode="stateHidden" />
+204-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:169:13-54
+205        <activity
+205-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:170:9-173:57
+206            android:name="pl.rikitiki.im.ui.VerifyOTRActivity"
+206-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:171:13-49
+207            android:label="@string/verify_otr"
+207-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:172:13-47
+208            android:windowSoftInputMode="stateHidden" />
+208-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:173:13-54
+209        <activity
+209-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:174:9-203:20
+210            android:name="pl.rikitiki.im.ui.ShareWithActivity"
+210-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:175:13-49
+211            android:exported="true"
+211-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:177:13-36
+212            android:label="@string/app_name" >
+212-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:176:13-45
+213            <intent-filter>
+213-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:178:13-184:29
+214                <action android:name="android.intent.action.SEND" />
+214-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:179:17-69
+214-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:179:25-66
+215
+216                <category android:name="android.intent.category.DEFAULT" />
+216-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:17-76
+216-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:27-73
+217
+218                <data android:mimeType="text/plain" />
+218-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:17-47
+218-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:183:23-52
+219            </intent-filter>
+220            <intent-filter>
+220-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:185:13-191:29
+221                <action android:name="android.intent.action.SEND" />
+221-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:179:17-69
+221-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:179:25-66
+222
+223                <category android:name="android.intent.category.DEFAULT" />
+223-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:17-76
+223-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:27-73
+224
+225                <data android:mimeType="*/*" />
+225-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:17-47
+225-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:183:23-52
+226            </intent-filter>
+227            <intent-filter>
+227-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:192:13-198:29
+228                <action android:name="android.intent.action.SEND_MULTIPLE" />
+228-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:193:17-78
+228-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:193:25-75
+229
+230                <category android:name="android.intent.category.DEFAULT" />
+230-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:17-76
+230-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:82:27-73
+231
+232                <data android:mimeType="image/*" />
+232-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:84:17-47
+232-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:183:23-52
+233            </intent-filter>
+234
+235            <meta-data
+235-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:200:13-202:73
+236                android:name="android.service.chooser.chooser_target_service"
+236-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:201:17-78
+237                android:value=".services.ContactChooserTargetService" />
+237-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:202:17-70
+238        </activity>
+239        <activity
+239-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:204:9-207:63
+240            android:name="pl.rikitiki.im.ui.TrustKeysActivity"
+240-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:205:13-49
+241            android:label="@string/trust_omemo_fingerprints"
+241-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:206:13-61
+242            android:windowSoftInputMode="stateAlwaysHidden" />
+242-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:207:13-60
+243        <activity
+243-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:208:9-211:45
+244            android:name="de.duenndns.ssl.MemorizingActivity"
+244-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:209:13-62
+245            android:theme="@style/ConversationsTheme" />
+245-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:210:13-54
+246        <activity
+246-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:212:9-215:65
+247            android:name="pl.rikitiki.im.ui.AboutActivity"
+247-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:213:13-45
+248            android:label="@string/title_activity_about"
+248-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:214:13-57
+249            android:parentActivityName="pl.rikitiki.im.ui.SettingsActivity" />
+249-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:215:13-62
+250        <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
+250-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:216:9-82
+250-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:216:19-79
+251
+252        <service android:name="pl.rikitiki.im.services.ExportLogsService" />
+252-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:218:9-63
+252-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:218:18-60
+253        <service
+253-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:219:9-226:19
+254            android:name="pl.rikitiki.im.services.ContactChooserTargetService"
+254-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:220:13-65
+255            android:exported="true"
+255-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:221:13-36
+256            android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE" >
+256-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:222:13-80
+257            <intent-filter>
+257-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:223:13-225:29
+258                <action android:name="android.service.chooser.ChooserTargetService" />
+258-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:224:17-87
+258-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:224:25-84
+259            </intent-filter>
+260        </service>
+261
+262        <provider
+262-->INJECTED
+263            android:name="androidx.core.content.FileProvider"
+263-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:229:13-62
+264            android:authorities="pl.rikitiki.im.files"
+264-->INJECTED
+265            android:exported="false"
+265-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:231:13-37
+266            android:grantUriPermissions="true" >
+266-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:232:13-47
+267            <meta-data
+267-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:233:13-235:54
+268                android:name="android.support.FILE_PROVIDER_PATHS"
+268-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:234:17-67
+269                android:resource="@xml/file_paths" />
+269-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:235:17-51
+270        </provider>
+271        <provider
+271-->INJECTED
+272            android:name="pl.rikitiki.im.services.BarcodeProvider"
+272-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:239:13-53
+273            android:authorities="pl.rikitiki.im.barcodes"
+273-->INJECTED
+274            android:exported="false"
+274-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:240:13-37
+275            android:grantUriPermissions="true" />
+275-->/home/kazmen/Documents/projects/claude/rikitiki/src/main/AndroidManifest.xml:241:13-47
+276
+277        <uses-library
+277-->[androidx.window:window:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/cb04fd3ec863acffe3455609b091a714/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
+278            android:name="androidx.window.extensions"
+278-->[androidx.window:window:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/cb04fd3ec863acffe3455609b091a714/transformed/jetified-window-1.0.0/AndroidManifest.xml:26:13-54
+279            android:required="false" />
+279-->[androidx.window:window:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/cb04fd3ec863acffe3455609b091a714/transformed/jetified-window-1.0.0/AndroidManifest.xml:27:13-37
+280        <uses-library
+280-->[androidx.window:window:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/cb04fd3ec863acffe3455609b091a714/transformed/jetified-window-1.0.0/AndroidManifest.xml:28:9-30:40
+281            android:name="androidx.window.sidecar"
+281-->[androidx.window:window:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/cb04fd3ec863acffe3455609b091a714/transformed/jetified-window-1.0.0/AndroidManifest.xml:29:13-51
+282            android:required="false" />
+282-->[androidx.window:window:1.0.0] /home/kazmen/.gradle/caches/9.4.1/transforms/cb04fd3ec863acffe3455609b091a714/transformed/jetified-window-1.0.0/AndroidManifest.xml:30:13-37
+283
+284        <provider
+284-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+285            android:name="androidx.startup.InitializationProvider"
+285-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:25:13-67
+286            android:authorities="pl.rikitiki.im.androidx-startup"
+286-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:26:13-68
+287            android:exported="false" >
+287-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:27:13-37
+288            <meta-data
+288-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+289                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+289-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+290                android:value="androidx.startup" />
+290-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+291        </provider>
+292
+293        <receiver
+293-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+294            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+294-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+295            android:directBootAware="false"
+295-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+296            android:enabled="true"
+296-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+297            android:exported="true"
+297-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+298            android:permission="android.permission.DUMP" >
+298-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+299            <intent-filter>
+299-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+300                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+300-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+300-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+301            </intent-filter>
+302            <intent-filter>
+302-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+303                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+303-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+303-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+304            </intent-filter>
+305            <intent-filter>
+305-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+306                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+306-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+306-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+307            </intent-filter>
+308            <intent-filter>
+308-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+309                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+309-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+309-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/kazmen/.gradle/caches/9.4.1/transforms/ffdd1b2d8a33903dde6f4cdc292af2c5/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+310            </intent-filter>
+311        </receiver>
+312    </application>
+313
+314</manifest>

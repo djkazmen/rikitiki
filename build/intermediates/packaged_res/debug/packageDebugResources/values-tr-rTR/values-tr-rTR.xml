@@ -288,7 +288,6 @@
     <string name="leave">Ayrıl</string>
     <string name="load_more_messages">Daha fazla ileti yükle</string>
     <string name="location">Yer</string>
-    <string name="magic_create_text">conversation.im sağlayıcısında hesap açma sürecinde size yol göstereceğiz.\nconversation.im\'i bir servis sağlayıcı olarak kullandığınızda diğer sağlayıcıları kullananlarla tam Jabber kimliğinizi vererek iletişim kurabilirsiniz.</string>
     <string name="mam_prefs">Arşivleme tercihleri</string>
     <string name="manual_verification_explanation">Aşağıdaki parmak izini, karşınızdaki kişinin parmak iziyle dikkatlice karşılaştırın. \n\nŞifreli eposta veya telefon gibi güvenilir bir iletişim kanalı üzerinden bilgi alışverişi yapabilirsiniz.</string>
     <string name="manually_verify">Bizzat doğrula</string>
